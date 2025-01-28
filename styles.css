@@ -1,0 +1,14 @@
+@keyframes subtleShadowPulse {
+  0%, 100% {
+    /* No shadow at start/end */
+    box-shadow: none;
+  }
+  50% {
+    /* Increase the blur and alpha for stronger effect */
+    box-shadow: 0 0 12px 3px rgba(13, 148, 136, 0.4);
+  }
+}
+
+.animate-subtleShadowPulse {
+  animation: subtleShadowPulse 4s ease-in-out infinite;
+}
