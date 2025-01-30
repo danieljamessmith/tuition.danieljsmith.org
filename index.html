@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Daniel J. Smith - Tutor</title>
 
   <!-- Tailwind CSS via CDN -->
@@ -16,8 +16,8 @@
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📐</text></svg>"
   />
 </head>
-
 <body class="bg-gray-50">
+
   <!-- Header -->
   <header class="bg-gradient-to-r from-teal-700 to-green-500 text-white shadow-lg">
     <div class="max-w-4xl mx-auto px-4 py-6">
@@ -34,21 +34,29 @@
 
         <!-- Name & Subtitle -->
         <div>
-          <h1 class="text-2xl font-bold">Daniel J. Smith</h1>
-          <p class="mt-1 text-sm opacity-90">Mathematics, Physics and Statistics Tuition</p>
-
-          <!-- Email box with subtle pulsing box shadow, margin-top -->
+          <h1 class="text-4xl font-bold">Daniel J. Smith</h1>
+          <p class="text-2xl mt-1 text-sm opacity-90">Mathematics, Physics &amp; Statistics Tuition</p>
           <div
-            class="mt-6 inline-block bg-white font-semibold px-5 py-3 rounded-md 
-                   transition-shadow hover:shadow-lg animate-subtleShadowPulse"
-          >
-            <span class="font-bold text-gray-800">Enquiries:</span>
-            <a href="mailto:tuition@danieljsmith.org" 
-               class="ml-1 break-all hover:underline text-red-400"
-            >
-              tuition@danieljsmith.org
-            </a>
-          </div>
+  class="mt-6 inline-block bg-white font-semibold px-5 py-3 rounded-md 
+         transition-shadow hover:shadow-lg"
+>
+  <p>
+    <span class="font-bold text-gray-800">Email:</span>
+    <a href="mailto:tuition@danieljsmith.org" 
+       class="ml-1 break-all hover:underline text-red-700">
+      tuition@danieljsmith.org
+    </a>
+  </p>
+  <p class="mt-1">
+    <span class="font-bold text-gray-800">WhatsApp:</span>
+    <a href="https://wa.me/447964090436" 
+       target="_blank" 
+       class="ml-1 hover:underline text-green-600">
+      +44 7964 090436
+    </a>
+  </p>
+</div>
+
         </div>
       </div>
     </div>
@@ -56,105 +64,137 @@
 
   <!-- Main Content -->
   <main class="max-w-4xl mx-auto px-4 py-12">
+
     <!-- Hero Section -->
     <section class="mb-12">
       <h2 class="text-3xl font-bold text-gray-800 mb-2">
-        Professional, Friendly and Experienced Private Tutor
+        Professional, Friendly, and Results-Driven
       </h2>
       <p class="text-gray-600 text-lg mb-4">
-        Specialising in GCSE, A-Level, and University courses in Maths, Physics and Statistics
+        Accelerate your progress in GCSE, A-Level, and University Maths, Physics &amp; Statistics.
+        <br>
+        Over <strong>500 hours of experience</strong> privately and through leading agencies.
       </p>
-      <!-- Degrees, left aligned -->
       <p class="text-gray-700 text-sm mb-6">
-        <span class="font-semibold">MASt Applied Mathematics</span> &ndash; St Catharine's College, University of Cambridge<br/>
-        <span class="font-semibold">BSc Mathematics and Physics</span> &ndash; University of Warwick
+        <span class="font-semibold">MASt Applied Mathematics</span> (2023) – University of Cambridge, St Catharine's College<br/>
+        <span class="font-semibold">BSc Mathematics &amp; Physics</span> (2022) – University of Warwick<br/>7
+        <span class="font-semibold">CertHE Mathematical Physics</span> (2020) – University of Nottingham
       </p>
     </section>
 
-    <!-- Tutoring Platforms Badges -->
-    <section class="mb-12 text-center">
-      <h3 class="text-xl font-semibold text-gray-800 mb-4">
-        As Seen On Leading Tutoring Platforms
-      </h3>
-      <div class="inline-flex items-center space-x-6">
-        <!-- The Profs Badge -->
-        <a
-          href="https://www.theprofs.co.uk/tutors/daniel-2949825/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center
-                 w-48 h-28 bg-white rounded-md shadow-md border border-gray-200"
-        >
-          <img
-            src="assets/logos/theprofs.png"
-            alt="The Profs"
-            class="object-contain max-w-full max-h-full"
-          />
-        </a>
-    
-        <!-- Spires Badge -->
-        <a
-          href="https://spires.co/profile/danieljamessmith"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center
-                 w-48 h-28 bg-white rounded-md shadow-md border border-gray-200"
-        >
-          <img
-            src="assets/logos/spires.png"
-            alt="Spires"
-            class="object-contain max-w-full max-h-full"
-          />
-        </a>
-    
-        <!-- FirstTutors Badge -->
-        <a
-          href="https://www.firsttutors.com/uk/tutor/daniel.maths.physics.59/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center
-                 w-48 h-28 bg-white rounded-md shadow-md border border-gray-200"
-        >
-          <img
-            src="assets/logos/firsttutors.png"
-            alt="First Tutors"
-            class="object-contain max-w-full max-h-full"
-          />
-        </a>
-      </div>
-    </section>
-    
-    <!-- Services -->
+    <!-- Services Section -->
     <section class="mb-12 space-y-6">
-      <!-- 1. Comprehensive Exam Board Coverage -->
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <h3 class="text-xl font-semibold text-teal-700 mb-3">Comprehensive Exam Board Coverage</h3>
-        <p class="text-gray-600">
-          Expert knowledge across all major boards (AQA, Edexcel, OCR, MEI),
-          ensuring tailored support for each specification.
-        </p>
-      </div>
 
-      <!-- 2. Equivalent & Alternative Qualifications -->
+        <!-- 1. Comprehensive Exam Board Coverage -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold text-teal-700 mb-3">Comprehensive Exam Board Coverage</h3>
+          <p class="text-gray-600">Tailored sessions designed for all major GCSE and A-level exam boards, including:</p>
+          <ul class="list-disc ml-6 text-gray-600 mt-2">
+            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+              <svg class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+              </svg>
+             <span>Edexcel</span>
+            </li>
+            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+              <svg class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+              </svg>
+             <span>AQA</span>
+            </li> 
+            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+              <svg class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+              </svg>
+             <span>OCR</span>
+            </li>
+            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+              <svg class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+              </svg>
+             <span>WJEC</span>
+            </li>
+          </ul>
+        </div>
+
+      <!-- 2. Equivalent and Alternative Qualifications -->
       <div class="bg-white p-6 rounded-lg shadow-md">
         <h3 class="text-xl font-semibold text-teal-700 mb-3">Equivalent &amp; Alternative Qualifications</h3>
-        <p class="text-gray-600">
-          Specialised tuition for BTEC, HND, IB, or other pathways,
-          adapting to unique curricula and requirements.
-        </p>
+        <p class="text-gray-600">Expert tuition for a range of qualifications, including:</p>
+        <ul class="list-disc ml-6 text-gray-600 mt-2">
+          <li class="flex items-center space-x-3 rtl:space-x-reverse">
+            <svg class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+            </svg>
+           <span>International Baccalaureate (IB)</span>
+          </li>
+          <li class="flex items-center space-x-3 rtl:space-x-reverse">
+            <svg class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+            </svg>
+           <span>Higher National Diploma (IB)</span>
+          </li> 
+          <li class="flex items-center space-x-3 rtl:space-x-reverse">
+            <svg class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+            </svg>
+           <span>BTEC (Levels 3-5)</span>
+          </li>
+          <li class="flex items-center space-x-3 rtl:space-x-reverse">
+            <svg class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+            </svg>
+           <span>Foundation Year Programmes</span>
+          </li>
+        </ul>
       </div>
 
       <!-- 3. Safety & Trust: Enhanced DBS -->
       <div class="bg-white p-6 rounded-lg shadow-md">
         <h3 class="text-xl font-semibold text-teal-700 mb-3">Safety &amp; Trust</h3>
         <p class="text-gray-600">
-          I hold a current Enhanced DBS certificate, giving you peace of mind
-          when scheduling private tuition sessions.
+          I hold an Enhanced DBS certificate, providing peace of mind and a professional, 
+          secure learning environment.
         </p>
+      </div>
+
+      <!-- 4. Undergraduate & Graduate Modules -->
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold text-teal-700 mb-3">Undergraduate &amp; Graduate Modules</h3>
+        <p class="text-gray-600">
+          Past modules tutored include:
+        </p>
+        <ul class="list-disc ml-6 text-gray-600 mt-2">
+
+          <li class="flex items-center space-x-3 rtl:space-x-reverse">
+            <svg class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+            </svg>
+           <span><i>COMP1043</i> - Mathematics for Computer Scientists 2 – University of Nottingham</span>
+          </li>
+          <li class="flex items-center space-x-3 rtl:space-x-reverse">
+            <svg class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+            </svg>
+           <span><i>F3202</i> - Mathematical Methods for Physics 2 – University of Sussex</span>
+          </li> 
+          <li class="flex items-center space-x-3 rtl:space-x-reverse">
+            <svg class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+            </svg>
+           <span><i>CMP4004Y</i> -  Mathematics for Computing – University of East Anglia</span>
+          </li>
+          <li class="flex items-center space-x-3 rtl:space-x-reverse">
+            <svg class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+            </svg>
+           <span><i>EART70161</i> - Computational Mathematics – Imperial College London</span>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- LinkedIn Profile Badge at the Bottom (No Heading or Anchor Text) -->
+    <!-- LinkedIn Profile Badge (Centered) -->
     <section class="mb-12 text-center">
       <script src="https://platform.linkedin.com/badges/js/profile.js"
               async defer type="text/javascript"></script>
@@ -171,6 +211,8 @@
         </a>
       </div>
     </section>
+
+
   </main>
 </body>
 </html>
