@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Daniel J. Smith - Tutor</title>
 
   <!-- Tailwind CSS via CDN -->
@@ -43,7 +43,7 @@
   <p>
     <span class="font-bold text-gray-800">Email:</span>
     <a href="mailto:tuition@danieljsmith.org" 
-       class="ml-1 break-all hover:underline text-red-700">
+       class="ml-1 whitespace-nowrap hover:underline text-red-700">
       tuition@danieljsmith.org
     </a>
   </p>
@@ -51,7 +51,7 @@
     <span class="font-bold text-gray-800">WhatsApp:</span>
     <a href="https://wa.me/447964090436" 
        target="_blank" 
-       class="ml-1 hover:underline text-green-600">
+       class="ml-1 whitespace-nowrap hover:underline text-green-600">
       +44 7964 090436
     </a>
   </p>
@@ -74,12 +74,41 @@
         Accelerate your progress in Maths and Physics at GCSE, A-Level or University.
         <br>
         Over <strong>500 hours of experience</strong> privately and through leading agencies.
-      </p>
-      <p class="text-gray-700 text-sm mb-6">
-        <span class="font-semibold">MASt Applied Mathematics</span> (2023) – University of Cambridge, St Catharine's College<br/>
-        <span class="font-semibold">BSc Mathematics &amp; Physics</span> (2022) – University of Warwick<br/>
-        <span class="font-semibold">CertHE Mathematical Physics</span> (2020) – University of Nottingham
-      </p>
+      </p><br>
+      <ul class="text-sm text-gray-700 mb-6 space-y-3 list-none">
+        <!-- 1st Qualification -->
+        <li>
+          <!-- Larger or bold line for qualification -->
+          <div>
+            <strong>MASt Applied Mathematics</strong> (2023)
+          </div>
+          <!-- Slightly smaller, italic line for institution -->
+          <div class="italic text-gray-600">
+            University of Cambridge, St Catharine's College
+          </div>
+        </li>
+      
+        <!-- 2nd Qualification -->
+        <li>
+          <div>
+            <strong>BSc Mathematics &amp; Physics </strong>(2022)
+          </div>
+          <div class="italic text-gray-600">
+            University of Warwick
+          </div>
+        </li>
+      
+        <!-- 3rd Qualification -->
+        <li>
+          <div>
+            <strong>CertHE Mathematical Physics</strong> (2020)
+          </div>
+          <div class="italic text-gray-600">
+            University of Nottingham
+          </div>
+        </li>
+      </ul>
+      
     </section>
 
     <!-- Services Section -->
@@ -158,40 +187,134 @@
         </p>
       </div>
 
-      <!-- 4. Undergraduate & Graduate Modules -->
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <h3 class="text-xl font-semibold text-teal-700 mb-3">Undergraduate &amp; Graduate Modules</h3>
-        <p class="text-gray-600">
-          Past modules tutored include:
-        </p>
-        <ul class="list-disc ml-6 text-gray-600 mt-2">
+<!-- 4. Undergraduate & Graduate Modules -->
+<div class="bg-white p-6 rounded-lg shadow-md">
+  <h3 class="text-xl font-semibold text-teal-700 mb-3">
+    Undergraduate &amp; Graduate Modules
+  </h3>
+  <p class="text-gray-600">Past modules tutored include:</p>
 
-          <li class="flex items-center space-x-3 rtl:space-x-reverse">
-            <svg class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-            </svg>
-           <span><i>COMP1043</i> - Mathematics for Computer Scientists 2 – University of Nottingham</span>
-          </li>
-          <li class="flex items-center space-x-3 rtl:space-x-reverse">
-            <svg class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-            </svg>
-           <span><i>F3202</i> - Mathematical Methods for Physics 2 – University of Sussex</span>
-          </li> 
-          <li class="flex items-center space-x-3 rtl:space-x-reverse">
-            <svg class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-            </svg>
-           <span><i>CMP4004Y</i> -  Mathematics for Computing – University of East Anglia</span>
-          </li>
-          <li class="flex items-center space-x-3 rtl:space-x-reverse">
-            <svg class="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-            </svg>
-           <span><i>EART70161</i> - Computational Mathematics – Imperial College London</span>
-          </li>
-        </ul>
+  <!-- 
+    Using list-none to remove default bullets (we have checkmark icons).
+    Using space-y-3 to add some vertical spacing between each list item.
+  -->
+  <ul class="list-none mt-2 space-y-3">
+
+    <!-- 1st item -->
+    <li class="flex space-x-2">
+      <!-- Checkmark icon -->
+      <svg
+        class="shrink-0 w-4 h-4 text-green-500"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 16 12"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 5.917 5.724 10.5 15 1.5"
+        />
+      </svg>
+
+      <!-- Module info container -->
+      <div>
+        <!-- Module name in a bolder font. -->
+        <div class="font-semibold text-gray-700">
+          COMP1043 - Mathematics for Computer Scientists 2
+        </div>
+        <!-- Institution on a separate, smaller italic line. -->
+        <div class="italic text-gray-600">
+          University of Nottingham
+        </div>
       </div>
+    </li>
+
+    <!-- 2nd item -->
+    <li class="flex space-x-2">
+      <svg
+        class="shrink-0 w-4 h-4 text-green-500"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 16 12"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 5.917 5.724 10.5 15 1.5"
+        />
+      </svg>
+      <div>
+        <div class="font-semibold text-gray-700">
+          F3202 - Mathematical Methods for Physics 2
+        </div>
+        <div class="italic text-gray-600">
+          University of Sussex
+        </div>
+      </div>
+    </li>
+
+    <!-- 3rd item -->
+    <li class="flex space-x-2">
+      <svg
+        class="shrink-0 w-4 h-4 text-green-500"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 16 12"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 5.917 5.724 10.5 15 1.5"
+        />
+      </svg>
+      <div>
+        <div class="font-semibold text-gray-700">
+          CMP4004Y - Mathematics for Computing
+        </div>
+        <div class="italic text-gray-600">
+          University of East Anglia
+        </div>
+      </div>
+    </li>
+
+    <!-- 4th item -->
+    <li class="flex space-x-2">
+      <svg
+        class="shrink-0 w-4 h-4 text-green-500"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 16 12"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 5.917 5.724 10.5 15 1.5"
+        />
+      </svg>
+      <div>
+        <div class="font-semibold text-gray-700">
+          EART70161 - Computational Mathematics
+        </div>
+        <div class="italic text-gray-600">
+          Imperial College London
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
     </section>
 
     <!-- LinkedIn Profile Badge (Centered) -->
