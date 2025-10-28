@@ -59,7 +59,7 @@ import MainLayout from '../layouts/MainLayout.astro';
             <tbody>
               <tr class="border-t"><td class="py-2 pr-4">Edexcel</td><td class="py-2 pr-4">Mathematics</td></tr>
               <tr class="border-t"><td class="py-2 pr-4">Edexcel</td><td class="py-2 pr-4">Physics</td></tr>
-              <tr class="border-t"><td class="py-2 pr-4">Edexcel (iGCSE)</td><td class="py-2 pr-4">Mathematics</td></tr>
+              <tr class="border-t"><td class="py-2 pr-4">Edexcel iGCSE</td><td class="py-2 pr-4">Mathematics</td></tr>
               <tr class="border-t"><td class="py-2 pr-4">AQA</td><td class="py-2 pr-4">Mathematics</td></tr>
               <tr class="border-t"><td class="py-2 pr-4">AQA</td><td class="py-2 pr-4">Physics</td></tr>
               <tr class="border-t"><td class="py-2 pr-4">AQA</td><td class="py-2 pr-4">Statistics</td></tr>
@@ -142,30 +142,57 @@ import MainLayout from '../layouts/MainLayout.astro';
         </div>
       </div>
 
-      <script>
-        const tabs = [
-          { btn: document.getElementById('tab-btn-alevel'), panel: document.getElementById('tab-panel-alevel') },
-          { btn: document.getElementById('tab-btn-gcse'), panel: document.getElementById('tab-panel-gcse') },
-          { btn: document.getElementById('tab-btn-admissions'), panel: document.getElementById('tab-panel-admissions') },
-          { btn: document.getElementById('tab-btn-university'), panel: document.getElementById('tab-panel-university') },
-        ];
+      <script is:inline>
+        // Re-bind after client-side navigation: use event delegation on the tab container
+        (function(){
+          let lastScroll = 0;
+          const container = document.currentScript.previousElementSibling; // the wrapper div holding buttons and panels
+          if (!container) return;
 
-        function activate(tabId) {
-          const activeClasses = 'bg-teal-700 text-white';
-          const idleClasses = 'bg-white text-teal-700 border border-teal-200';
+          const buttons = {
+            alevel: container.querySelector('#tab-btn-alevel'),
+            gcse: container.querySelector('#tab-btn-gcse'),
+            admissions: container.querySelector('#tab-btn-admissions'),
+            university: container.querySelector('#tab-btn-university'),
+          };
+          const panels = {
+            alevel: container.querySelector('#tab-panel-alevel'),
+            gcse: container.querySelector('#tab-panel-gcse'),
+            admissions: container.querySelector('#tab-panel-admissions'),
+            university: container.querySelector('#tab-panel-university'),
+          };
 
-          tabs.forEach(({ btn, panel }) => {
-            const isActive = btn?.dataset.tab === tabId;
-            panel?.classList.toggle('hidden', !isActive);
-            if (btn) {
-              btn.className = `px-4 py-2 rounded-md ${isActive ? activeClasses : idleClasses}`;
-              btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          function rememberScroll(){ lastScroll = window.scrollY; }
+          function restoreScroll(){ requestAnimationFrame(() => window.scrollTo({ top: lastScroll })); }
+
+          function setActive(tabId){
+            const activeClasses = 'px-4 py-2 rounded-md bg-teal-700 text-white';
+            const idleClasses = 'px-4 py-2 rounded-md bg-white text-teal-700 border border-teal-200';
+            for (const k of Object.keys(buttons)){
+              const btn = buttons[k];
+              const panel = panels[k];
+              const isActive = k === tabId;
+              if (btn){
+                btn.className = isActive ? activeClasses : idleClasses;
+                btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+              }
+              if (panel){ panel.classList.toggle('hidden', !isActive); }
             }
-          });
-        }
+          }
 
-        tabs.forEach(({ btn }) => btn?.addEventListener('click', () => activate(btn.dataset.tab)));
+          // Default to A-level if none active
+          if (buttons.alevel && panels.alevel) setActive('alevel');
+
+          container.addEventListener('click', (e)=>{
+            const btn = e.target.closest('button[data-tab]');
+            if (!btn) return;
+            rememberScroll();
+            setActive(btn.dataset.tab);
+            restoreScroll();
+          });
+        })();
       </script>
+      
     </section>
     
   </main>

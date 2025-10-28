@@ -1,6 +1,10 @@
 ---
 import '../styles/global.css';
 const { title } = Astro.props;
+const currentPath = Astro.url.pathname;
+const isHome = currentPath === '/' || currentPath === '/index.html';
+const homeBtnClasses = `inline-block px-4 py-2 rounded-md text-sm font-semibold ${isHome ? 'bg-teal-700 text-white hover:bg-teal-800' : 'bg-white text-teal-700 border border-teal-200 hover:shadow'}`;
+const expBtnClasses = `inline-block px-4 py-2 rounded-md text-sm font-semibold ${currentPath.startsWith('/experience') ? 'bg-teal-700 text-white hover:bg-teal-800' : 'bg-white text-teal-700 border border-teal-200 hover:shadow'}`;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -13,19 +17,23 @@ const { title } = Astro.props;
     rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>Σ</text></svg>"
   />
+  <link rel="preload" as="image" href="/assets/images/headshot.jpg" imagesrcset="/assets/images/headshot.jpg 1x" imagesizes="160px" />
 </head>
 <body class="bg-gray-50">
 
   <header class="bg-gradient-to-r from-teal-700 to-green-500 text-white shadow-lg">
     <div class="max-w-4xl mx-auto px-4 py-6">
-      <div class="flex items-start space-x-6">
-        <div class="border border-white/50 bg-white/20 rounded-md shadow-md p-1">
+      <div class="flex items-start space-x-6" style="view-transition-name: head; contain: paint;">
+        <div class="border border-white/50 bg-white/20 rounded-md shadow-md p-1" style="view-transition-name: head; contain: paint;">
           <img
             src="/assets/images/headshot.jpg"
             alt="Professional headshot"
             width="160"
             height="160"
             fetchpriority="high"
+            loading="eager"
+            style="view-transition-name: headshot; contain: paint;"
+            decoding="async"
             class="w-40 h-40 object-cover rounded shadow-sm"
           />
         </div>
@@ -58,14 +66,84 @@ const { title } = Astro.props;
     </div>
   </header>
 
-  <div class="bg-white/80 backdrop-blur sticky top-0 z-40 shadow-sm">
+  <div class="bg-white/80 backdrop-blur sticky top-0 z-40 shadow-sm" style="view-transition-name: cta; contain: paint;">
     <div class="max-w-4xl mx-auto px-4 py-3 flex gap-3">
-      <a href="/" class="inline-block px-4 py-2 rounded-md text-sm font-semibold bg-teal-700 text-white hover:bg-teal-800">Home</a>
-      <a href="/experience" class="inline-block px-4 py-2 rounded-md text-sm font-semibold bg-white text-teal-700 border border-teal-200 hover:shadow">Experience</a>
+      <a id="cta-home" data-transition-nav href="/" class={homeBtnClasses} aria-current={isHome ? 'page' : undefined}>Home</a>
+      <a id="cta-exp" data-transition-nav href="/experience" class={expBtnClasses} aria-current={!isHome ? 'page' : undefined}>Experience</a>
     </div>
   </div>
 
-  <slot />
+  <div id="page-content" style="view-transition-name: page; contain: paint;">
+    <slot />
+  </div>
+
+  <script>
+    // Progressive enhancement: intercept CTA clicks to swap page content only.
+    const pageEl = document.getElementById('page-content');
+    const homeLink = document.getElementById('cta-home');
+    const expLink = document.getElementById('cta-exp');
+
+    function isModifiedEvent(e) {
+      return e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey;
+    }
+
+    function setActive(pathname) {
+      const homeActive = pathname === '/' || pathname === '/index.html';
+      const active = 'inline-block px-4 py-2 rounded-md text-sm font-semibold bg-teal-700 text-white hover:bg-teal-800';
+      const idle = 'inline-block px-4 py-2 rounded-md text-sm font-semibold bg-white text-teal-700 border border-teal-200 hover:shadow';
+      if (homeLink && expLink) {
+        homeLink.className = homeActive ? active : idle;
+        expLink.className = homeActive ? idle : active;
+        homeLink.setAttribute('aria-current', homeActive ? 'page' : 'false');
+        expLink.setAttribute('aria-current', !homeActive ? 'page' : 'false');
+      }
+    }
+
+    async function navigate(url) {
+      const to = new URL(url, location.href);
+      if (to.origin !== location.origin) { location.href = url; return; }
+      const res = await fetch(to.href, { headers: { 'X-Requested-With': 'view-transition' } });
+      const html = await res.text();
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const next = doc.getElementById('page-content');
+      if (!next) { location.href = url; return; }
+      const update = () => {
+        pageEl.innerHTML = next.innerHTML;
+        // Execute any inline scripts within the new page content
+        const scripts = pageEl.querySelectorAll('script');
+        scripts.forEach((oldScript) => {
+          const s = document.createElement('script');
+          if (oldScript.src) {
+            s.src = oldScript.src;
+          } else {
+            s.textContent = oldScript.textContent || '';
+          }
+          Array.from(oldScript.attributes).forEach(attr => s.setAttribute(attr.name, attr.value));
+          oldScript.replaceWith(s);
+        });
+        history.pushState({}, '', to.pathname);
+        setActive(to.pathname);
+        window.scrollTo(0, 0);
+      };
+      if (document.startViewTransition) {
+        document.startViewTransition(update);
+      } else {
+        update();
+      }
+    }
+
+    function onClick(e) {
+      const a = e.target.closest('a[data-transition-nav]');
+      if (!a || isModifiedEvent(e) || a.target === '_blank') return;
+      e.preventDefault();
+      navigate(a.href);
+    }
+
+    function onPop() { navigate(location.href); }
+
+    document.addEventListener('click', onClick);
+    window.addEventListener('popstate', onPop);
+  </script>
 
 </body>
 </html>
