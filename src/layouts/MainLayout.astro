@@ -1,0 +1,61 @@
+---
+import '../styles/global.css';
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{title}</title>
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>Σ</text></svg>"
+  />
+</head>
+<body class="bg-gray-50">
+
+  <header class="bg-gradient-to-r from-teal-700 to-green-500 text-white shadow-lg">
+    <div class="max-w-4xl mx-auto px-4 py-6">
+      <div class="flex items-start space-x-6">
+        <div class="border border-white/50 bg-white/20 rounded-md shadow-md p-1">
+          <img
+            src="/assets/images/headshot.jpg"
+            alt="Professional headshot"
+            class="w-40 h-auto rounded shadow-sm"
+          />
+        </div>
+        <div>
+          <h1 class="text-4xl font-bold">Daniel J. Smith</h1>
+          <p class="mt-1 text-white/90">Bespoke Tuition in Mathematics and Physics</p>
+          <div
+  class="mt-6 inline-block bg-white font-semibold px-5 py-3 rounded-md 
+         transition-shadow hover:shadow-lg"
+>
+  <p>
+    <span class="font-bold text-gray-800">Email:</span>
+    <a href="mailto:tuition@danieljsmith.org" 
+       class="ml-1 whitespace-nowrap hover:underline text-red-700">
+      tuition@danieljsmith.org
+    </a>
+  </p>
+  <p class="mt-1">
+    <span class="font-bold text-gray-800">WhatsApp:</span>
+    <a href="https://wa.me/447964090436" 
+       target="_blank" 
+       class="ml-1 whitespace-nowrap hover:underline text-green-600">
+      +44 7964 090436
+    </a>
+  </p>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <slot />
+
+</body>
+</html>

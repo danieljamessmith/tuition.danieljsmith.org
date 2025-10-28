@@ -1,0 +1,30 @@
+{
+  "name": "danieljsmith.org",
+  "version": "1.0.0",
+  "description": "This repository hosts the static site for [danieljsmith.org](https://danieljsmith.org), deployed via GitHub Pages.",
+  "main": "index.js",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.16",
+    "astro": "^5.15.1",
+    "tailwindcss": "^4.1.16"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danieljamessmith/danieljsmith.org.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danieljamessmith/danieljsmith.org/issues"
+  },
+  "homepage": "https://github.com/danieljamessmith/danieljsmith.org#readme"
+}
