@@ -1,5 +1,5 @@
 site:
-  name: DJS TUITION
+  name: danieljsmith.org
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: DJS TUITION
-    template: '%s — DJS TUITION'
+    default: danieljsmith.org
+    template: '%s — danieljsmith.org'
   description: "Professional tutoring services tailored to help students achieve their academic goals."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: DJS TUITION
+    site_name: danieljsmith.org
     images:
       - url: '~/assets/images/default.png'
         width: 1200
@@ -41,4 +41,4 @@ analytics:
       id: null # or "G-XXXXXXXXXX"
 
 ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: 'light:only' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"

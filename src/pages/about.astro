@@ -1,66 +1,30 @@
 ---
 import Hero from '~/components/widgets/Hero.astro';
-import Content from '~/components/widgets/Content.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'About us',
+  title: 'Testimonials',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    tagline="About us"
-    image={{
-      src: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Tutoring Image',
-    }}
-  >
-    <Fragment slot="title">
-      About DJS TUITION
-    </Fragment>
-
+  <Hero tagline="Testimonials">
+    <Fragment slot="title">What Students Say</Fragment>
     <Fragment slot="subtitle">
-      Dedicated to helping students reach their full potential through personalized tutoring.
+      Hear from students who have benefited from personalised Mathematics and Physics tuition.
     </Fragment>
   </Hero>
 
-  <!-- Content Widget **************** -->
+  <!-- Testimonials Content -->
   
-  <Content
-    items={[
-      {
-        title: 'Experienced Tutors',
-        description:
-          'Our team of qualified tutors brings years of experience and expertise to help students succeed in their studies.',
-      },
-      {
-        title: 'Personalized Approach',
-        description:
-          'We tailor our teaching methods to match each student\'s learning style and pace, ensuring optimal understanding and retention.',
-      },
-      {
-        title: 'Flexible Scheduling',
-        description:
-          'We work around your schedule to provide convenient tutoring sessions that fit your lifestyle.',
-      },
-      {
-        title: 'Comprehensive Support',
-        description:
-          'From exam preparation to homework help, we provide comprehensive academic support across a wide range of subjects.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Education Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Our Mission</h3>
-      To provide exceptional tutoring services that empower students to achieve their academic goals and build confidence in their abilities.
-    </Fragment>
-  </Content>
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <p class="text-center text-muted text-lg">
+        Testimonials coming soon.
+      </p>
+    </div>
+  </section>
 
 </Layout>

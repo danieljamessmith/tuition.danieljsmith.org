@@ -1,31 +1,100 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
-import Hero from '~/components/widgets/Hero.astro';
+import Image from '~/components/common/Image.astro';
 
 const metadata = {
-  title: 'DJS TUITION',
+  title: 'danieljsmith.org',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- Hero Section with Integrated Headshot ******************* -->
+  
+  <section class="relative md:-mt-[76px] not-prose">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+      <div class="py-8 md:py-10">
+        <div class="max-w-6xl mx-auto">
+          <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+            <!-- Headshot - Left side -->
+            <div class="flex-shrink-0 mx-auto md:mx-0">
+              <Image
+                src="~/assets/images/IMG_0978_crop.JPG"
+                alt="Daniel J. Smith - Mathematics and Physics Tutor"
+                width={240}
+                height={240}
+                class="w-48 h-48 md:w-56 md:h-56 rounded-lg object-cover shadow-lg"
+                loading="eager"
+              />
+            </div>
+            
+            <!-- Hero Text - Right side -->
+            <div class="flex-1 text-center md:text-left">
+              <h1 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-3 font-heading">
+                Bespoke Mathematics & Physics Tuition
+              </h1>
+              <div class="max-w-3xl md:mx-0 mx-auto">
+                <p class="text-xl text-muted mb-6">
+                  Cambridge MASt graduate with 1000+ hours' experience helping students excel at A‑Level and university level. Specialist Oxbridge admissions support.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                  <a class="btn-secondary" href="/services">View Services</a>
+                  <a class="btn-secondary" href="/contact">Get in Touch</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <Hero
-    actions={[
-      { text: 'View Services', href: '/services' },
-      { text: 'Contact Us', href: '/contact' },
-    ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'DJS Tuition Hero Image' }}
-  >
-    <Fragment slot="title">
-      Professional Tutoring Services
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Helping students achieve their academic goals through personalized, effective tutoring.
-    </Fragment>
-  </Hero>
+  <!-- Qualifications Section **************** -->
+  
+  <section class="py-6 md:py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="space-y-5">
+          <div class="flex gap-3">
+            <div class="flex-shrink-0 mt-1">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900">MASt Applied Mathematics (2023)</h3>
+              <p class="text-muted">University of Cambridge, St Catharine's College</p>
+            </div>
+          </div>
+          
+          <div class="flex gap-3">
+            <div class="flex-shrink-0 mt-1">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900">BSc Mathematics & Physics (First Class, 2022)</h3>
+              <p class="text-muted">University of Warwick</p>
+            </div>
+          </div>
+          
+          <div class="flex gap-3">
+            <div class="flex-shrink-0 mt-1">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900">CertHE Mathematical Physics (2020)</h3>
+              <p class="text-muted">University of Nottingham</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </Layout>

@@ -1,7 +1,6 @@
 ---
 import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -13,73 +12,70 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    tagline="Services"
     title="Tutoring Services"
-    subtitle="Comprehensive academic support tailored to your needs. We offer personalized tutoring across a wide range of subjects."
-    actions={[{ variant: 'primary', text: 'Get Started', href: '/contact' }]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Tutoring Services Image',
-    }}
+    subtitle="Expert tuition from A‑Level through to university level, covering all major exam boards and entrance examinations."
   />
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Our Tutoring Services"
-    subtitle="We provide expert tutoring across multiple subjects and academic levels."
     columns={3}
+    classes={{ container: 'pt-2 md:pt-4' }}
     items={[
       {
-        title: 'Mathematics',
+        title: 'University Entrance Exams',
         description:
-          'Expert help with algebra, geometry, calculus, and statistics. From basic concepts to advanced problem-solving techniques.',
-        icon: 'tabler:math',
-      },
-      {
-        title: 'Science',
-        description:
-          'Comprehensive support in physics, chemistry, and biology. Hands-on learning approaches to complex scientific concepts.',
-        icon: 'tabler:flask',
-      },
-      {
-        title: 'English & Literature',
-        description:
-          'Improve reading comprehension, writing skills, and literary analysis. Support for essays, creative writing, and exam preparation.',
-        icon: 'tabler:book',
-      },
-      {
-        title: 'Test Preparation',
-        description:
-          'Specialized coaching for standardized tests, entrance exams, and assessment preparation with proven strategies.',
-        icon: 'tabler:clipboard-check',
-      },
-      {
-        title: 'Homework Help',
-        description:
-          'Regular support with assignments and coursework to ensure understanding and timely completion of school work.',
+          'Specialist preparation for MAT, PAT, STEP, and TMUA with Oxbridge‑focused strategies and extensive past‑paper practice.',
         icon: 'tabler:school',
       },
       {
-        title: 'Exam Review',
+        title: 'A‑Level Maths & Physics',
         description:
-          'Focused review sessions to prepare for upcoming exams, including past paper practice and study techniques.',
-        icon: 'tabler:file-text',
+          'Comprehensive support for A‑Level Maths, Further Maths, and Physics across Edexcel, AQA, OCR A and OCR B (MEI).',
+        icon: 'tabler:calculator',
       },
-    ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    actions={[
       {
-        variant: 'primary',
-        text: 'Contact Us',
-        href: '/contact',
+        title: 'Undergraduate & Graduate Level',
+        description:
+          'Support for university modules in multivariable calculus, differential equations, linear algebra, and mathematical methods.',
+        icon: 'tabler:books',
+      },
+      {
+        title: 'Scientific Computing',
+        description:
+          'Python, Jupyter, data science, and computational methods. Support for programming assignments, data analysis projects, and numerical methods.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Mock Exams & Professional Marking',
+        description:
+          'Realistic mocks written and marked to exam‑board standards, with detailed feedback, mark schemes, and improvement plans.',
+        icon: 'tabler:clipboard-check',
+      },
+      {
+        title: 'GCSE Maths & Physics',
+        description:
+          'Tailored sessions for all major GCSE exam boards (Edexcel, AQA, OCR, WJEC).',
+        icon: 'tabler:math',
+      },
+      {
+        title: 'Alternative Qualifications',
+        description:
+          'Expert tuition for IB, HND, BTEC (Levels 3–5), and Foundation Year Programmes.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Special Educational Needs',
+        description:
+          'Experienced working with students with ASD and ADHD, adapting teaching to individual needs.',
+        icon: 'tabler:heart-handshake',
+      },
+      {
+        title: 'Enhanced DBS Certified',
+        description:
+          'Enhanced DBS certification ensures a professional, secure learning environment for all students.',
+        icon: 'tabler:shield-check',
       },
     ]}
-    title="Ready to Get Started?"
-    subtitle="Contact us today to discuss how we can help you achieve your academic goals."
   />
 </Layout>
