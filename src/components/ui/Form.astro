@@ -2,7 +2,7 @@
 import type { Form as Props } from '~/types';
 import Button from '~/components/ui/Button.astro';
 
-const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
+const { inputs, selects, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
 ---
 
 <form>
@@ -23,6 +23,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
                 id={name}
                 autocomplete={autocomplete}
                 placeholder={placeholder}
+                required
                 class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
               />
             </div>
@@ -31,8 +32,31 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
   }
 
   {
+    selects &&
+      selects.map(({ name, label, options }) => (
+        <div class="mb-6">
+          {label && (
+            <label for={name} class="block text-sm font-medium">
+              {label}
+            </label>
+          )}
+          <select
+            name={name}
+            id={name}
+            required
+            class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+          >
+            {options.map((option) => (
+              <option value={option.value} disabled={option.value === ''}>{option.label}</option>
+            ))}
+          </select>
+        </div>
+      ))
+  }
+
+  {
     textarea && (
-      <div>
+      <div class="mb-6">
         <label for="textarea" class="block text-sm font-medium">
           {textarea.label}
         </label>
@@ -41,6 +65,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
           name={textarea.name ? textarea.name : 'message'}
           rows={textarea.rows ? textarea.rows : 4}
           placeholder={textarea.placeholder}
+          required
           class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
         />
       </div>
@@ -55,6 +80,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
             id="disclaimer"
             name="disclaimer"
             type="checkbox"
+            required
             class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
           />
         </div>

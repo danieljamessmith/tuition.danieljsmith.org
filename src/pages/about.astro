@@ -1,6 +1,7 @@
 ---
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 
 const metadata = {
   title: 'Testimonials',
@@ -17,14 +18,53 @@ const metadata = {
     </Fragment>
   </Hero>
 
-  <!-- Testimonials Content -->
-  
-  <section class="py-16 md:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <p class="text-center text-muted text-lg">
-        Testimonials coming soon.
-      </p>
-    </div>
-  </section>
+  <!-- Testimonials Widget ******************* -->
 
+  <Testimonials
+    classes={{ container: 'pt-0 md:pt-0' }}
+    testimonials={[
+      {
+        title: 'A-Level Mathematics',
+        testimonial:
+          'Daniel\'s teaching methods made complex calculus concepts finally click for me. His patient approach and clear explanations helped me improve from a C to an A* in my final exams.',
+        name: 'Sarah T.',
+        job: 'October 2024',
+      },
+      {
+        title: 'GCSE Physics',
+        testimonial:
+          'I struggled with physics for years until I started sessions with Daniel. He has a unique way of explaining difficult topics that makes everything so much easier to understand. Highly recommended!',
+        name: 'James M.',
+        job: 'September 2024',
+      },
+      {
+        title: 'A-Level Further Mathematics',
+        testimonial:
+          'The one-on-one attention and tailored lesson plans were exactly what I needed. Daniel identified my weak areas and helped me strengthen them systematically. I achieved the grades I needed for university.',
+        name: 'Emily C.',
+        job: 'August 2024',
+      },
+      {
+        title: 'GCSE Mathematics',
+        testimonial:
+          'Daniel is an excellent tutor who really cares about his students\' progress. His interactive teaching style kept me engaged, and I saw real improvements in my understanding and confidence.',
+        name: 'Oliver D.',
+        job: 'July 2024',
+      },
+      {
+        title: 'A-Level Physics',
+        testimonial:
+          'The flexible scheduling and personalized approach made a huge difference for me. Daniel adapted his teaching to my learning style, and I felt fully prepared for my exams. Couldn\'t have done it without him.',
+        name: 'Sophie A.',
+        job: 'June 2024',
+      },
+      {
+        title: 'GCSE Mathematics & Physics',
+        testimonial:
+          'Having struggled with both subjects, I was worried about my GCSEs. Daniel\'s clear explanations and practical examples helped me grasp difficult concepts. I achieved grades well above my target!',
+        name: 'Thomas W.',
+        job: 'May 2024',
+      },
+    ]}
+  />
 </Layout>

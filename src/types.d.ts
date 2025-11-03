@@ -176,6 +176,12 @@ export interface Textarea {
   rows?: number;
 }
 
+export interface Select {
+  name: string;
+  label?: string;
+  options: Array<{ value: string; label: string }>;
+}
+
 export interface Disclaimer {
   label?: string;
 }
@@ -206,6 +212,7 @@ export interface Collapse {
 
 export interface Form {
   inputs?: Array<Input>;
+  selects?: Array<Select>;
   textarea?: Textarea;
   disclaimer?: Disclaimer;
   button?: string;

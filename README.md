@@ -1,302 +1,220 @@
-# 🚀 AstroWind
+# danieljsmith.org
 
-<img src="https://raw.githubusercontent.com/arthelokyo/.github/main/resources/astrowind/lighthouse-score.png" align="right"
-     alt="AstroWind Lighthouse Score" width="100" height="358">
+Professional tutoring website for Daniel J. Smith - Mathematics and Physics tuition.
 
-🌟 _Most *starred* & *forked* Astro theme in 2022, 2023 & 2024_. 🌟
+## 🎓 About
 
-**AstroWind** is a free and open-source template to make your website using **[Astro 5.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/)**. Ready to start a new project and designed taking into account web best practices.
+This website provides information about tutoring services for GCSE, A-Level, and university-level Mathematics and Physics, as well as specialized Oxbridge admissions support.
 
-- ✅ **Production-ready** scores in **PageSpeed Insights** reports.
-- ✅ Integration with **Tailwind CSS** supporting **Dark mode** and **_RTL_**.
-- ✅ **Fast and SEO friendly blog** with automatic **RSS feed**, **MDX** support, **Categories & Tags**, **Social Share**, ...
-- ✅ **Image Optimization** (using new **Astro Assets** and **Unpic** for Universal image CDN).
-- ✅ Generation of **project sitemap** based on your routes.
-- ✅ **Open Graph tags** for social media sharing.
-- ✅ **Analytics** built-in Google Analytics, and Splitbee integration.
+## 🚀 Technology Stack
 
-<br>
+- **Framework:** [Astro 5](https://astro.build/) - Fast, content-focused static site generator
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- **Icons:** [Astro Icon](https://github.com/natemoo-re/astro-icon) with Tabler icons
+- **Deployment:** GitHub Pages
+- **Forms:** Zoho Forms with reCAPTCHA v3
 
-![AstroWind Theme Screenshot](https://raw.githubusercontent.com/arthelokyo/.github/main/resources/astrowind/screenshot-astrowind-1.0.png)
-
-[![arthelokyo](https://custom-icon-badges.demolab.com/badge/made%20by%20-arthelokyo-556bf2?style=flat-square&logo=arthelokyo&logoColor=white&labelColor=101827)](https://github.com/arthelokyo)
-[![License](https://img.shields.io/github/license/arthelokyo/astrowind?style=flat-square&color=dddddd&labelColor=000000)](https://github.com/arthelokyo/astrowind/blob/main/LICENSE.md)
-[![Maintained](https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg?style=flat-square)](https://github.com/arthelokyo)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/arthelokyo/astrowind#contributing)
-[![Known Vulnerabilities](https://snyk.io/test/github/arthelokyo/astrowind/badge.svg?style=flat-square)](https://snyk.io/test/github/arthelokyo/astrowind)
-[![Stars](https://img.shields.io/github/stars/arthelokyo/astrowind.svg?style=social&label=stars&maxAge=86400&color=ff69b4)](https://github.com/arthelokyo/astrowind)
-[![Forks](https://img.shields.io/github/forks/arthelokyo/astrowind.svg?style=social&label=forks&maxAge=86400&color=ff69b4)](https://github.com/arthelokyo/astrowind)
-
-<br>
-
-<details open>
-<summary>Table of Contents</summary>
-
-- [Demo](#demo)
-- [Upcoming: AstroWind 2.0 – We Need Your Vision!](#-upcoming-astrowind-20--we-need-your-vision)
-- [TL;DR](#tldr)
-- [Getting started](#getting-started)
-  - [Project structure](#project-structure)
-  - [Commands](#commands)
-  - [Configuration](#configuration)
-  - [Deploy](#deploy)
-- [Frequently Asked Questions](#frequently-asked-questions)
-- [Related Projects](#related-projects)
-- [Contributing](#contributing)
-- [Acknowledgements](#acknowledgements)
-- [License](#license)
-
-</details>
-
-<br>
-
-## Demo
-
-📌 [https://astrowind.vercel.app/](https://astrowind.vercel.app/)
-
-<br>
-
-## 🔔 Upcoming: AstroWind 2.0 – We Need Your Vision!
-
-We're embarking on an exciting journey with **AstroWind 2.0**, and we want you to be a part of it! We're currently taking the first steps in developing this new version and your insights are invaluable. Join the discussion and share your feedback, ideas, and suggestions to help shape the future of **AstroWind**. Let's make **AstroWind 2.0** even better, together!
-
-[Share Your Feedback in Our Discussion!](https://github.com/arthelokyo/astrowind/discussions/392)
-
-<br>
-
-## TL;DR
-
-```shell
-npm create astro@latest -- --template arthelokyo/astrowind
-```
-
-## Getting started
-
-**AstroWind** tries to give you quick access to creating a website using [Astro 5.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/). It's a free theme which focuses on simplicity, good practices and high performance.
-
-Very little vanilla javascript is used only to provide basic functionality so that each developer decides which framework (React, Vue, Svelte, Solid JS...) to use and how to approach their goals.
-
-In this version the template supports all the options in the `output` configuration, `static`, `hybrid` and `server`, but the blog only works with `prerender = true`. We are working on the next version and aim to make it fully compatible with SSR.
-
-### Project structure
-
-Inside **AstroWind** template, you'll see the following folders and files:
+## 📁 Project Structure
 
 ```
 /
 ├── public/
-│   ├── _headers
-│   └── robots.txt
+│   ├── _headers              # Cache control headers
+│   ├── robots.txt            # SEO robots configuration
+│   └── assets/               # Favicons and static assets
 ├── src/
 │   ├── assets/
-│   │   ├── favicons/
-│   │   ├── images/
-│   │   └── styles/
-│   │       └── tailwind.css
+│   │   ├── images/           # Site images and photos
+│   │   └── styles/           # Global CSS styles
 │   ├── components/
-│   │   ├── blog/
-│   │   ├── common/
-│   │   ├── ui/
-│   │   ├── widgets/
-│   │   │   ├── Header.astro
-│   │   │   └── ...
-│   │   ├── CustomStyles.astro
-│   │   ├── Favicons.astro
-│   │   └── Logo.astro
-│   ├── content/
-│   │   ├── post/
-│   │   │   ├── post-slug-1.md
-│   │   │   ├── post-slug-2.mdx
-│   │   │   └── ...
-│   │   └-- config.ts
-│   ├── layouts/
-│   │   ├── Layout.astro
-│   │   ├── MarkdownLayout.astro
-│   │   └── PageLayout.astro
-│   ├── pages/
-│   │   ├── [...blog]/
-│   │   │   ├── [category]/
-│   │   │   ├── [tag]/
-│   │   │   ├── [...page].astro
-│   │   │   └── index.astro
-│   │   ├── index.astro
-│   │   ├── 404.astro
-│   │   ├-- rss.xml.ts
-│   │   └── ...
-│   ├── utils/
-│   ├── config.yaml
-│   └── navigation.js
-├── package.json
-├── astro.config.ts
-└── ...
+│   │   ├── common/           # Reusable common components
+│   │   ├── ui/               # UI components (buttons, forms, etc.)
+│   │   └── widgets/          # Page sections (header, hero, etc.)
+│   ├── layouts/              # Page layouts
+│   ├── pages/                # Site pages (routes)
+│   │   ├── index.astro       # Homepage
+│   │   ├── about.astro       # Testimonials page
+│   │   ├── services.astro    # Services listing
+│   │   ├── contact.astro     # Contact form
+│   │   ├── thank-you.astro   # Form success page
+│   │   └── 404.astro         # Error page
+│   ├── utils/                # Utility functions
+│   ├── config.yaml           # Site configuration
+│   └── navigation.ts         # Navigation menu structure
+├── astro.config.ts           # Astro configuration
+├── tailwind.config.js        # Tailwind configuration
+└── package.json              # Dependencies
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🛠️ Development
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Prerequisites
 
-Any static assets, like images, can be placed in the `public/` directory if they do not require any transformation or in the `assets/` directory if they are imported directly.
+- Node.js (v18.17.1 or v20.3.0+ or v21.0.0+)
+- npm or equivalent package manager
 
-[![Edit AstroWind on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/arthelokyo/astrowind/tree/main) [![Open in Gitpod](https://svgshare.com/i/xdi.svg)](https://gitpod.io/?on=gitpod#https://github.com/arthelokyo/astrowind) [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/arthelokyo/astrowind)
+### Installation
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file `README.md`. Update `src/config.yaml` and contents. Have fun!
+```bash
+# Install dependencies
+npm install
+```
 
-<br>
+### Local Development
 
-### Commands
+```bash
+# Start development server (http://localhost:4321)
+npm run dev
 
-All commands are run from the root of the project, from a terminal:
+# Alternative start command
+npm start
+```
 
-| Command             | Action                                             |
-| :------------------ | :------------------------------------------------- |
-| `npm install`       | Installs dependencies                              |
-| `npm run dev`       | Starts local dev server at `localhost:4321`        |
-| `npm run build`     | Build your production site to `./dist/`            |
-| `npm run preview`   | Preview your build locally, before deploying       |
-| `npm run check`     | Check your project for errors                      |
-| `npm run fix`       | Run Eslint and format codes with Prettier          |
-| `npm run astro ...` | Run CLI commands like `astro add`, `astro preview` |
+### Build for Production
 
-<br>
+```bash
+# Build static site
+npm run build
 
-### Configuration
+# Preview production build locally
+npm run preview
+```
 
-Basic configuration file: `./src/config.yaml`
+### Code Quality
+
+```bash
+# Run all checks (Astro, ESLint, Prettier)
+npm run check
+
+# Fix linting and formatting issues
+npm run fix
+
+# Individual checks
+npm run check:astro
+npm run check:eslint
+npm run check:prettier
+```
+
+## 📝 Configuration
+
+### Site Settings
+
+Edit `src/config.yaml` to update:
+- Site name and URL
+- SEO metadata (title, description, Open Graph)
+- Google Site Verification
+- Analytics settings (Google Analytics)
+- UI theme preferences
+
+### Navigation
+
+Edit `src/navigation.ts` to modify:
+- Header navigation links
+- Footer content and links
+
+### Contact Form
+
+The contact form uses Zoho Forms. See `ZOHO-FORMS-SETUP.md` for detailed integration instructions including:
+- Form field configuration
+- reCAPTCHA v3 setup
+- Email notifications
+- Success page redirection
+
+## 🚢 Deployment
+
+### GitHub Pages
+
+This site is configured for deployment to GitHub Pages using GitHub Actions.
+
+**Setup:**
+
+1. Enable GitHub Pages in repository settings
+2. Set source to "GitHub Actions"
+3. Create `.github/workflows/deploy.yml` (if not exists):
 
 ```yaml
-site:
-  name: 'Example'
-  site: 'https://example.com'
-  base: '/' # Change this if you need to deploy to Github Pages, for example
-  trailingSlash: false # Generate permalinks with or without "/" at the end
+name: Deploy to GitHub Pages
 
-  googleSiteVerificationId: false # Or some value,
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
 
-# Default SEO metadata
-metadata:
-  title:
-    default: 'Example'
-    template: '%s — Example'
-  description: 'This is the default meta description of Example website'
-  robots:
-    index: true
-    follow: true
-  openGraph:
-    site_name: 'Example'
-    images:
-      - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
-    type: website
-  twitter:
-    handle: '@twitter_user'
-    site: '@twitter_user'
-    cardType: summary_large_image
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-i18n:
-  language: en
-  textDirection: ltr
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build
+        run: npm run build
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
 
-apps:
-  blog:
-    isEnabled: true # If the blog will be enabled
-    postsPerPage: 6 # Number of posts per page
-
-    post:
-      isEnabled: true
-      permalink: '/blog/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
-      robots:
-        index: true
-
-    list:
-      isEnabled: true
-      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
-      robots:
-        index: true
-
-    category:
-      isEnabled: true
-      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
-      robots:
-        index: true
-
-    tag:
-      isEnabled: true
-      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
-      robots:
-        index: false
-
-    isRelatedPostsEnabled: true # If a widget with related posts is to be displayed below each post
-    relatedPostsCount: 4 # Number of related posts to display
-
-analytics:
-  vendors:
-    googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
-
-ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 ```
 
-<br>
+4. Push to main branch to trigger deployment
 
-#### Customize Design
+## 🎨 Customization
 
-To customize Font families, Colors or more Elements refer to the following files:
+### Styling
 
-- `src/components/CustomStyles.astro`
-- `src/assets/styles/tailwind.css`
+- **Global styles:** `src/assets/styles/tailwind.css`
+- **Custom styles:** `src/components/CustomStyles.astro`
+- **Tailwind config:** `tailwind.config.js`
 
-### Deploy
+### Images
 
-#### Deploy to production (manual)
+- Place images in `src/assets/images/`
+- Images are automatically optimized by Astro
+- Use the `Image` component from `~/components/common/Image.astro`
 
-You can create an optimized production build with:
+### Adding New Pages
 
-```shell
-npm run build
-```
+1. Create a new `.astro` file in `src/pages/`
+2. Import and use `PageLayout` from `~/layouts/PageLayout.astro`
+3. Add navigation link in `src/navigation.ts` if needed
 
-Now, your website is ready to be deployed. All generated files are located at
-`dist` folder, which you can deploy the folder to any hosting service you
-prefer.
+## 📄 License
 
-#### Deploy to Netlify
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-Clone this repository on your own GitHub account and deploy it to Netlify:
+## 🙏 Acknowledgments
 
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/arthelokyo/astrowind)
+Built with [AstroWind](https://github.com/arthelokyo/astrowind) template as a starting point.
 
-#### Deploy to Vercel
+## 📞 Support
 
-Clone this repository on your own GitHub account and deploy to Vercel:
+For website issues or inquiries, please contact via the [contact form](https://danieljsmith.org/contact).
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Farthelokyo%2Fastrowind)
+---
 
-<br>
-
-## Frequently Asked Questions
-
-- Why?
--
--
-
-<br>
-
-## Related projects
-
-- [TailNext](https://tailnext.vercel.app/) - Free template using Next.js 14 and Tailwind CSS with the new App Router.
-- [Qwind](https://qwind.pages.dev/) - Free template to make your website using Qwik + Tailwind CSS.
-
-## Contributing
-
-If you have any ideas, suggestions or find any bugs, feel free to open a discussion, an issue or create a pull request.
-That would be very useful for all of us and we would be happy to listen and take action.
-
-## Acknowledgements
-
-Initially created by **Arthelokyo** and maintained by a community of [contributors](https://github.com/arthelokyo/astrowind/graphs/contributors).
-
-## License
-
-**AstroWind** is licensed under the MIT license — see the [LICENSE](./LICENSE.md) file for details.
+**Version:** 1.0.0  
+**Last Updated:** November 2025

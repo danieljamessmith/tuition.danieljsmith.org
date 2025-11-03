@@ -2,7 +2,6 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
   title: 'Contact',
@@ -12,12 +11,10 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <HeroText title="Enquiries" />
 
   <ContactUs
     id="form"
-    title="Get in Touch"
-    subtitle="Send us a message and we'll get back to you as soon as possible."
     inputs={[
       {
         type: 'text',
@@ -30,37 +27,39 @@ const metadata = {
         label: 'Email',
       },
     ]}
+    selects={[
+      {
+        name: 'subject',
+        label: 'Subject',
+        options: [
+          { value: '', label: 'Please select...' },
+          { value: 'mathematics', label: 'Mathematics' },
+          { value: 'further-mathematics', label: 'Further Mathematics' },
+          { value: 'physics', label: 'Physics' },
+          { value: 'other', label: 'Other' },
+        ],
+      },
+      {
+        name: 'level',
+        label: 'Level',
+        options: [
+          { value: '', label: 'Please select...' },
+          { value: 'gcse', label: 'GCSE' },
+          { value: 'a-level', label: 'A-Level' },
+          { value: 'university-admissions', label: 'University Admissions' },
+          { value: 'undergraduate', label: 'Undergraduate' },
+          { value: 'graduate', label: 'Graduate' },
+          { value: 'other', label: 'Other' },
+        ],
+      },
+    ]}
     textarea={{
       label: 'Message',
     }}
     disclaimer={{
       label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+        'By submitting this form, you acknowledge and agree to the collection of your personal information.',
     }}
     description="We typically respond within 24 hours."
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Contact Information"
-    columns={3}
-    items={[
-      {
-        title: 'Email',
-        description: 'info@djstuition.com',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Phone',
-        description: 'Contact us via phone for immediate assistance',
-        icon: 'tabler:phone',
-      },
-      {
-        title: 'Office Hours',
-        description: 'Monday - Friday: 9:00 AM - 6:00 PM',
-        icon: 'tabler:clock',
-      },
-    ]}
   />
 </Layout>
