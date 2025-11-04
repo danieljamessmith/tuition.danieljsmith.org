@@ -1,5 +1,5 @@
 /**
- * Testimonials data for the About page
+ * Testimonials data for the Testimonials page
  */
 
 export interface Testimonial {
@@ -27,7 +27,7 @@ We would wholeheartedly recommend Daniel as a tutor to anyone.`,
     job: 'October 2025',
   },
   {
-    title: 'MSc Data Science and Machine Learning for Geo-Energy',
+    title: 'MSc Data Science & Machine Learning for Geo-Energy',
     board: 'Imperial College London',
     testimonial: `Daniel improved my confidence surrounding the maths content on my course almost immediately. He systematically identified and filled the many gaps in my knowledge with carefully thought-out, tailored lesson plans. While he guided the learning, he always gave me the freedom to choose the direction, regularly checking in on how I felt I was progressing and revisiting areas I found more difficult until they were firmly understood.
 
@@ -38,39 +38,61 @@ This approach suited my learning style perfectly. With Daniel’s support, I mad
     job: 'October 2025',
   },
   {
-    title: 'GCSE Physics',
-    board: 'AQA',
-    testimonial: `I struggled with physics for years until I started sessions with Daniel. He has a unique way of explaining difficult topics that makes everything so much easier to understand. Highly recommended!`,
-    name: 'James M.',
-    job: 'September 2024',
-  },
-  {
-    title: 'A-Level Further Mathematics',
-    board: 'OCR',
-    testimonial: `The one-on-one attention and tailored lesson plans were exactly what I needed. Daniel identified my weak areas and helped me strengthen them systematically. I achieved the grades I needed for university.`,
-    name: 'Emily C.',
-    job: 'August 2024',
-  },
-  {
-    title: 'GCSE Mathematics',
+    title: 'BTEC Engineering',
     board: 'Edexcel',
-    testimonial: `Daniel is an excellent tutor who really cares about his students' progress. His interactive teaching style kept me engaged, and I saw real improvements in my understanding and confidence.`,
-    name: 'Oliver D.',
-    job: 'July 2024',
+    testimonial: `
+    Daniel is an exceptional tutor. His knowledge and expertise in math is outstanding. 
+
+    His skills to engage with my son was sensitive, thoughtful and enabled him to understand and problem solve complex mathematical problems. 
+
+    Through Daniel’s tutoring my son’s grades significantly improved and he has achieved amazing grades and will be going on to study engineering at University. !`,
+    name: 'Sunita K.',
+    job: 'August 2025',
   },
   {
-    title: 'A-Level Physics',
+    title: 'GCSE & A-Level Maths',
     board: 'AQA',
-    testimonial: `The flexible scheduling and personalized approach made a huge difference for me. Daniel adapted his teaching to my learning style, and I felt fully prepared for my exams. Couldn't have done it without him.`,
-    name: 'Sophie A.',
-    job: 'June 2024',
+    testimonial: `Thank you Daniel, for your time spent with both my daughters on their GCSE and A Level’s- they have increased in interest, confidence and ability in maths and have secured their required grades, boosting beyond their predicted grades!! 
+    
+    They have really enjoyed your teaching style, flexibility and ability to build a rapport. 
+    
+    I will continue to recommend you and have already made two successful introductions- who are really happy with the progress their children are now making- a testament to you`,
+    name: 'Nikki E. ',
+    job: 'October 2025',
   },
   {
-    title: 'GCSE Mathematics & Physics',
-    board: 'OCR',
-    testimonial: `Having struggled with both subjects, I was worried about my GCSEs. Daniel's clear explanations and practical examples helped me grasp difficult concepts. I achieved grades well above my target!`,
-    name: 'Thomas W.',
-    job: 'May 2024',
+    title: 'GCSE Maths, Further Maths & Statistics',
+    board: 'AQA',
+    testimonial: `I personally think Daniel is a great tutor. Unlike what I expected, he isn’t dead serious all the time. 
+    
+    When I hear ‘maths tutor’, I think of some no nonsense, strict teacher. But Daniel isn’t that, he can actually have a sense of humour and he doesn’t come off as a strict teacher. His way of teaching has accelerated my grades, I used to be getting things like 60% on my Mathematics tests, but after tutoring, I am getting mostly 80%~100%! If i don’t understand something, he isn’t afraid to explain it to me. He is a fantastic tutor, and is willing to cover anything I want to learn or strengthen. 
+    
+    With him, I managed to pass my Statistics GCSE (with a grade 5), which is a subject I am not very confident in.`,
+    name: 'Lleyton P.',
+    job: 'October 2025',
+  },
+  {
+    title: 'A-Level Maths & Physics',
+    board: 'Edexcel',
+    testimonial: ` Hey Daniel,
+
+My exams went quite well. I ended up getting an a* in maths and an a in physics which secured my place at [UNI]. I think majority of my marks were lost in p3 for both subjects. Thank you for all the help you have given me, will definitely be recommending friends who are doing a levels to you. Good luck in the future.
+
+best regards,
+Aidan `,
+    name: 'Aidan L.',
+    job: 'August 2025',
+  },
+  {
+    title: 'A-Level Maths',
+    board: 'Edexcel',
+    testimonial: `﻿Hi Daniel, 
+
+Just to let you know I got an A for maths! Super happy and thank you so much for all your help it was so useful especially your marking of papers saved so much time and meant I got great feedback quickly. So thank you again and hope you have a great rest of the summer, 
+
+Gina `,
+    name: 'Gina C.',
+    job: 'August 2025',
   },
 ];
 
