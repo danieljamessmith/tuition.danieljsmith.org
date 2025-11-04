@@ -18,7 +18,7 @@ metadata:
   openGraph:
     site_name: danieljsmith.org
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/IMG_0978_crop.JPG'
         width: 1200
         height: 628
     type: website
