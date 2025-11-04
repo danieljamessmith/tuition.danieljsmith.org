@@ -1,0 +1,155 @@
+---
+import type { Form as Props } from '~/types';
+import Button from '~/components/ui/Button.astro';
+
+const { inputs, selects, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
+---
+
+<form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+  <!-- Web3Forms Access Key -->
+  <input type="hidden" name="access_key" value="78977e42-5cdb-4969-bf0e-9d3a9762ff81" />
+
+  <!-- Redirect to Thank You page after submission -->
+  <input type="hidden" name="redirect" value="https://danieljsmith.org/thank-you" />
+
+  <!-- Custom Subject Line -->
+  <input type="hidden" name="subject" value="New Contact Form Submission from danieljsmith.org" />
+
+  <!-- From Name -->
+  <input type="hidden" name="from_name" value="Daniel J Smith Tuition Website" />
+
+  {
+    inputs &&
+      inputs.map(
+        ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
+          name && (
+            <div class="mb-6">
+              {label && (
+                <label for={name} class="block text-sm font-medium">
+                  {label}
+                </label>
+              )}
+              <input
+                type={type}
+                name={name}
+                id={name}
+                autocomplete={autocomplete}
+                placeholder={placeholder}
+                required
+                class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+              />
+            </div>
+          )
+      )
+  }
+
+  {
+    selects &&
+      selects.map(({ name, label, options }) => (
+        <div class="mb-6">
+          {label && (
+            <label for={name} class="block text-sm font-medium">
+              {label}
+            </label>
+          )}
+          <select
+            name={name}
+            id={name}
+            required
+            class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+          >
+            {options.map((option) => (
+              <option value={option.value} disabled={option.value === ''}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </div>
+      ))
+  }
+
+  {
+    textarea && (
+      <div class="mb-6">
+        <label for="textarea" class="block text-sm font-medium">
+          {textarea.label}
+        </label>
+        <textarea
+          id="textarea"
+          name={textarea.name ? textarea.name : 'message'}
+          rows={textarea.rows ? textarea.rows : 4}
+          placeholder={textarea.placeholder}
+          required
+          class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+        />
+      </div>
+    )
+  }
+
+  {
+    disclaimer && (
+      <div class="mt-3 flex items-start">
+        <div class="flex mt-0.5">
+          <input
+            id="disclaimer"
+            name="disclaimer"
+            type="checkbox"
+            required
+            class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+          />
+        </div>
+        <div class="ml-3">
+          <label for="disclaimer" class="cursor-pointer select-none text-sm text-gray-600 dark:text-gray-400">
+            {disclaimer.label}
+          </label>
+        </div>
+      </div>
+    )
+  }
+
+  <!-- hCaptcha Widget -->
+  <div class="mt-6">
+    <div class="h-captcha" data-captcha="true"></div>
+  </div>
+
+  {
+    button && (
+      <div class="mt-10 grid">
+        <Button variant="primary" type="submit">
+          {button}
+        </Button>
+      </div>
+    )
+  }
+
+  {
+    description && (
+      <div class="mt-3 text-center">
+        <p class="text-sm text-gray-600 dark:text-gray-400">{description}</p>
+      </div>
+    )
+  }
+</form>
+
+<!-- Web3Forms Script for hCaptcha - Load synchronously to ensure captcha appears -->
+<script src="https://web3forms.com/client/script.js"></script>
+
+<!-- Client-side validation for hCaptcha -->
+<script is:inline>
+  // Wait for both DOM and hCaptcha to load
+  window.addEventListener('load', function () {
+    const form = document.getElementById('contact-form');
+
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        const hCaptcha = form.querySelector('textarea[name=h-captcha-response]');
+
+        if (!hCaptcha || !hCaptcha.value) {
+          e.preventDefault();
+          alert('Please complete the captcha verification to submit the form.');
+          return false;
+        }
+      });
+    }
+  });
+</script>

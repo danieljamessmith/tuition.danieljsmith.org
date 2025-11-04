@@ -1,0 +1,22 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import TestimonialsWidget from '~/components/widgets/Testimonials.astro';
+import { testimonials } from '~/data/testimonials';
+
+const metadata = {
+  title: 'Testimonials',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero tagline="Testimonials">
+    <Fragment slot="title">What Students Say</Fragment>
+  </Hero>
+
+  <!-- Testimonials Widget ******************* -->
+
+  <TestimonialsWidget testimonials={testimonials} />
+</Layout>
