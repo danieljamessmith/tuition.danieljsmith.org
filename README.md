@@ -23,13 +23,3 @@ src/
 ├── assets/         – Images, icons, and styles
 └── config.yaml     – Site configuration
 ```
-
-## Deployment
-
-Automatically deployed to GitHub Pages via GitHub Actions on push to `main` branch.
-
-## Contact
-
-**Contact:** contact@danieljsmith.org  
-**Enquiries:** tuition@danieljsmith.org
-
