@@ -11,7 +11,7 @@ metadata:
   title:
     default: danieljsmith.org
     template: '%s — danieljsmith.org'
-  description: 'Professional tutoring services tailored to help students achieve their academic goals.'
+  description: 'Internationally oriented maths and physics tutor. Cambridge graduate with 1k+ hours experience. Rates starting at £42/hour for A-level, Undergrad, TMUA, STEP and more.'
   robots:
     index: true
     follow: true
