@@ -93,6 +93,17 @@ export interface Image {
   alt?: string;
 }
 
+export interface HeroImage {
+  src: string | ImageMetadata;
+  alt?: string;
+  width?: number;
+  height?: number;
+  loading?: 'eager' | 'lazy';
+  sizes?: string;
+  widths?: number[];
+  class?: string;
+}
+
 export interface Video {
   src: string;
   type?: string;
@@ -224,7 +235,7 @@ export interface Form {
 export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' | 'classes'> {
   content?: string;
   actions?: string | CallToAction[];
-  image?: string | unknown;
+  image?: string | HeroImage;
 }
 
 export interface Team extends Omit<Headline, 'classes'>, Widget {

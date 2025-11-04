@@ -5,7 +5,19 @@ import Button from '~/components/ui/Button.astro';
 const { inputs, selects, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
 ---
 
-<form>
+<form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+  <!-- Web3Forms Access Key -->
+  <input type="hidden" name="access_key" value="78977e42-5cdb-4969-bf0e-9d3a9762ff81" />
+
+  <!-- Redirect to Thank You page after submission -->
+  <input type="hidden" name="redirect" value="https://danieljsmith.org/thank-you" />
+
+  <!-- Custom Subject Line -->
+  <input type="hidden" name="subject" value="New Contact Form Submission from danieljsmith.org" />
+
+  <!-- From Name -->
+  <input type="hidden" name="from_name" value="Daniel J Smith Tuition Website" />
+
   {
     inputs &&
       inputs.map(
@@ -47,7 +59,9 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
             class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
           >
             {options.map((option) => (
-              <option value={option.value} disabled={option.value === ''}>{option.label}</option>
+              <option value={option.value} disabled={option.value === ''}>
+                {option.label}
+              </option>
             ))}
           </select>
         </div>
@@ -93,6 +107,11 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
     )
   }
 
+  <!-- hCaptcha Widget -->
+  <div class="mt-6">
+    <div class="h-captcha" data-captcha="true"></div>
+  </div>
+
   {
     button && (
       <div class="mt-10 grid">
@@ -111,3 +130,26 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
     )
   }
 </form>
+
+<!-- Web3Forms Script for hCaptcha - Load synchronously to ensure captcha appears -->
+<script src="https://web3forms.com/client/script.js"></script>
+
+<!-- Client-side validation for hCaptcha -->
+<script is:inline>
+  // Wait for both DOM and hCaptcha to load
+  window.addEventListener('load', function () {
+    const form = document.getElementById('contact-form');
+
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        const hCaptcha = form.querySelector('textarea[name=h-captcha-response]');
+
+        if (!hCaptcha || !hCaptcha.value) {
+          e.preventDefault();
+          alert('Please complete the captcha verification to submit the form.');
+          return false;
+        }
+      });
+    }
+  });
+</script>

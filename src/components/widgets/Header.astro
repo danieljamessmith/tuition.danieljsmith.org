@@ -106,10 +106,7 @@ const getSocialLogo = (icon: string) => {
             <li class={links?.length ? 'dropdown' : ''}>
               {links?.length ? (
                 <>
-                  <button
-                    type="button"
-                    class="hover:text-emerald-100 px-4 py-3 flex items-center whitespace-nowrap"
-                  >
+                  <button type="button" class="hover:text-emerald-100 px-4 py-3 flex items-center whitespace-nowrap">
                     {text}{' '}
                     <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
                   </button>
@@ -177,22 +174,22 @@ const getSocialLogo = (icon: string) => {
       <div class="items-center flex justify-between w-full md:w-auto">
         <div class="flex items-center gap-1">
           {
-            socialLinks?.length ? (
-              socialLinks.map(({ ariaLabel, href, icon }) => {
-                const logoSvg = getSocialLogo(icon || '');
-                return logoSvg ? (
-                  <a
-                    class="text-white hover:text-emerald-100 transition-colors rounded-lg p-2 inline-flex items-center"
-                    aria-label={ariaLabel}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span class="w-5 h-5" set:html={logoSvg} />
-                  </a>
-                ) : null;
-              })
-            ) : null
+            socialLinks?.length
+              ? socialLinks.map(({ ariaLabel, href, icon }) => {
+                  const logoSvg = getSocialLogo(icon || '');
+                  return logoSvg ? (
+                    <a
+                      class="text-white hover:text-emerald-100 transition-colors rounded-lg p-2 inline-flex items-center"
+                      aria-label={ariaLabel}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span class="w-5 h-5" set:html={logoSvg} />
+                    </a>
+                  ) : null;
+                })
+              : null
           }
           {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />}
           {

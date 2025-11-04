@@ -11,7 +11,7 @@ metadata:
   title:
     default: danieljsmith.org
     template: '%s — danieljsmith.org'
-  description: "Professional tutoring services tailored to help students achieve their academic goals."
+  description: 'Professional tutoring services tailored to help students achieve their academic goals.'
   robots:
     index: true
     follow: true

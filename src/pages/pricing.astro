@@ -1,0 +1,110 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Pricing',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    title="Pricing"
+    subtitle="Transparent pricing for international online tuition. Rates are indicative and confirmed based on subject complexity, level, and session frequency."
+  />
+
+  <!-- Pricing Tiers Section ******************* -->
+
+  <section class="py-8 md:py-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+        <div class="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-slate-800">
+          <h3 class="text-lg font-semibold mb-3">A-Level & GCSE</h3>
+          <p class="text-3xl font-bold text-primary mb-2">
+            <span class="text-lg font-normal text-muted">from </span>£42<span class="text-lg font-normal text-muted"
+              >/hour</span
+            >
+          </p>
+          <p class="text-sm text-muted">Maths, Further Maths, Physics & Statistics across all major exam boards</p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-slate-800">
+          <h3 class="text-lg font-semibold mb-3">University</h3>
+          <p class="text-3xl font-bold text-primary mb-2">
+            <span class="text-lg font-normal text-muted">from </span>£51<span class="text-lg font-normal text-muted"
+              >/hour</span
+            >
+          </p>
+          <p class="text-sm text-muted">
+            Maths modules for STEM undergraduates and graduates. Enquire for experience and suitability.
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-slate-800">
+          <h3 class="text-lg font-semibold mb-3">Admissions</h3>
+          <p class="text-3xl font-bold text-primary mb-2">
+            <span class="text-lg font-normal text-muted">from </span>£60<span class="text-lg font-normal text-muted"
+              >/hour</span
+            >
+          </p>
+          <p class="text-sm text-muted">
+            TMUA, MAT, ESAT, STEP and other entrance exams. Application support and mock interviews.
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-slate-800">
+          <h3 class="text-lg font-semibold mb-3">Other</h3>
+          <p class="text-2xl font-bold text-primary mb-2">Please Enquire</p>
+          <p class="text-sm text-muted">IB, HND, BTEC, Foundation Year, and other qualifications</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features2 Widget - Details ************** -->
+
+  <Features2
+    columns={3}
+    classes={{ container: 'pt-2 md:pt-4 pb-8 md:pb-12' }}
+    items={[
+      {
+        title: 'Bulk Bookings',
+        description:
+          'Discounted rates available for regular weekly sessions and bulk booking packages. Contact me to discuss tailored arrangements.',
+        icon: 'tabler:discount',
+      },
+      {
+        title: 'Consultations',
+        description:
+          "Free initial consultation to discuss your needs and goals. I do not offer free taster sessions, but the consultation helps us determine if we're a good fit.",
+        icon: 'tabler:phone',
+      },
+      {
+        title: 'Online Internationally',
+        description:
+          'Online tuition is available internationally via video call, providing flexible access to students worldwide.',
+        icon: 'tabler:world',
+      },
+      {
+        title: 'In-Person Tuition',
+        description:
+          'In-person sessions may be possible in select UK areas. Please enquire for availability and details.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Payment Methods',
+        description: 'UK payments accepted via BACS and others. International payments accepted via Stripe and others.',
+        icon: 'tabler:credit-card',
+      },
+      {
+        title: 'Preparation Materials',
+        description:
+          'Bespoke preparation materials, worksheets, and resources provided at 50% of the standard hourly rate.',
+        icon: 'tabler:file-text',
+      },
+    ]}
+  />
+</Layout>

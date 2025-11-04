@@ -10,12 +10,14 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Section with Integrated Headshot ******************* -->
-  
+
   <section class="relative md:-mt-[76px] not-prose">
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
       <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-      <div class="py-8 md:py-10 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+      <div
+        class="py-8 md:py-10 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+      >
         <div class="max-w-6xl mx-auto">
           <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
             <!-- Headshot - Left side -->
@@ -29,7 +31,7 @@ const metadata = {
                 loading="eager"
               />
             </div>
-            
+
             <!-- Hero Text - Right side -->
             <div class="flex-1 text-center md:text-left">
               <h1 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-3 font-heading">
@@ -37,7 +39,8 @@ const metadata = {
               </h1>
               <div class="max-w-3xl md:mx-0 mx-auto">
                 <p class="text-xl text-muted mb-6">
-                  Cambridge MASt graduate with 1000+ hours' experience helping students excel at GCSE, A-Level and University. Entrance exams and admissions consultation.
+                  Cambridge MASt graduate with 1000+ hours' experience helping students excel at GCSE, A-Level and
+                  University. Entrance exams and admissions consultation.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                   <a class="btn-secondary" href="/services">View Services</a>
@@ -52,10 +55,12 @@ const metadata = {
   </section>
 
   <!-- Qualifications Section **************** -->
-  
+
   <section class="py-6 md:py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="max-w-3xl mx-auto intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+      <div
+        class="max-w-3xl mx-auto intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+      >
         <div class="space-y-5">
           <div class="flex gap-3">
             <div class="flex-shrink-0 mt-1">
@@ -68,7 +73,7 @@ const metadata = {
               <p class="text-muted">University of Cambridge, St Catharine's College</p>
             </div>
           </div>
-          
+
           <div class="flex gap-3">
             <div class="flex-shrink-0 mt-1">
               <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,7 +85,7 @@ const metadata = {
               <p class="text-muted">University of Warwick</p>
             </div>
           </div>
-          
+
           <div class="flex gap-3">
             <div class="flex-shrink-0 mt-1">
               <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,5 +101,4 @@ const metadata = {
       </div>
     </div>
   </section>
-
 </Layout>

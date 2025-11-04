@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
   title: 'Thank You',
@@ -12,46 +11,12 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero>
-    <Fragment slot="title">
-      Thank You
-    </Fragment>
-    <Fragment slot="subtitle">
-      Your enquiry has been submitted successfully. We'll get back to you within 24 hours at the email address you provided.
-    </Fragment>
+    <Fragment slot="title"> Thank You </Fragment>
+    <Fragment slot="subtitle"> Your enquiry has been submitted successfully. </Fragment>
   </Hero>
-
-  <!-- Next Steps ************** -->
-
-  <Features2
-    title="What happens next?"
-    columns={3}
-    items={[
-      {
-        title: 'Review',
-        description: 'We\'ll review your enquiry and match you with the appropriate tuition programme.',
-        icon: 'tabler:mail-check',
-      },
-      {
-        title: 'Response',
-        description: 'You\'ll receive a response within 24 hours to discuss your requirements.',
-        icon: 'tabler:message-circle',
-      },
-      {
-        title: 'Schedule',
-        description: 'We\'ll arrange your first session at a time that works for you.',
-        icon: 'tabler:calendar-check',
-      },
-    ]}
-  />
 
   <!-- Return Link -->
   <div class="flex justify-center pb-16 md:pb-20">
-    <a
-      href="/"
-      class="text-primary hover:underline text-lg font-medium"
-    >
-      ← Return to homepage
-    </a>
+    <a href="/" class="text-primary hover:underline text-lg font-medium"> ← Return to homepage </a>
   </div>
 </Layout>
-

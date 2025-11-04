@@ -45,7 +45,7 @@ This approach suited my learning style perfectly. With Daniel’s support, I mad
 
     His skills to engage with my son was sensitive, thoughtful and enabled him to understand and problem solve complex mathematical problems. 
 
-    Through Daniel’s tutoring my son’s grades significantly improved and he has achieved amazing grades and will be going on to study engineering at University. !`,
+    Through Daniel's tutoring my son's grades significantly improved and he has achieved amazing grades and will be going on to study engineering at University!`,
     name: 'Sunita K.',
     job: 'August 2025',
   },
@@ -63,11 +63,11 @@ This approach suited my learning style perfectly. With Daniel’s support, I mad
   {
     title: 'GCSE Maths, Further Maths & Statistics',
     board: 'AQA',
-    testimonial: `I personally think Daniel is a great tutor. Unlike what I expected, he isn’t dead serious all the time. 
+    testimonial: `I personally think Daniel is a great tutor. Unlike what I expected, he isn't dead serious all the time.
     
-    When I hear ‘maths tutor’, I think of some no nonsense, strict teacher. But Daniel isn’t that, he can actually have a sense of humour and he doesn’t come off as a strict teacher. His way of teaching has accelerated my grades, I used to be getting things like 60% on my Mathematics tests, but after tutoring, I am getting mostly 80%~100%! If i don’t understand something, he isn’t afraid to explain it to me. He is a fantastic tutor, and is willing to cover anything I want to learn or strengthen. 
+    When I hear 'maths tutor', I think of some no nonsense, strict teacher. But Daniel isn't that, he can actually have a sense of humour and he doesn't come off as a strict teacher. His way of teaching has accelerated my grades, I used to be getting things like 60% on my Mathematics tests, but after tutoring, I am getting mostly 80%~100%! If i don't understand something, he isn't afraid to explain it to me. He is a fantastic tutor, and is willing to cover anything I want to learn or strengthen.
     
-    With him, I managed to pass my Statistics GCSE (with a grade 5), which is a subject I am not very confident in.`,
+    With him, I managed to pass my Statistics GCSE (with a grade 5), which is a subject I am not very confident in.`,
     name: 'Lleyton P.',
     job: 'October 2025',
   },
@@ -86,7 +86,7 @@ Aidan `,
   {
     title: 'A-Level Maths',
     board: 'Edexcel',
-    testimonial: `﻿Hi Daniel, 
+    testimonial: `Hi Daniel, 
 
 Just to let you know I got an A for maths! Super happy and thank you so much for all your help it was so useful especially your marking of papers saved so much time and meant I got great feedback quickly. So thank you again and hope you have a great rest of the summer, 
 
@@ -95,4 +95,3 @@ Gina `,
     job: 'August 2025',
   },
 ];
-

@@ -2,7 +2,7 @@
 import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 
-import { headerData  } from '~/navigation';
+import { headerData } from '~/navigation';
 
 import type { MetaData } from '~/types';
 
@@ -18,6 +18,6 @@ const { metadata } = Astro.props;
     <Header {...headerData} isSticky />
   </slot>
   <main>
-    <slot/>
+    <slot />
   </main>
 </Layout>
