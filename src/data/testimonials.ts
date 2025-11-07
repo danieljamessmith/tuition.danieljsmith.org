@@ -12,6 +12,15 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
+    title: 'Engineering Mathematics 2 (SCQF Level 7)',
+    board: 'SQA Higher National (HNC/HND Electrical Engineering route)',
+    testimonial: `After failing my maths test twice, I started tutoring sessions with Daniel. Together, we completed all the practice and mock exams provided by my college, and after I ran out of papers, Daniel created custom-made mock exams with detailed workings and answers that targeted the areas where I lacked knowledge the most. He always replied quickly outside of regular teaching hours whenever I got stuck or needed answers to a question. 
+    
+    His positive attitude and constant encouragement gave me the confidence to ask many questions about topics I didn’t fully understand. Thanks to his flexible schedule and enjoyable way of teaching, he gave me the confidence I needed to keep trying. With his constant support right up until the last few hours before my exam, I finally passed my maths test and can now move on to the next step in completing my HND.`,
+    name: 'Jay B.',
+    job: 'November 2025',
+  },
+  {
     title: 'A-Level Maths & Physics',
     board: 'Edexcel Maths / AQA Physics',
     testimonial: `Our son found himself in a position at senior school where he wanted — and needed — A level Maths in order to study Physics at university. The school would not allow him to switch subjects, so he decided to take the A level as a private candidate. We felt he would benefit from some additional tuition, and after meeting Daniel online, we engaged him as a private tutor.
@@ -33,11 +42,10 @@ This approach suited my learning style perfectly. With Daniel’s support, I mad
     name: 'Alex S.',
     job: 'October 2025',
   },
-  {
+    {
     title: 'BTEC Engineering',
     board: 'Edexcel',
-    testimonial: `
-    Daniel is an exceptional tutor. His knowledge and expertise in math is outstanding. His skills to engage with my son was sensitive, thoughtful and enabled him to understand and problem solve complex mathematical problems. 
+    testimonial: `Daniel is an exceptional tutor. His knowledge and expertise in math is outstanding. His skills to engage with my son was sensitive, thoughtful and enabled him to understand and problem solve complex mathematical problems. 
 
     Through Daniel's tutoring my son's grades significantly improved and he has achieved amazing grades and will be going on to study engineering at University!`,
     name: 'Sunita K.',
@@ -48,20 +56,16 @@ This approach suited my learning style perfectly. With Daniel’s support, I mad
     board: 'AQA',
     testimonial: `Thank you Daniel, for your time spent with both my daughters on their GCSE and A Level’s- they have increased in interest, confidence and ability in maths and have secured their required grades, boosting beyond their predicted grades!! 
     
-    They have really enjoyed your teaching style, flexibility and ability to build a rapport. 
-    
-    I will continue to recommend you and have already made two successful introductions- who are really happy with the progress their children are now making- a testament to you`,
+    They have really enjoyed your teaching style, flexibility and ability to build a rapport. I will continue to recommend you and have already made two successful introductions- who are really happy with the progress their children are now making- a testament to you`,
     name: 'Nikki E. ',
     job: 'October 2025',
   },
   {
     title: 'GCSE Maths, Further Maths & Statistics',
     board: 'AQA',
-    testimonial: `I personally think Daniel is a great tutor. Unlike what I expected, he isn't dead serious all the time.
+    testimonial: `I personally think Daniel is a great tutor. Unlike what I expected, he isn't dead serious all the time. When I hear 'maths tutor', I think of some no nonsense, strict teacher. But Daniel isn't that, he can actually have a sense of humour and he doesn't come off as a strict teacher. 
     
-    When I hear 'maths tutor', I think of some no nonsense, strict teacher. But Daniel isn't that, he can actually have a sense of humour and he doesn't come off as a strict teacher. His way of teaching has accelerated my grades, I used to be getting things like 60% on my Mathematics tests, but after tutoring, I am getting mostly 80%~100%! If i don't understand something, he isn't afraid to explain it to me. He is a fantastic tutor, and is willing to cover anything I want to learn or strengthen.
-    
-    With him, I managed to pass my Statistics GCSE (with a grade 5), which is a subject I am not very confident in.`,
+    His way of teaching has accelerated my grades, I used to be getting things like 60% on my Mathematics tests, but after tutoring, I am getting mostly 80%~100%! If i don't understand something, he isn't afraid to explain it to me. He is a fantastic tutor, and is willing to cover anything I want to learn or strengthen. With him, I managed to pass my Statistics GCSE (with a grade 5), which is a subject I am not very confident in.`,
     name: 'Lleyton P.',
     job: 'October 2025',
   },
@@ -75,17 +79,6 @@ My exams went quite well. I ended up getting an a* in maths and an a in physics 
 best regards,
 Aidan `,
     name: 'Aidan L.',
-    job: 'August 2025',
-  },
-  {
-    title: 'A-Level Maths',
-    board: 'Edexcel',
-    testimonial: `Hi Daniel, 
-
-Just to let you know I got an A for maths! Super happy and thank you so much for all your help it was so useful especially your marking of papers saved so much time and meant I got great feedback quickly. So thank you again and hope you have a great rest of the summer, 
-
-Gina `,
-    name: 'Gina C.',
     job: 'August 2025',
   },
 ];
