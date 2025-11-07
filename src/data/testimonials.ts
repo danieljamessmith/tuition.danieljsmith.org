@@ -14,15 +14,11 @@ export const testimonials: Testimonial[] = [
   {
     title: 'A-Level Maths & Physics',
     board: 'Edexcel Maths / AQA Physics',
-    testimonial: `Our son found himself in a position at senior school where he wanted — and needed — A level Maths in order to study Physics at university.
-
-The school would not allow him to switch subjects, so he decided to take the A level as a private candidate. We felt he would benefit from some additional tuition, and after meeting Daniel online, we engaged him as a private tutor.
+    testimonial: `Our son found himself in a position at senior school where he wanted — and needed — A level Maths in order to study Physics at university. The school would not allow him to switch subjects, so he decided to take the A level as a private candidate. We felt he would benefit from some additional tuition, and after meeting Daniel online, we engaged him as a private tutor.
 
 Daniel has been a fantastic tutor — always going the extra mile for our son. He even offered support with Physics from time to time and provided invaluable guidance on how to navigate the exam system as a private candidate.
 
-Our son went on to achieve a Grade A in his Maths A level, which has enabled him to fulfil his dream of studying Physics at university.
-
-We would wholeheartedly recommend Daniel as a tutor to anyone.`,
+Our son went on to achieve a Grade A in his Maths A level, which has enabled him to fulfil his dream of studying Physics at university. We would wholeheartedly recommend Daniel as a tutor to anyone.`,
     name: 'Pete W.',
     job: 'October 2025',
   },
@@ -41,9 +37,7 @@ This approach suited my learning style perfectly. With Daniel’s support, I mad
     title: 'BTEC Engineering',
     board: 'Edexcel',
     testimonial: `
-    Daniel is an exceptional tutor. His knowledge and expertise in math is outstanding. 
-
-    His skills to engage with my son was sensitive, thoughtful and enabled him to understand and problem solve complex mathematical problems. 
+    Daniel is an exceptional tutor. His knowledge and expertise in math is outstanding. His skills to engage with my son was sensitive, thoughtful and enabled him to understand and problem solve complex mathematical problems. 
 
     Through Daniel's tutoring my son's grades significantly improved and he has achieved amazing grades and will be going on to study engineering at University!`,
     name: 'Sunita K.',

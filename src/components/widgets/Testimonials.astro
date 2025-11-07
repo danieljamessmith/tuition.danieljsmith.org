@@ -17,6 +17,16 @@ const {
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
+
+// Convert newlines to HTML breaks to preserve spacing in production builds
+// This is necessary because HTML minification collapses whitespace
+const formatTestimonial = (text: string): string => {
+  return text
+    .split('\n\n')
+    .join('<br><br>')
+    .split('\n')
+    .join('<br>');
+};
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
@@ -30,7 +40,7 @@ const {
             <div class="flex flex-col p-6 md:p-8 rounded-lg shadow-xl dark:shadow-none dark:border dark:border-slate-600">
               {testimonial && (
                 <blockquote class="flex-auto mb-6">
-                  <p class="text-muted whitespace-pre-line text-base leading-relaxed italic">{testimonial}</p>
+                  <p class="text-muted text-base leading-relaxed italic" set:html={formatTestimonial(testimonial)}></p>
                 </blockquote>
               )}
 
