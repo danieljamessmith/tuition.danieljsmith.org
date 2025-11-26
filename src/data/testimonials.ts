@@ -12,6 +12,13 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
+    title: 'TMUA',
+    board: 'UAT Entrance Exam (University of Cambridge)',
+    testimonial: `Thank you Daniel for your tutoring! Daniel helped me prepare for the TMUA exam over the course of the summer, teaching me to manage time pressure in an exam setting and completely removing my worries about running out of time. His approach to explaining questions helped me learned new methods of solving problems that ended up helping me a great amount in the exam. Thanks to his help, I ended up getting a score of 8.3/9.0 and got an interview at the University of Cambridge. I highly recommend his services to any students who feel like they are stuck with exam preparation.`,
+    name: 'Adrian N.',
+    job: 'November 2025',
+  },
+  {
     title: 'Engineering Mathematics 2 (SCQF Level 7)',
     board: 'SQA Higher National (HNC/HND Electrical Engineering route)',
     testimonial: `After failing my maths test twice, I started tutoring sessions with Daniel. Together, we completed all the practice and mock exams provided by my college, and after I ran out of papers, Daniel created custom-made mock exams with detailed workings and answers that targeted the areas where I lacked knowledge the most. He always replied quickly outside of regular teaching hours whenever I got stuck or needed answers to a question. 
@@ -32,17 +39,6 @@ Our son went on to achieve a Grade A in his Maths A level, which has enabled him
     job: 'October 2025',
   },
   {
-    title: 'MSc Data Science & Machine Learning for Geo-Energy',
-    board: 'Imperial College London',
-    testimonial: `Daniel improved my confidence surrounding the maths content on my course almost immediately. He systematically identified and filled the many gaps in my knowledge with carefully thought-out, tailored lesson plans. While he guided the learning, he always gave me the freedom to choose the direction, regularly checking in on how I felt I was progressing and revisiting areas I found more difficult until they were firmly understood.
-
-His teaching style is not only clear and highly effective but also grounded in the underlying theories and concepts. This meant I never left a session simply knowing how to get an answer — I also understood the crucial ‘why’ behind solutions we found together.
-
-This approach suited my learning style perfectly. With Daniel’s support, I made rapid progress through advanced topics that had previously felt daunting and, at times, unapproachable. My questions were always met with well-considered answers and I was never made to feel a question I had asked was wrong or silly. I can confidently say that Daniel belongs to that rare group of teachers you remember long after their lessons end. His ability to explain complex ideas concisely and accessibly is exceptional, and our sessions have made a truly lasting difference to my education.`,
-    name: 'Alex S.',
-    job: 'October 2025',
-  },
-    {
     title: 'BTEC Engineering',
     board: 'Edexcel',
     testimonial: `Daniel is an exceptional tutor. His knowledge and expertise in math is outstanding. His skills to engage with my son was sensitive, thoughtful and enabled him to understand and problem solve complex mathematical problems. 
@@ -50,6 +46,17 @@ This approach suited my learning style perfectly. With Daniel’s support, I mad
     Through Daniel's tutoring my son's grades significantly improved and he has achieved amazing grades and will be going on to study engineering at University!`,
     name: 'Sunita K.',
     job: 'August 2025',
+  },
+  {
+    title: 'MSc Data Science & Machine Learning for Geo-Energy',
+    board: 'Imperial College London',
+    testimonial: `Daniel improved my confidence surrounding the maths content on my course almost immediately. He systematically identified and filled the many gaps in my knowledge with carefully thought-out, tailored lesson plans. While he guided the learning, he always gave me the freedom to choose the direction, regularly checking in on how I felt I was progressing and revisiting areas I found more difficult until they were firmly understood.
+
+His teaching style is not only clear and highly effective but also grounded in the underlying theories and concepts. This meant I never left a session simply knowing how to get an answer — I also understood the crucial 'why' behind solutions we found together.
+
+This approach suited my learning style perfectly. With Daniel's support, I made rapid progress through advanced topics that had previously felt daunting and, at times, unapproachable. My questions were always met with well-considered answers and I was never made to feel a question I had asked was wrong or silly. I can confidently say that Daniel belongs to that rare group of teachers you remember long after their lessons end. His ability to explain complex ideas concisely and accessibly is exceptional, and our sessions have made a truly lasting difference to my education.`,
+    name: 'Alex S.',
+    job: 'October 2025',
   },
   {
     title: 'GCSE & A-Level Maths',
