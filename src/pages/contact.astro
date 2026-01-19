@@ -11,54 +11,56 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
-  <HeroText title="Enquiries" />
+  <HeroText title="Enquiries" subtitle="Get in touch to discuss your tutoring needs" />
 
-  <ContactUs
-    id="form"
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
-      },
-    ]}
-    selects={[
-      {
-        name: 'subject',
-        label: 'Subject',
-        options: [
-          { value: '', label: 'Please select...' },
-          { value: 'mathematics', label: 'Mathematics' },
-          { value: 'further-mathematics', label: 'Further Mathematics' },
-          { value: 'physics', label: 'Physics' },
-          { value: 'other', label: 'Other' },
-        ],
-      },
-      {
-        name: 'level',
-        label: 'Level',
-        options: [
-          { value: '', label: 'Please select...' },
-          { value: 'gcse', label: 'GCSE' },
-          { value: 'a-level', label: 'A-Level' },
-          { value: 'university-admissions', label: 'University Admissions' },
-          { value: 'undergraduate', label: 'Undergraduate' },
-          { value: 'graduate', label: 'Graduate' },
-          { value: 'other', label: 'Other' },
-        ],
-      },
-    ]}
-    textarea={{
-      label: 'Message',
-    }}
-    disclaimer={{
-      label: 'By submitting this form, you acknowledge and agree to the collection of your personal information.',
-    }}
-    description="We typically respond within 24 hours."
-  />
+  <section class="bg-section-gradient-reverse pb-12 md:pb-16">
+    <ContactUs
+      id="form"
+      inputs={[
+        {
+          type: 'text',
+          name: 'name',
+          label: 'Name',
+        },
+        {
+          type: 'email',
+          name: 'email',
+          label: 'Email',
+        },
+      ]}
+      selects={[
+        {
+          name: 'subject',
+          label: 'Subject',
+          options: [
+            { value: '', label: 'Please select...' },
+            { value: 'mathematics', label: 'Mathematics' },
+            { value: 'further-mathematics', label: 'Further Mathematics' },
+            { value: 'physics', label: 'Physics' },
+            { value: 'other', label: 'Other' },
+          ],
+        },
+        {
+          name: 'level',
+          label: 'Level',
+          options: [
+            { value: '', label: 'Please select...' },
+            { value: 'gcse', label: 'GCSE' },
+            { value: 'a-level', label: 'A-Level' },
+            { value: 'university-admissions', label: 'University Admissions' },
+            { value: 'undergraduate', label: 'Undergraduate' },
+            { value: 'graduate', label: 'Graduate' },
+            { value: 'other', label: 'Other' },
+          ],
+        },
+      ]}
+      textarea={{
+        label: 'Message',
+      }}
+      disclaimer={{
+        label: 'By submitting this form, you acknowledge and agree to the collection of your personal information.',
+      }}
+      description="We typically respond within 24 hours."
+    />
+  </section>
 </Layout>

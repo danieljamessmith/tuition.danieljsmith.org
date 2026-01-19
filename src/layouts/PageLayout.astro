@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
 
 import { headerData } from '~/navigation';
 
@@ -20,4 +21,7 @@ const { metadata } = Astro.props;
   <main>
     <slot />
   </main>
+  <slot name="footer">
+    <Footer socialLinks={headerData.socialLinks} />
+  </slot>
 </Layout>
