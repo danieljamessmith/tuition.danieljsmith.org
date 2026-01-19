@@ -23,9 +23,9 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
       inputs.map(
         ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
           name && (
-            <div class="mb-6">
+            <div class="mb-5">
               {label && (
-                <label for={name} class="block text-sm font-medium">
+                <label for={name} class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                   {label}
                 </label>
               )}
@@ -36,7 +36,7 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
                 autocomplete={autocomplete}
                 placeholder={placeholder}
                 required
-                class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+                class="py-3 px-4 block w-full text-base rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-800/50 text-gray-900 dark:text-gray-100 transition-all duration-200 focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 dark:focus:border-emerald-400 focus:bg-white dark:focus:bg-slate-800 outline-none placeholder:text-gray-400"
               />
             </div>
           )
@@ -46,9 +46,9 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
   {
     selects &&
       selects.map(({ name, label, options }) => (
-        <div class="mb-6">
+        <div class="mb-5">
           {label && (
-            <label for={name} class="block text-sm font-medium">
+            <label for={name} class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
               {label}
             </label>
           )}
@@ -56,7 +56,7 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
             name={name}
             id={name}
             required
-            class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+            class="py-3 px-4 block w-full text-base rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-800/50 text-gray-900 dark:text-gray-100 transition-all duration-200 focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 dark:focus:border-emerald-400 focus:bg-white dark:focus:bg-slate-800 outline-none cursor-pointer"
           >
             {options.map((option) => (
               <option value={option.value} disabled={option.value === ''}>
@@ -70,8 +70,8 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
 
   {
     textarea && (
-      <div class="mb-6">
-        <label for="textarea" class="block text-sm font-medium">
+      <div class="mb-5">
+        <label for="textarea" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
           {textarea.label}
         </label>
         <textarea
@@ -80,7 +80,7 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
           rows={textarea.rows ? textarea.rows : 4}
           placeholder={textarea.placeholder}
           required
-          class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+          class="py-3 px-4 block w-full text-base rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-800/50 text-gray-900 dark:text-gray-100 transition-all duration-200 focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 dark:focus:border-emerald-400 focus:bg-white dark:focus:bg-slate-800 outline-none resize-y placeholder:text-gray-400"
         />
       </div>
     )
@@ -88,18 +88,18 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
 
   {
     disclaimer && (
-      <div class="mt-3 flex items-start">
+      <div class="mt-4 flex items-start">
         <div class="flex mt-0.5">
           <input
             id="disclaimer"
             name="disclaimer"
             type="checkbox"
             required
-            class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+            class="cursor-pointer w-5 h-5 rounded border-gray-300 dark:border-gray-600 text-emerald-600 focus:ring-emerald-500 focus:ring-offset-0 dark:bg-slate-800 transition-colors"
           />
         </div>
         <div class="ml-3">
-          <label for="disclaimer" class="cursor-pointer select-none text-sm text-gray-600 dark:text-gray-400">
+          <label for="disclaimer" class="cursor-pointer select-none text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             {disclaimer.label}
           </label>
         </div>

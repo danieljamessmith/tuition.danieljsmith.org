@@ -1,49 +1,75 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Image from '~/components/common/Image.astro';
+import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'danieljsmith.org',
   ignoreTitleTemplate: true,
 };
+
+const qualifications = [
+  {
+    title: 'MASt Applied Mathematics (2023)',
+    institution: 'University of Cambridge, St Catharine\'s College',
+  },
+  {
+    title: 'BSc Mathematics & Physics (2022)',
+    institution: 'University of Warwick',
+  },
+  {
+    title: 'CertHE Mathematical Physics (2020)',
+    institution: 'University of Nottingham',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Section with Integrated Headshot ******************* -->
 
-  <section class="relative md:-mt-[76px] not-prose">
-    <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+  <section class="relative md:-mt-[76px] not-prose overflow-hidden">
+    <!-- Layered background for depth -->
+    <div class="absolute inset-0 bg-hero-pattern" aria-hidden="true"></div>
+    
+    <!-- Decorative gradient orbs -->
+    <div class="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-emerald-200/30 to-teal-200/20 rounded-full blur-3xl -z-10" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-teal-100/30 to-emerald-100/20 rounded-full blur-3xl -z-10" aria-hidden="true"></div>
+    
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
       <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-      <div
-        class="py-8 md:py-10 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-      >
+      <div class="py-10 md:py-14">
         <div class="max-w-6xl mx-auto">
-          <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
-            <!-- Headshot - Left side -->
-            <div class="flex-shrink-0 mx-auto md:mx-0">
-              <Image
-                src="~/assets/images/IMG_0978_crop.JPG"
-                alt="Daniel J. Smith - Mathematics and Physics Tutor"
-                width={240}
-                height={240}
-                class="w-48 h-48 md:w-56 md:h-56 rounded-lg object-cover shadow-lg"
-                loading="eager"
-              />
+          <div class="flex flex-col md:flex-row md:items-start gap-8 md:gap-12">
+            <!-- Headshot - Left side with enhanced styling -->
+            <div class="flex-shrink-0 mx-auto md:mx-0 motion-safe:animate-fade-in stagger-1">
+              <div class="relative group">
+                <!-- Decorative ring -->
+                <div class="absolute -inset-2 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl opacity-20 group-hover:opacity-30 blur-sm transition-opacity duration-300"></div>
+                <Image
+                  src="~/assets/images/IMG_0978_crop.JPG"
+                  alt="Daniel J. Smith - Mathematics and Physics Tutor"
+                  width={240}
+                  height={240}
+                  class="relative w-48 h-48 md:w-60 md:h-60 rounded-2xl object-cover shadow-card-lg ring-4 ring-white dark:ring-slate-800"
+                  loading="eager"
+                />
+              </div>
             </div>
 
-            <!-- Hero Text - Right side -->
+            <!-- Hero Text - Right side with staggered animations -->
             <div class="flex-1 text-center md:text-left">
-              <h1 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-3 font-heading">
+              <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-4 font-heading text-gray-900 dark:text-white motion-safe:animate-fade-up stagger-2">
                 Bespoke Mathematics & Physics Tuition
               </h1>
               <div class="max-w-3xl md:mx-0 mx-auto">
-                <p class="text-xl text-muted mb-6">
-                  Cambridge MASt graduate with 1000+ hours' experience helping students excel at GCSE, A-Level and
-                  University. Entrance exams and admissions consultation.
+                <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed motion-safe:animate-fade-up stagger-3">
+                  Cambridge MASt graduate with <span class="font-semibold text-emerald-600 dark:text-emerald-400">1000+ hours'</span> experience helping students excel at GCSE, A-Level and University. Entrance exams and admissions consultation.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                  <a class="btn-secondary" href="/services">View Services</a>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start motion-safe:animate-fade-up stagger-4">
+                  <a class="btn-primary" href="/services">
+                    <span>View Services</span>
+                    <Icon name="tabler:arrow-right" class="w-4 h-4 ml-2" />
+                  </a>
                   <a class="btn-secondary" href="/contact">Get in Touch</a>
                 </div>
               </div>
@@ -56,47 +82,27 @@ const metadata = {
 
   <!-- Qualifications Section **************** -->
 
-  <section class="py-6 md:py-8">
+  <section class="py-8 md:py-12 bg-section-gradient-reverse">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div
-        class="max-w-3xl mx-auto intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-      >
-        <div class="space-y-5">
-          <div class="flex gap-3">
-            <div class="flex-shrink-0 mt-1">
-              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
+      <div class="max-w-3xl mx-auto">
+        <div class="space-y-4">
+          {qualifications.map((qual, index) => (
+            <div 
+              class={`group flex gap-4 p-4 rounded-xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border border-gray-100 dark:border-slate-800 shadow-sm hover:shadow-card transition-all duration-300 hover:-translate-y-0.5 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter stagger-${index + 1}`}
+            >
+              <div class="flex-shrink-0 mt-0.5">
+                <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-white shadow-sm">
+                  <Icon name="tabler:check" class="w-4 h-4" />
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                  {qual.title}
+                </h3>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">{qual.institution}</p>
+              </div>
             </div>
-            <div>
-              <h3 class="text-lg font-semibold text-gray-900">MASt Applied Mathematics (2023)</h3>
-              <p class="text-muted">University of Cambridge, St Catharine's College</p>
-            </div>
-          </div>
-
-          <div class="flex gap-3">
-            <div class="flex-shrink-0 mt-1">
-              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-gray-900">BSc Mathematics & Physics (2022)</h3>
-              <p class="text-muted">University of Warwick</p>
-            </div>
-          </div>
-
-          <div class="flex gap-3">
-            <div class="flex-shrink-0 mt-1">
-              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-gray-900">CertHE Mathematical Physics (2020)</h3>
-              <p class="text-muted">University of Nottingham</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

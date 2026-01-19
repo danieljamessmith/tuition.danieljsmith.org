@@ -66,12 +66,12 @@ const getSocialLogo = (icon: string) => {
 <header
   class:list={[
     { sticky: isSticky, relative: !isSticky, dark: isDark },
-    'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out',
+    'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-all duration-300 ease-out',
   ]}
   {...isSticky ? { 'data-aw-sticky-header': true } : {}}
   {...id ? { id } : {}}
 >
-  <div class="absolute inset-0 bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500/90"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 transition-opacity duration-300"></div>
   <div
     class:list={[
       'relative text-white py-3 px-3 md:px-6 mx-auto w-full',
@@ -87,8 +87,8 @@ const getSocialLogo = (icon: string) => {
     ]}
   >
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
-      <a class="flex items-center" href={getHomePermalink()}>
-        <Logo />
+      <a class="flex items-center transition-colors duration-300" href={getHomePermalink()}>
+        <Logo class="header-logo transition-colors duration-300" />
       </a>
       <div class="flex items-center md:hidden">
         <ToggleMenu />
@@ -179,7 +179,7 @@ const getSocialLogo = (icon: string) => {
                   const logoSvg = getSocialLogo(icon || '');
                   return logoSvg ? (
                     <a
-                      class="text-white hover:text-emerald-100 transition-colors rounded-lg p-2 inline-flex items-center"
+                      class="social-link text-white hover:text-emerald-100 transition-colors duration-300 rounded-lg p-2 inline-flex items-center"
                       aria-label={ariaLabel}
                       href={href}
                       target="_blank"

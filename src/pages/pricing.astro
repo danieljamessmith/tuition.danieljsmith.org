@@ -2,10 +2,44 @@
 import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'Pricing',
 };
+
+const pricingTiers = [
+  {
+    name: 'A-Level & GCSE',
+    price: '45',
+    description: 'Maths, Further Maths, Physics & Statistics across all major exam boards',
+    icon: 'tabler:calculator',
+    featured: true,
+    badge: 'Most Popular',
+  },
+  {
+    name: 'University',
+    price: '52.50',
+    description: 'Maths modules for STEM undergraduates and graduates. Enquire for experience and suitability.',
+    icon: 'tabler:school',
+    featured: false,
+  },
+  {
+    name: 'Admissions',
+    price: '60',
+    description: 'TMUA, MAT, ESAT, STEP and other entrance exams. Application support and mock interviews.',
+    icon: 'tabler:certificate',
+    featured: false,
+  },
+  {
+    name: 'Other',
+    price: null,
+    priceText: 'Please Enquire',
+    description: 'IB, HND, BTEC, Foundation Year, and other qualifications',
+    icon: 'tabler:dots',
+    featured: false,
+  },
+];
 ---
 
 <Layout metadata={metadata}>
@@ -18,48 +52,52 @@ const metadata = {
 
   <!-- Pricing Tiers Section ******************* -->
 
-  <section class="py-8 md:py-12">
+  <section class="py-8 md:py-12 bg-section-gradient">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
-        <div class="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-slate-800">
-          <h3 class="text-lg font-semibold mb-3">A-Level & GCSE</h3>
-          <p class="text-3xl font-bold text-primary mb-2">
-            <span class="text-lg font-normal text-muted">from </span>£42<span class="text-lg font-normal text-muted"
-              >/hour</span
-            >
-          </p>
-          <p class="text-sm text-muted">Maths, Further Maths, Physics & Statistics across all major exam boards</p>
-        </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 max-w-4xl mx-auto">
+        {pricingTiers.map((tier, index) => (
+          <div 
+            class={`group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter stagger-${index + 1} ${tier.featured ? 'ring-2 ring-emerald-500 ring-offset-2 ring-offset-white dark:ring-offset-slate-900 shadow-glow-emerald' : 'shadow-card border border-gray-100 dark:border-slate-800'}`}
+          >
+            {tier.featured && tier.badge && (
+              <div class="absolute top-0 right-0 z-10">
+                <div class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs font-semibold px-3 py-1.5 rounded-bl-xl shadow-sm">
+                  {tier.badge}
+                </div>
+              </div>
+            )}
 
-        <div class="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-slate-800">
-          <h3 class="text-lg font-semibold mb-3">University</h3>
-          <p class="text-3xl font-bold text-primary mb-2">
-            <span class="text-lg font-normal text-muted">from </span>£51<span class="text-lg font-normal text-muted"
-              >/hour</span
-            >
-          </p>
-          <p class="text-sm text-muted">
-            Maths modules for STEM undergraduates and graduates. Enquire for experience and suitability.
-          </p>
-        </div>
+            <div class="p-6 lg:p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <div class={`flex items-center justify-center w-12 h-12 rounded-xl transition-colors ${tier.featured ? 'bg-gradient-to-br from-emerald-500 to-teal-500 text-white' : 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/50'}`}>
+                  <Icon name={tier.icon} class="w-6 h-6" />
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">{tier.name}</h3>
+              </div>
 
-        <div class="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-slate-800">
-          <h3 class="text-lg font-semibold mb-3">Admissions</h3>
-          <p class="text-3xl font-bold text-primary mb-2">
-            <span class="text-lg font-normal text-muted">from </span>£60<span class="text-lg font-normal text-muted"
-              >/hour</span
-            >
-          </p>
-          <p class="text-sm text-muted">
-            TMUA, MAT, ESAT, STEP and other entrance exams. Application support and mock interviews.
-          </p>
-        </div>
+              <div class="mb-4">
+                {tier.price ? (
+                  <div class="flex items-baseline gap-1">
+                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400">from</span>
+                    <span class={`text-4xl font-bold ${tier.featured ? 'text-gradient-emerald' : 'text-gray-900 dark:text-white'}`}>£{tier.price}</span>
+                    <span class="text-base font-medium text-gray-500 dark:text-gray-400">/hour</span>
+                  </div>
+                ) : (
+                  <p class="text-2xl font-bold text-gradient-emerald">{tier.priceText}</p>
+                )}
+              </div>
 
-        <div class="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-slate-800">
-          <h3 class="text-lg font-semibold mb-3">Other</h3>
-          <p class="text-2xl font-bold text-primary mb-2">Please Enquire</p>
-          <p class="text-sm text-muted">IB, HND, BTEC, Foundation Year, and other qualifications</p>
-        </div>
+              <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6">{tier.description}</p>
+              <a 
+                href="/contact" 
+                class={`inline-flex items-center justify-center w-full py-3 px-6 rounded-lg font-medium text-sm transition-all duration-300 ${tier.featured ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:from-emerald-600 hover:to-teal-600 hover:shadow-lg hover:shadow-emerald-500/25' : 'bg-gray-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 hover:text-emerald-700 dark:hover:text-emerald-400 border border-gray-200 dark:border-slate-700'}`}
+              >
+                Get Started
+                <Icon name="tabler:arrow-right" class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>

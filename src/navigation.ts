@@ -41,7 +41,5 @@ export const footerData = {
   links: [],
   secondaryLinks: [],
   socialLinks: [],
-  footNote: `
-    © 2025 DJS TUITION. All rights reserved.
-  `,
+  footNote: ``,
 };
