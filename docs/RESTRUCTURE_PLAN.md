@@ -1,13 +1,13 @@
 # Full Site Restructure: Multi-Subdomain Architecture
 
-> **Overview:** Restructure danieljsmith.org into three subdomains: a minimal Astro landing hub at the apex, the current AstroWind tuition site at tuition.danieljsmith.org, and a new vanilla Astro resources site at files.danieljsmith.org. All hosted on GitHub Pages via separate repositories.
+> **Overview:** Restructure danieljsmith.org into three subdomains: a minimal Astro landing hub at the apex, the current AstroWind tuition site at tuition.danieljsmith.org, and a new vanilla Astro resources site at resources.danieljsmith.org. All hosted on GitHub Pages via separate repositories.
 
 ## Final Architecture
 
 ```
 danieljsmith.org            → Minimal Astro landing/hub page (new)
 tuition.danieljsmith.org    → Current AstroWind site (migrated)
-files.danieljsmith.org      → Vanilla Astro resources site (new)
+resources.danieljsmith.org      → Vanilla Astro resources site (new)
 ```
 
 All three sites use Astro, providing consistent tooling and knowledge. Each subdomain is a separate GitHub repository, deployable independently. Blog (Quarto) deferred to future project.
@@ -33,7 +33,7 @@ Create a parent workspace folder to hold all three repos:
 danieljsmith-sites/
 ├── danieljsmith.org/              → Landing page (new repo)
 ├── tuition.danieljsmith.org/      → Current repo, renamed
-└── files.danieljsmith.org/        → Resources site (new repo)
+└── resources.danieljsmith.org/        → Resources site (new repo)
 ```
 
 ### Clone/Create Repos Locally
@@ -65,7 +65,7 @@ In Namecheap (Domain List -> Advanced DNS), configure these records:
 | A     | @        | 185.199.110.153                    | GitHub Pages IP (apex)  |
 | A     | @        | 185.199.111.153                    | GitHub Pages IP (apex)  |
 | CNAME | tuition  | danieljamessmith.github.io         | Tuition subdomain       |
-| CNAME | files    | danieljamessmith.github.io         | Resources subdomain     |
+| CNAME | resources | danieljamessmith.github.io         | Resources subdomain     |
 
 The apex domain uses A records (CNAMEs not allowed at apex). Subdomains use CNAME records.
 
@@ -133,19 +133,19 @@ danieljsmith.org/
 
 ---
 
-## Part 5: Vanilla Astro Resources Site (files.danieljsmith.org)
+## Part 5: Vanilla Astro Resources Site (resources.danieljsmith.org)
 
 New repository with minimal Astro + Tailwind:
 
 **Structure:**
 
 ```
-files.danieljsmith.org/
+resources.danieljsmith.org/
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml
 ├── public/
-│   ├── CNAME                    # Contains: files.danieljsmith.org
+│   ├── CNAME                    # Contains: resources.danieljsmith.org
 │   └── pdfs/                    # Your PDF files
 │       ├── tmua-paper-1.pdf
 │       ├── tmua-paper-2.pdf
@@ -232,30 +232,76 @@ After first push to each repo:
 
 ## Order of Operations (Phased Deployment)
 
+> **Legend:**
+> - 🌐 **MANUAL** — Requires browser (GitHub, Namecheap). Agent must pause.
+> - 💻 **AGENT** — Can be done in Cursor by the agent.
+> - ⏸️ **CHECKPOINT** — Agent stops and waits for user confirmation before continuing.
+
 ### Phase 1: Prepare (no risk to live site)
 
-1. **Rename GitHub repo** from `danieljsmith.org` to `tuition.danieljsmith.org`
-2. Create `danieljsmith-sites/` workspace folder
-3. Clone renamed repo into `tuition.danieljsmith.org/` subfolder
-4. Create `subdomain-migration` branch in tuition repo
-5. Make CNAME + footer changes on the branch (don't merge yet)
-6. Create `danieljsmith.org/` and `files.danieljsmith.org/` folders
-7. Initialize Astro projects in both new folders
-8. Build and test all three sites locally with `npm run dev`
+1. 🌐 **MANUAL:** Rename GitHub repo from `danieljsmith.org` to `tuition.danieljsmith.org`
+   - Go to GitHub repo Settings → General → Repository name
+
+⏸️ **CHECKPOINT:** Confirm repo rename is complete before continuing.
+
+2. 💻 **AGENT:** Create workspace structure and clone repos
+   - Create `djs-sites/` parent folder (or use existing workspace)
+   - Clone renamed tuition repo (or update remote URL if already cloned)
+   - Create `subdomain-migration` branch in tuition repo
+
+3. 💻 **AGENT:** Make migration changes on the branch
+   - Update `public/CNAME` to `tuition.danieljsmith.org`
+   - Add "Back to main site" footer link
+   - Commit changes (do NOT push to main yet)
+
+4. 💻 **AGENT:** Create new Astro projects
+   - Initialize `landing/` folder with minimal Astro + Tailwind
+   - Initialize `resources.danieljsmith.org/` folder with minimal Astro + Tailwind
+   - Build out both sites (layouts, pages, content)
+
+5. 💻 **AGENT:** Test all three sites locally
+   - Run `npm run dev` in each project
+   - Verify builds succeed
+
+⏸️ **CHECKPOINT:** Confirm all three sites work locally before proceeding to deployment.
 
 ### Phase 2: DNS + New Sites (additive)
 
-1. Add **all** DNS records in Namecheap (A records for apex + CNAMEs for subdomains)
-2. Create GitHub repos: `danieljsmith.org` and `files.danieljsmith.org`
-3. Push and deploy `files.danieljsmith.org` (completely new, no conflict)
-4. Verify files site works at `files.danieljsmith.org`
+6. 🌐 **MANUAL:** Configure DNS in Namecheap
+   - Add A records for apex domain (all four GitHub IPs)
+   - Add CNAME records for `tuition` and `resources` subdomains
+
+7. 🌐 **MANUAL:** Create new GitHub repos
+   - Create `danieljsmith.org` repo
+   - Create `resources.danieljsmith.org` repo
+
+⏸️ **CHECKPOINT:** Confirm DNS records and repos are created before continuing.
+
+8. 💻 **AGENT:** Push resources site
+   - Initialize git, add remote, push to `resources.danieljsmith.org` repo
+
+9. 🌐 **MANUAL:** Configure GitHub Pages for resources site
+   - Settings → Pages → Source: GitHub Actions
+   - Set custom domain: `resources.danieljsmith.org`
+   - Enable HTTPS
+
+⏸️ **CHECKPOINT:** Confirm resources site is live at `resources.danieljsmith.org`.
 
 ### Phase 3: The Switch (coordinated, landing page last)
 
-1. **Merge `subdomain-migration` to main** in tuition repo
-2. Push triggers deploy → site now serves at `tuition.danieljsmith.org`
-3. **Push and deploy landing page** to `danieljsmith.org` (apex)
-4. Verify all three sites work and links are correct
+10. 💻 **AGENT:** Merge tuition migration branch
+    - Merge `subdomain-migration` to `main` and push
+    - This triggers deploy → site now serves at `tuition.danieljsmith.org`
+
+11. 💻 **AGENT:** Push landing page
+    - Initialize git, add remote, push to `danieljsmith.org` repo
+
+12. 🌐 **MANUAL:** Configure GitHub Pages for landing page
+    - Settings → Pages → Source: GitHub Actions
+    - Set custom domain: `danieljsmith.org`
+    - Enable HTTPS
+
+⏸️ **CHECKPOINT:** Verify all three sites work and cross-links are correct.
 
 **Why this order:** Landing page is deployed last so its "Tuition" link doesn't 404 while we're mid-switch.
 
@@ -287,8 +333,8 @@ If anything breaks:
 
 **New resources repo:**
 
-- GitHub repo: `files.danieljsmith.org`
-- `public/CNAME` - `files.danieljsmith.org`
+- GitHub repo: `resources.danieljsmith.org`
+- `public/CNAME` - `resources.danieljsmith.org`
 - `src/data/resources.ts` - resource metadata
 - `src/pages/index.astro` - resources listing
 - `public/pdfs/` - your PDF files
