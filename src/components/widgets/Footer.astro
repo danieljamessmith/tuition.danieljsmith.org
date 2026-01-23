@@ -33,6 +33,7 @@ const links = [
   { text: 'Pricing', href: getPermalink('/pricing') },
   { text: 'Testimonials', href: getPermalink('/testimonials') },
   { text: 'Contact', href: getPermalink('/contact') },
+  { text: 'Main Site', href: 'https://danieljsmith.org', external: true },
 ];
 
 const currentYear = new Date().getFullYear();
@@ -53,10 +54,11 @@ const currentYear = new Date().getFullYear();
 
       <!-- Quick links -->
       <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
-        {links.map(({ text, href }) => (
+        {links.map(({ text, href, external }) => (
           <a
             href={href}
             class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+            {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
           >
             {text}
           </a>
