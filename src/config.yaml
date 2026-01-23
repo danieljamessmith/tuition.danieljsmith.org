@@ -1,6 +1,6 @@
 site:
-  name: danieljsmith.org
-  site: 'https://danieljsmith.org'
+  name: tuition.danieljsmith.org
+  site: 'https://tuition.danieljsmith.org'
   base: '/'
   trailingSlash: false
 
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: danieljsmith.org
-    template: '%s — danieljsmith.org'
+    default: tuition.danieljsmith.org
+    template: '%s — tuition.danieljsmith.org'
   description: 'Internationally oriented maths and physics tutor. Cambridge graduate with 1k+ hours experience. Rates starting at £42/hour for A-level, Undergrad, TMUA, STEP and more.'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: danieljsmith.org
+    site_name: tuition.danieljsmith.org
     images:
       - url: '~/assets/images/IMG_0978_crop.JPG'
         width: 1200
