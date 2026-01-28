@@ -21,13 +21,13 @@ export default {
       },
 
       animation: {
-        'fade': 'fadeInUp 0.8s ease-out both',
+        fade: 'fadeInUp 0.8s ease-out both',
         'fade-up': 'fadeUp 0.6s ease-out forwards',
         'fade-in': 'fadeIn 0.5s ease-out forwards',
         'scale-in': 'scaleIn 0.5s ease-out forwards',
         'slide-in-left': 'slideInLeft 0.6s ease-out forwards',
         'slide-in-right': 'slideInRight 0.6s ease-out forwards',
-        'float': 'float 6s ease-in-out infinite',
+        float: 'float 6s ease-in-out infinite',
       },
 
       keyframes: {
@@ -62,7 +62,7 @@ export default {
       },
 
       boxShadow: {
-        'card': '0 4px 20px -2px rgba(0, 0, 0, 0.06), 0 2px 8px -2px rgba(0, 0, 0, 0.04)',
+        card: '0 4px 20px -2px rgba(0, 0, 0, 0.06), 0 2px 8px -2px rgba(0, 0, 0, 0.04)',
         'card-hover': '0 20px 40px -12px rgba(16, 185, 129, 0.15), 0 8px 16px -8px rgba(0, 0, 0, 0.1)',
         'card-lg': '0 8px 30px -4px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04)',
         'glow-emerald': '0 0 40px -8px rgba(16, 185, 129, 0.4)',

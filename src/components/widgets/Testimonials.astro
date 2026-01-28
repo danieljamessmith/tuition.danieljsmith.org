@@ -21,11 +21,7 @@ const {
 // Convert newlines to HTML breaks to preserve spacing in production builds
 // This is necessary because HTML minification collapses whitespace
 const formatTestimonial = (text: string): string => {
-  return text
-    .split('\n\n')
-    .join('<br><br>')
-    .split('\n')
-    .join('<br>');
+  return text.split('\n\n').join('<br><br>').split('\n').join('<br>');
 };
 ---
 
@@ -39,26 +35,29 @@ const formatTestimonial = (text: string): string => {
           return (
             <div class="break-inside-avoid mb-6 lg:mb-8">
               <div class="group relative flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1">
-                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-400 opacity-80 group-hover:opacity-100 transition-opacity"></div>
-                
+                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-400 opacity-80 group-hover:opacity-100 transition-opacity" />
+
                 <div class="p-6 md:p-8">
-                  <div class="absolute top-4 right-6 text-7xl font-serif text-emerald-100 dark:text-emerald-900/50 leading-none select-none pointer-events-none">"</div>
+                  <div class="absolute top-4 right-6 text-7xl font-serif text-emerald-100 dark:text-emerald-900/50 leading-none select-none pointer-events-none">
+                    "
+                  </div>
 
                   {testimonial && (
                     <blockquote class="relative z-10 mb-6">
-                      <p class="text-gray-600 dark:text-gray-300 text-base leading-relaxed" set:html={formatTestimonial(testimonial)}></p>
+                      <p
+                        class="text-gray-600 dark:text-gray-300 text-base leading-relaxed"
+                        set:html={formatTestimonial(testimonial)}
+                      />
                     </blockquote>
                   )}
 
-                  <div class="h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-700 to-transparent mb-5"></div>
+                  <div class="h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-700 to-transparent mb-5" />
 
                   <div class="mb-4">
                     {title && (
                       <h3 class="text-lg font-semibold text-gray-900 dark:text-white leading-snug mb-1">{title}</h3>
                     )}
-                    {board && (
-                      <p class="text-sm text-emerald-600 dark:text-emerald-400 font-medium">{board}</p>
-                    )}
+                    {board && <p class="text-sm text-emerald-600 dark:text-emerald-400 font-medium">{board}</p>}
                   </div>
 
                   <div class="flex items-center mt-auto pt-2 border-t border-gray-100 dark:border-gray-800">

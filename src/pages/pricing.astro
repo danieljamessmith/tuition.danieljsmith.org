@@ -55,49 +55,57 @@ const pricingTiers = [
   <section class="py-8 md:py-12 bg-section-gradient">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 max-w-4xl mx-auto">
-        {pricingTiers.map((tier) => (
-          <div 
-            class={`group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover ${tier.featured ? 'ring-2 ring-emerald-500 ring-offset-2 ring-offset-white dark:ring-offset-slate-900 shadow-glow-emerald' : 'shadow-card border border-gray-100 dark:border-slate-800'}`}
-          >
-            {tier.featured && tier.badge && (
-              <div class="absolute top-0 right-0 z-10">
-                <div class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs font-semibold px-3 py-1.5 rounded-bl-xl shadow-sm">
-                  {tier.badge}
-                </div>
-              </div>
-            )}
-
-            <div class="p-6 lg:p-8">
-              <div class="flex items-center gap-3 mb-4">
-                <div class={`flex items-center justify-center w-12 h-12 rounded-xl transition-colors ${tier.featured ? 'bg-gradient-to-br from-emerald-500 to-teal-500 text-white' : 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/50'}`}>
-                  <Icon name={tier.icon} class="w-6 h-6" />
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white">{tier.name}</h3>
-              </div>
-
-              <div class="mb-4">
-                {tier.price ? (
-                  <div class="flex items-baseline gap-1">
-                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400">from</span>
-                    <span class={`text-4xl font-bold ${tier.featured ? 'text-gradient-emerald' : 'text-gray-900 dark:text-white'}`}>£{tier.price}</span>
-                    <span class="text-base font-medium text-gray-500 dark:text-gray-400">/hour</span>
+        {
+          pricingTiers.map((tier) => (
+            <div
+              class={`group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover ${tier.featured ? 'ring-2 ring-emerald-500 ring-offset-2 ring-offset-white dark:ring-offset-slate-900 shadow-glow-emerald' : 'shadow-card border border-gray-100 dark:border-slate-800'}`}
+            >
+              {tier.featured && tier.badge && (
+                <div class="absolute top-0 right-0 z-10">
+                  <div class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs font-semibold px-3 py-1.5 rounded-bl-xl shadow-sm">
+                    {tier.badge}
                   </div>
-                ) : (
-                  <p class="text-2xl font-bold text-gradient-emerald">{tier.priceText}</p>
-                )}
-              </div>
+                </div>
+              )}
 
-              <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6">{tier.description}</p>
-              <a 
-                href="/contact" 
-                class={`inline-flex items-center justify-center w-full py-3 px-6 rounded-lg font-medium text-sm transition-all duration-300 ${tier.featured ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:from-emerald-600 hover:to-teal-600 hover:shadow-lg hover:shadow-emerald-500/25' : 'bg-gray-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 hover:text-emerald-700 dark:hover:text-emerald-400 border border-gray-200 dark:border-slate-700'}`}
-              >
-                Get Started
-                <Icon name="tabler:arrow-right" class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-              </a>
+              <div class="p-6 lg:p-8">
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class={`flex items-center justify-center w-12 h-12 rounded-xl transition-colors ${tier.featured ? 'bg-gradient-to-br from-emerald-500 to-teal-500 text-white' : 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/50'}`}
+                  >
+                    <Icon name={tier.icon} class="w-6 h-6" />
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900 dark:text-white">{tier.name}</h3>
+                </div>
+
+                <div class="mb-4">
+                  {tier.price ? (
+                    <div class="flex items-baseline gap-1">
+                      <span class="text-sm font-medium text-gray-500 dark:text-gray-400">from</span>
+                      <span
+                        class={`text-4xl font-bold ${tier.featured ? 'text-gradient-emerald' : 'text-gray-900 dark:text-white'}`}
+                      >
+                        £{tier.price}
+                      </span>
+                      <span class="text-base font-medium text-gray-500 dark:text-gray-400">/hour</span>
+                    </div>
+                  ) : (
+                    <p class="text-2xl font-bold text-gradient-emerald">{tier.priceText}</p>
+                  )}
+                </div>
+
+                <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6">{tier.description}</p>
+                <a
+                  href="/contact"
+                  class={`inline-flex items-center justify-center w-full py-3 px-6 rounded-lg font-medium text-sm transition-all duration-300 ${tier.featured ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:from-emerald-600 hover:to-teal-600 hover:shadow-lg hover:shadow-emerald-500/25' : 'bg-gray-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 hover:text-emerald-700 dark:hover:text-emerald-400 border border-gray-200 dark:border-slate-700'}`}
+                >
+                  Get Started
+                  <Icon name="tabler:arrow-right" class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                </a>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>

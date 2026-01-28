@@ -99,7 +99,10 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
           />
         </div>
         <div class="ml-3">
-          <label for="disclaimer" class="cursor-pointer select-none text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+          <label
+            for="disclaimer"
+            class="cursor-pointer select-none text-sm text-gray-600 dark:text-gray-400 leading-relaxed"
+          >
             {disclaimer.label}
           </label>
         </div>
@@ -138,16 +141,16 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
 <script is:inline>
   function renderCaptcha() {
     const captchaContainer = document.querySelector('.h-captcha');
-    
+
     if (!captchaContainer) return;
-    
+
     // Check if hcaptcha is loaded
     if (typeof hcaptcha !== 'undefined') {
       // Only render if not already rendered (check for iframe)
       if (!captchaContainer.querySelector('iframe')) {
         try {
           hcaptcha.render(captchaContainer, {
-            sitekey: '50b2fe65-b00b-4b9e-ad62-3ba471098be2'
+            sitekey: '50b2fe65-b00b-4b9e-ad62-3ba471098be2',
           });
         } catch {
           // Already rendered or error, ignore
@@ -161,7 +164,7 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
 
   function initContactForm() {
     const form = document.getElementById('contact-form');
-    
+
     // Render captcha (with retry logic for async script loading)
     renderCaptcha();
 
