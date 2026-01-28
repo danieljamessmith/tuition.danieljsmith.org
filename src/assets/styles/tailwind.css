@@ -98,27 +98,7 @@
   }
 }
 
-#header.scroll > div:first-child {
-  @apply bg-white/95 md:backdrop-blur-lg;
-  box-shadow: 0 4px 20px -4px rgba(16, 185, 129, 0.1), 0 2px 8px -2px rgba(0, 0, 0, 0.06);
-}
-.dark #header.scroll > div:first-child,
-#header.scroll.dark > div:first-child {
-  @apply bg-slate-900/95 border-b border-emerald-500/10;
-  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.3);
-}
-
-#header.scroll .header-logo {
-  @apply text-emerald-600 dark:text-emerald-400;
-}
-
-#header.scroll nav a {
-  @apply text-gray-700 hover:text-emerald-600 dark:text-gray-300 dark:hover:text-emerald-400;
-}
-
-#header.scroll .social-link {
-  @apply text-gray-600 hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-400;
-}
+/* Scroll styles removed - navbar stays consistent */
 
 #header.expanded nav {
   position: fixed;

@@ -10,7 +10,7 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
   <input type="hidden" name="access_key" value="78977e42-5cdb-4969-bf0e-9d3a9762ff81" />
 
   <!-- Redirect to Thank You page after submission -->
-  <input type="hidden" name="redirect" value="https://danieljsmith.org/thank-you" />
+  <input type="hidden" name="redirect" value="https://tuition.danieljsmith.org/thank-you" />
 
   <!-- Custom Subject Line -->
   <input type="hidden" name="subject" value="New Contact Form Submission from danieljsmith.org" />
@@ -109,7 +109,7 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
 
   <!-- hCaptcha Widget -->
   <div class="mt-6">
-    <div class="h-captcha" data-captcha="true"></div>
+    <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
   </div>
 
   {
@@ -131,25 +131,61 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
   }
 </form>
 
-<!-- Web3Forms Script for hCaptcha - Load synchronously to ensure captcha appears -->
-<script src="https://web3forms.com/client/script.js"></script>
+<!-- hCaptcha Script (official) -->
+<script is:inline src="https://js.hcaptcha.com/1/api.js" async defer></script>
 
-<!-- Client-side validation for hCaptcha -->
+<!-- Re-initialize hCaptcha on View Transitions navigation -->
 <script is:inline>
-  // Wait for both DOM and hCaptcha to load
-  window.addEventListener('load', function () {
+  function renderCaptcha() {
+    const captchaContainer = document.querySelector('.h-captcha');
+    
+    if (!captchaContainer) return;
+    
+    // Check if hcaptcha is loaded
+    if (typeof hcaptcha !== 'undefined') {
+      // Only render if not already rendered (check for iframe)
+      if (!captchaContainer.querySelector('iframe')) {
+        try {
+          hcaptcha.render(captchaContainer, {
+            sitekey: '50b2fe65-b00b-4b9e-ad62-3ba471098be2'
+          });
+        } catch (e) {
+          // Already rendered or error, ignore
+        }
+      }
+    } else {
+      // hCaptcha not loaded yet, retry in 100ms
+      setTimeout(renderCaptcha, 100);
+    }
+  }
+
+  function initContactForm() {
     const form = document.getElementById('contact-form');
+    
+    // Render captcha (with retry logic for async script loading)
+    renderCaptcha();
 
-    if (form) {
+    // Add form validation (only once)
+    if (form && !form.dataset.validated) {
+      form.dataset.validated = 'true';
       form.addEventListener('submit', function (e) {
-        const hCaptcha = form.querySelector('textarea[name=h-captcha-response]');
-
-        if (!hCaptcha || !hCaptcha.value) {
+        const hCaptchaResponse = form.querySelector('textarea[name=h-captcha-response]');
+        if (!hCaptchaResponse || !hCaptchaResponse.value) {
           e.preventDefault();
           alert('Please complete the captcha verification to submit the form.');
           return false;
         }
       });
     }
-  });
+  }
+
+  // Run on initial page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initContactForm);
+  } else {
+    initContactForm();
+  }
+
+  // Run on View Transitions navigation (Astro)
+  document.addEventListener('astro:page-load', initContactForm);
 </script>

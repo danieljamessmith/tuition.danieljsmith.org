@@ -41,7 +41,7 @@ const qualifications = [
         <div class="max-w-6xl mx-auto">
           <div class="flex flex-col md:flex-row md:items-start gap-8 md:gap-12">
             <!-- Headshot - Left side with enhanced styling -->
-            <div class="flex-shrink-0 mx-auto md:mx-0 motion-safe:animate-fade-in stagger-1">
+            <div class="flex-shrink-0 mx-auto md:mx-0">
               <div class="relative group">
                 <!-- Decorative ring -->
                 <div class="absolute -inset-2 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl opacity-20 group-hover:opacity-30 blur-sm transition-opacity duration-300"></div>
@@ -56,16 +56,16 @@ const qualifications = [
               </div>
             </div>
 
-            <!-- Hero Text - Right side with staggered animations -->
+            <!-- Hero Text - Right side -->
             <div class="flex-1 text-center md:text-left">
-              <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-4 font-heading text-gray-900 dark:text-white motion-safe:animate-fade-up stagger-2">
+              <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-4 font-heading text-gray-900 dark:text-white">
                 Bespoke Mathematics & Physics Tuition
               </h1>
               <div class="max-w-3xl md:mx-0 mx-auto">
-                <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed motion-safe:animate-fade-up stagger-3">
+                <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
                   Cambridge MASt graduate with <span class="font-semibold text-emerald-600 dark:text-emerald-400">1000+ hours'</span> experience helping students excel at GCSE, A-Level and University. Entrance exams and admissions consultation.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start motion-safe:animate-fade-up stagger-4">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                   <a class="btn-primary" href="/services">
                     <span>View Services</span>
                     <Icon name="tabler:arrow-right" class="w-4 h-4 ml-2" />
@@ -88,7 +88,7 @@ const qualifications = [
         <div class="space-y-4">
           {qualifications.map((qual, index) => (
             <div 
-              class={`group flex gap-4 p-4 rounded-xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border border-gray-100 dark:border-slate-800 shadow-sm hover:shadow-card transition-all duration-300 hover:-translate-y-0.5 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter stagger-${index + 1}`}
+              class="group flex gap-4 p-4 rounded-xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border border-gray-100 dark:border-slate-800 shadow-sm hover:shadow-card transition-all duration-300 hover:-translate-y-0.5"
             >
               <div class="flex-shrink-0 mt-0.5">
                 <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-white shadow-sm">

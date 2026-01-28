@@ -57,7 +57,7 @@ const pricingTiers = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 max-w-4xl mx-auto">
         {pricingTiers.map((tier, index) => (
           <div 
-            class={`group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter stagger-${index + 1} ${tier.featured ? 'ring-2 ring-emerald-500 ring-offset-2 ring-offset-white dark:ring-offset-slate-900 shadow-glow-emerald' : 'shadow-card border border-gray-100 dark:border-slate-800'}`}
+            class={`group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover ${tier.featured ? 'ring-2 ring-emerald-500 ring-offset-2 ring-offset-white dark:ring-offset-slate-900 shadow-glow-emerald' : 'shadow-card border border-gray-100 dark:border-slate-800'}`}
           >
             {tier.featured && tier.badge && (
               <div class="absolute top-0 right-0 z-10">

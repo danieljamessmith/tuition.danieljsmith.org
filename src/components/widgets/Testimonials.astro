@@ -36,10 +36,8 @@ const formatTestimonial = (text: string): string => {
     {
       testimonials &&
         testimonials.map(({ title, testimonial, name, job, board, image }, index) => {
-          const staggerClass = `stagger-${(index % 4) + 1}`;
-          
           return (
-            <div class={`break-inside-avoid mb-6 lg:mb-8 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter ${staggerClass}`}>
+            <div class="break-inside-avoid mb-6 lg:mb-8">
               <div class="group relative flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1">
                 <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-400 opacity-80 group-hover:opacity-100 transition-opacity"></div>
                 
