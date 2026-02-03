@@ -110,11 +110,6 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
     )
   }
 
-  <!-- hCaptcha Widget -->
-  <div class="mt-6">
-    <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
-  </div>
-
   {
     button && (
       <div class="mt-10 grid">
@@ -133,62 +128,3 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
     )
   }
 </form>
-
-<!-- hCaptcha Script (official) -->
-<script is:inline src="https://js.hcaptcha.com/1/api.js" async defer></script>
-
-<!-- Re-initialize hCaptcha on View Transitions navigation -->
-<script is:inline>
-  function renderCaptcha() {
-    const captchaContainer = document.querySelector('.h-captcha');
-
-    if (!captchaContainer) return;
-
-    // Check if hcaptcha is loaded
-    if (typeof hcaptcha !== 'undefined') {
-      // Only render if not already rendered (check for iframe)
-      if (!captchaContainer.querySelector('iframe')) {
-        try {
-          hcaptcha.render(captchaContainer, {
-            sitekey: '50b2fe65-b00b-4b9e-ad62-3ba471098be2',
-          });
-        } catch {
-          // Already rendered or error, ignore
-        }
-      }
-    } else {
-      // hCaptcha not loaded yet, retry in 100ms
-      setTimeout(renderCaptcha, 100);
-    }
-  }
-
-  function initContactForm() {
-    const form = document.getElementById('contact-form');
-
-    // Render captcha (with retry logic for async script loading)
-    renderCaptcha();
-
-    // Add form validation (only once)
-    if (form && !form.dataset.validated) {
-      form.dataset.validated = 'true';
-      form.addEventListener('submit', function (e) {
-        const hCaptchaResponse = form.querySelector('textarea[name=h-captcha-response]');
-        if (!hCaptchaResponse || !hCaptchaResponse.value) {
-          e.preventDefault();
-          alert('Please complete the captcha verification to submit the form.');
-          return false;
-        }
-      });
-    }
-  }
-
-  // Run on initial page load
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initContactForm);
-  } else {
-    initContactForm();
-  }
-
-  // Run on View Transitions navigation (Astro)
-  document.addEventListener('astro:page-load', initContactForm);
-</script>
