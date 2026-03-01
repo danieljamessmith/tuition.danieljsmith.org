@@ -13,7 +13,14 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     title: 'TMUA',
-    board: 'UAT Entrance Exam (University of Cambridge)',
+    board: 'UAT Entrance Exam',
+    testimonial: `When I first started practicing for my TMUA exam it was intimidating, the idea of being thrown into an unfamiliar style of exam. I faced many difficulties in digesting questions and approaching them in an efficient manner. However, once I began my lessons with Daniel he was able to break down questions, thoroughly explaining steps and introducing me to new methods or perspectives to view problems. He was a massive help and definitely boosted my confidence and performance. In addition to this, Daniel was kind and hospitable and I found our sessions both enjoyable and productive. I would really recommend his services to anyone else preparing for any similar exam.`,
+    name: 'Noyen L.',
+    job: 'February 2026',
+  },
+  {
+    title: 'TMUA',
+    board: 'UAT Entrance Exam',
     testimonial: `Thank you Daniel for your tutoring! Daniel helped me prepare for the TMUA exam over the course of the summer, teaching me to manage time pressure in an exam setting and completely removing my worries about running out of time. His approach to explaining questions helped me learned new methods of solving problems that ended up helping me a great amount in the exam. Thanks to his help, I ended up getting a score of 8.3/9.0 and got an interview at the University of Cambridge. I highly recommend his services to any students who feel like they are stuck with exam preparation.`,
     name: 'Adrian N.',
     job: 'November 2025',
@@ -75,17 +82,5 @@ This approach suited my learning style perfectly. With Daniel's support, I made 
     His way of teaching has accelerated my grades, I used to be getting things like 60% on my Mathematics tests, but after tutoring, I am getting mostly 80%~100%! If i don't understand something, he isn't afraid to explain it to me. He is a fantastic tutor, and is willing to cover anything I want to learn or strengthen. With him, I managed to pass my Statistics GCSE (with a grade 5), which is a subject I am not very confident in.`,
     name: 'Lleyton P.',
     job: 'October 2025',
-  },
-  {
-    title: 'A-Level Maths & Physics',
-    board: 'Edexcel',
-    testimonial: ` Hey Daniel,
-
-My exams went quite well. I ended up getting an a* in maths and an a in physics which secured my place at [UNI]. I think majority of my marks were lost in p3 for both subjects. Thank you for all the help you have given me, will definitely be recommending friends who are doing a levels to you. Good luck in the future.
-
-best regards,
-Aidan `,
-    name: 'Aidan L.',
-    job: 'August 2025',
   },
 ];
