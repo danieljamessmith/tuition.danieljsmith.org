@@ -38,9 +38,7 @@ const {
               <Icon name={icon || defaultIcon} class={twMerge('w-7 h-7', defaultIconClass, itemClasses?.icon)} />
             </div>
           )}
-          <div class={twMerge('text-lg font-semibold text-gray-900', titleClass, itemClasses?.title)}>
-            {title}
-          </div>
+          <div class={twMerge('text-lg font-semibold text-gray-900', titleClass, itemClasses?.title)}>{title}</div>
           {description && (
             <p
               class={twMerge('text-gray-600 mt-2 text-sm leading-relaxed', descriptionClass, itemClasses?.description)}
