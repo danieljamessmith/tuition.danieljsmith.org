@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
+import Hero from '~/components/widgets/Hero.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 
 const metadata = {
@@ -9,9 +9,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText title="Enquiries" subtitle="Get in touch to discuss your tutoring needs" />
+  <Hero title="Enquiries" subtitle="Get in touch to discuss your tutoring needs" />
 
   <section class="bg-section-gradient-reverse pb-12 md:pb-16">
     <ContactUs
@@ -62,5 +60,12 @@ const metadata = {
       }}
       description="We typically respond within 24 hours."
     />
+    <p class="text-center text-sm text-muted mt-6 px-4">
+      Or email directly:
+      <a
+        href="mailto:tuition@danieljsmith.org"
+        class="text-emerald-700 hover:text-emerald-800 hover:underline font-medium">tuition@danieljsmith.org</a
+      >
+    </p>
   </section>
 </Layout>
