@@ -46,6 +46,12 @@ const { language, textDirection } = I18N;
 
     <CommonMeta />
     <Favicons />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <CustomStyles />
     <ApplyColorMode />
     <Metadata {...metadata} />
@@ -56,7 +62,7 @@ const { language, textDirection } = I18N;
     <ClientRouter fallback="swap" />
   </head>
 
-  <body class="antialiased text-default bg-page tracking-tight">
+  <body class="antialiased text-default bg-page tracking-tight font-display">
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
