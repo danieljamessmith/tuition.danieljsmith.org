@@ -17,7 +17,7 @@ export default {
         sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
         serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
         heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
-        display: ['Newsreader', 'Georgia', 'Cambria', 'serif'],
+        display: ['Roboto', ...defaultTheme.fontFamily.sans],
       },
 
       boxShadow: {

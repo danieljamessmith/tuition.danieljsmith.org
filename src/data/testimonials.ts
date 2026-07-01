@@ -15,14 +15,14 @@ export const testimonials: Testimonial[] = [
     title: 'TMUA',
     board: 'UAT Entrance Exam',
     testimonial: `When I first started practicing for my TMUA exam it was intimidating, the idea of being thrown into an unfamiliar style of exam. I faced many difficulties in digesting questions and approaching them in an efficient manner. However, once I began my lessons with Daniel he was able to break down questions, thoroughly explaining steps and introducing me to new methods or perspectives to view problems. He was a massive help and definitely boosted my confidence and performance. In addition to this, Daniel was kind and hospitable and I found our sessions both enjoyable and productive. I would really recommend his services to anyone else preparing for any similar exam.`,
-    name: 'Noyen L.',
+    name: 'Noyen',
     job: 'February 2026',
   },
   {
     title: 'TMUA',
     board: 'UAT Entrance Exam',
     testimonial: `Thank you Daniel for your tutoring! Daniel helped me prepare for the TMUA exam over the course of the summer, teaching me to manage time pressure in an exam setting and completely removing my worries about running out of time. His approach to explaining questions helped me learned new methods of solving problems that ended up helping me a great amount in the exam. Thanks to his help, I ended up getting a score of 8.3/9.0 and got an interview at the University of Cambridge. I highly recommend his services to any students who feel like they are stuck with exam preparation.`,
-    name: 'Adrian N.',
+    name: 'Adrian',
     job: 'November 2025',
   },
   {
@@ -31,7 +31,7 @@ export const testimonials: Testimonial[] = [
     testimonial: `After failing my maths test twice, I started tutoring sessions with Daniel. Together, we completed all the practice and mock exams provided by my college, and after I ran out of papers, Daniel created custom-made mock exams with detailed workings and answers that targeted the areas where I lacked knowledge the most. He always replied quickly outside of regular teaching hours whenever I got stuck or needed answers to a question. 
     
     His positive attitude and constant encouragement gave me the confidence to ask many questions about topics I didn’t fully understand. Thanks to his flexible schedule and enjoyable way of teaching, he gave me the confidence I needed to keep trying. With his constant support right up until the last few hours before my exam, I finally passed my maths test and can now move on to the next step in completing my HND.`,
-    name: 'Jay B.',
+    name: 'Jay',
     job: 'November 2025',
   },
   {
@@ -42,17 +42,8 @@ export const testimonials: Testimonial[] = [
 Daniel has been a fantastic tutor — always going the extra mile for our son. He even offered support with Physics from time to time and provided invaluable guidance on how to navigate the exam system as a private candidate.
 
 Our son went on to achieve a Grade A in his Maths A level, which has enabled him to fulfil his dream of studying Physics at university. We would wholeheartedly recommend Daniel as a tutor to anyone.`,
-    name: 'Pete W.',
+    name: 'Pete',
     job: 'October 2025',
-  },
-  {
-    title: 'BTEC Engineering',
-    board: 'Edexcel',
-    testimonial: `Daniel is an exceptional tutor. His knowledge and expertise in math is outstanding. His skills to engage with my son was sensitive, thoughtful and enabled him to understand and problem solve complex mathematical problems. 
-
-    Through Daniel's tutoring my son's grades significantly improved and he has achieved amazing grades and will be going on to study engineering at University!`,
-    name: 'Sunita K.',
-    job: 'August 2025',
   },
   {
     title: 'MSc Data Science & Machine Learning for Geo-Energy',
@@ -62,25 +53,7 @@ Our son went on to achieve a Grade A in his Maths A level, which has enabled him
 His teaching style is not only clear and highly effective but also grounded in the underlying theories and concepts. This meant I never left a session simply knowing how to get an answer — I also understood the crucial 'why' behind solutions we found together.
 
 This approach suited my learning style perfectly. With Daniel's support, I made rapid progress through advanced topics that had previously felt daunting and, at times, unapproachable. My questions were always met with well-considered answers and I was never made to feel a question I had asked was wrong or silly. I can confidently say that Daniel belongs to that rare group of teachers you remember long after their lessons end. His ability to explain complex ideas concisely and accessibly is exceptional, and our sessions have made a truly lasting difference to my education.`,
-    name: 'Alex S.',
-    job: 'October 2025',
-  },
-  {
-    title: 'GCSE & A-Level Maths',
-    board: 'AQA',
-    testimonial: `Thank you Daniel, for your time spent with both my daughters on their GCSE and A Level’s- they have increased in interest, confidence and ability in maths and have secured their required grades, boosting beyond their predicted grades!! 
-    
-    They have really enjoyed your teaching style, flexibility and ability to build a rapport. I will continue to recommend you and have already made two successful introductions- who are really happy with the progress their children are now making- a testament to you`,
-    name: 'Nikki E. ',
-    job: 'October 2025',
-  },
-  {
-    title: 'GCSE Maths, Further Maths & Statistics',
-    board: 'AQA',
-    testimonial: `I personally think Daniel is a great tutor. Unlike what I expected, he isn't dead serious all the time. When I hear 'maths tutor', I think of some no nonsense, strict teacher. But Daniel isn't that, he can actually have a sense of humour and he doesn't come off as a strict teacher. 
-    
-    His way of teaching has accelerated my grades, I used to be getting things like 60% on my Mathematics tests, but after tutoring, I am getting mostly 80%~100%! If i don't understand something, he isn't afraid to explain it to me. He is a fantastic tutor, and is willing to cover anything I want to learn or strengthen. With him, I managed to pass my Statistics GCSE (with a grade 5), which is a subject I am not very confident in.`,
-    name: 'Lleyton P.',
+    name: 'Alex',
     job: 'October 2025',
   },
 ];
