@@ -22,33 +22,98 @@ const qualifications = [
     institution: 'University of Nottingham',
   },
 ];
+
+const professionalStandards = [
+  {
+    title: 'Enhanced DBS certificate',
+    detail: 'Child Workforce',
+  },
+  {
+    title: 'DBS Update Service',
+    detail: 'Registered for ongoing status checks',
+  },
+  {
+    title: 'Information Commissioner’s Office',
+    detail: 'Registered with the ICO',
+  },
+  {
+    title: 'Professional indemnity insurance',
+    detail: 'Cover in place for private tuition work',
+  },
+  {
+    title: 'Safeguarding training',
+    detail: 'Completed and kept under review',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
   <HomeHero />
 
-  <!-- Qualifications Section -->
+  <!-- Credentials Section -->
   <section class="py-8 md:py-12 bg-section-gradient-reverse">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="max-w-3xl mx-auto">
-        <div class="space-y-4">
-          {
-            qualifications.map((qual) => (
-              <div class="group flex gap-4 p-4 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100 shadow-sm hover:shadow-card transition-all duration-300 hover:-translate-y-0.5">
-                <div class="flex-shrink-0 mt-0.5">
-                  <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-white shadow-sm">
-                    <Icon name="tabler:check" class="w-4 h-4" />
+      <div class="max-w-6xl mx-auto grid gap-6 lg:grid-cols-2">
+        <div class="rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100 shadow-sm p-5 sm:p-6">
+          <div class="mb-5">
+            <p class="text-sm font-bold uppercase tracking-wide text-emerald-700">Credentials</p>
+            <h2 class="mt-1 text-2xl font-bold tracking-normal text-gray-900">Academic Qualifications</h2>
+          </div>
+
+          <div class="space-y-4">
+            {
+              qualifications.map((qual) => (
+                <div class="group flex gap-4 rounded-lg p-2 transition-colors hover:bg-emerald-50/60">
+                  <div class="flex-shrink-0 mt-0.5">
+                    <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-white shadow-sm">
+                      <Icon name="tabler:check" class="w-4 h-4" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-semibold text-gray-900 group-hover:text-emerald-700 transition-colors">
+                      {qual.title}
+                    </h3>
+                    <p class="text-gray-500 text-sm">{qual.institution}</p>
                   </div>
                 </div>
-                <div>
-                  <h3 class="text-lg font-semibold text-gray-900 group-hover:text-emerald-700 transition-colors">
-                    {qual.title}
-                  </h3>
-                  <p class="text-gray-500 text-sm">{qual.institution}</p>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100 shadow-sm p-5 sm:p-6">
+          <div class="mb-5">
+            <p class="text-sm font-bold uppercase tracking-wide text-emerald-700">Professional Standards</p>
+            <h2 class="mt-1 text-2xl font-bold tracking-normal text-gray-900">Safeguarding & Compliance</h2>
+          </div>
+
+          <div class="space-y-4">
+            {
+              professionalStandards.map((standard) => (
+                <div class="group flex gap-4 rounded-lg p-2 transition-colors hover:bg-emerald-50/60">
+                  <div class="flex-shrink-0 mt-0.5">
+                    <div class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-50 text-emerald-700 ring-1 ring-emerald-100">
+                      <Icon name="tabler:shield-check" class="w-4 h-4" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-semibold text-gray-900 group-hover:text-emerald-700 transition-colors">
+                      {standard.title}
+                    </h3>
+                    <p class="text-gray-500 text-sm">{standard.detail}</p>
+                  </div>
                 </div>
-              </div>
-            ))
-          }
+              ))
+            }
+          </div>
+
+          <a
+            href="/policies#section-4"
+            class="mt-5 inline-flex items-center text-sm font-semibold text-emerald-700 transition-colors hover:text-emerald-900"
+          >
+            View safeguarding and data policies
+            <Icon name="tabler:arrow-right" class="w-4 h-4 ml-1.5" />
+          </a>
         </div>
       </div>
     </div>

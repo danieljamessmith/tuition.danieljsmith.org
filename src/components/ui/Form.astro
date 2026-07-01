@@ -99,9 +99,17 @@ const { inputs, selects, textarea, disclaimer, button = 'Contact us', descriptio
           />
         </div>
         <div class="ml-3">
-          <label for="disclaimer" class="cursor-pointer select-none text-sm text-gray-600 leading-relaxed">
-            {disclaimer.label}
+          <label for="disclaimer" class="cursor-pointer text-sm text-gray-600 leading-relaxed">
+            <span>{disclaimer.label}</span>
           </label>
+          {disclaimer.href && (
+            <a
+              href={disclaimer.href}
+              class="ml-1 text-sm font-medium text-emerald-700 hover:text-emerald-800 hover:underline"
+            >
+              {disclaimer.linkText ?? 'View policies'}
+            </a>
+          )}
         </div>
       </div>
     )

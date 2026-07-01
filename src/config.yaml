@@ -11,7 +11,7 @@ metadata:
   title:
     default: tuition.danieljsmith.org
     template: '%s — tuition.danieljsmith.org'
-  description: 'Internationally oriented maths and physics tutor. Cambridge graduate with 1k+ hours experience. Rates starting at £42/hour for A-level, Undergrad, TMUA, STEP and more.'
+  description: 'Internationally oriented maths and physics tutor. Cambridge MASt graduate with 2000+ hours of experience. Online support for A-Level, Further Maths, undergraduate maths, TMUA, STEP and more. Rates from £50/hour.'
   robots:
     index: true
     follow: true

@@ -5,6 +5,7 @@ import ContactUs from '~/components/widgets/Contact.astro';
 
 const metadata = {
   title: 'Contact',
+  description: 'Enquire about online maths, physics, admissions, or university-level tuition.',
 };
 ---
 
@@ -56,16 +57,11 @@ const metadata = {
         label: 'Message',
       }}
       disclaimer={{
-        label: 'By submitting this form, you acknowledge and agree to the collection of your personal information.',
+        label: 'By submitting this form, you acknowledge the collection and handling of your personal information.',
+        href: '/policies#section-4',
+        linkText: 'View safeguarding and data policies.',
       }}
       description="We typically respond within 24 hours."
     />
-    <p class="text-center text-sm text-muted mt-6 px-4">
-      Or email directly:
-      <a
-        href="mailto:tuition@danieljsmith.org"
-        class="text-emerald-700 hover:text-emerald-800 hover:underline font-medium">tuition@danieljsmith.org</a
-      >
-    </p>
   </section>
 </Layout>

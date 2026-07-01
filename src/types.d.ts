@@ -196,6 +196,8 @@ export interface Select {
 
 export interface Disclaimer {
   label?: string;
+  href?: string;
+  linkText?: string;
 }
 
 // COMPONENTS
