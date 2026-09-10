@@ -28,13 +28,14 @@ const formatTestimonial = (text: string): string => {
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
 
-  <div class="columns-1 lg:columns-2 gap-6 lg:gap-8">
+  <!-- A grid preserves chronological source order across each row. -->
+  <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
     {
       testimonials &&
         testimonials.map(({ title, testimonial, name, job, board, image }) => {
           return (
-            <div class="break-inside-avoid mb-6 lg:mb-8">
-              <div class="group relative flex flex-col bg-white rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1">
+            <div>
+              <div class="group relative flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
                 <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-400 opacity-80 group-hover:opacity-100 transition-opacity" />
 
                 <div class="p-6 md:p-8">

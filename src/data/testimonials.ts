@@ -12,7 +12,33 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
+    title: 'GCSE Mathematics (Foundation)',
+    board: 'AQA',
+    testimonial: `We can't recommend Daniel highly enough. My son is dyslexic and has always found academic work a struggle. We found a tutor who is patient, understanding and endlessly encouraging — someone who took the time to understand how my son learns best, rather than expecting him to fit a standard approach.
+
+Daniel built my son's confidence session by session. Over 18 months, we saw a genuine transformation — not just in his maths ability, but in how he saw himself as a learner.
+
+Honestly, I don't believe my son would have passed his maths exam without Daniel's support. If you're looking for a tutor who combines expertise with genuine care, especially for a child who learns differently, Daniel is exceptional.`,
+    name: 'Ali',
+    job: 'August 2026',
+  },
+  {
+    title: 'A-level Further Mathematics',
+    board: 'OCR B (MEI)',
+    testimonial: `Daniel was amazing! There wasn’t a single question that he couldn’t answer whether it was about exams, entrance exams, how to optimise the use of a calculator, exam board specifications. He always showed me multiple ways of approaching problems — ways I was never even taught at school — which gave me a lot more confidence going into all of my exams. He’s very organised and designs his own questions tailored to each exam board so you can approach ones you’ve never seen before which is really helpful when you run out of past papers. I couldn’t recommend him more for anyone taking Further Maths at A-Level in any exam board.`,
+    name: 'D.',
+    job: 'August 2026',
+  },
+  {
+    title: 'A-level Mathematics',
+    board: 'Pearson Edexcel',
+    testimonial: `Daniel got me from an E to a B in one year. He created many worksheets and helped me with anything I needed help with from past paper questions to content. He was incredibly helpful and was always patient and guided me through all working. I could not recommend a better tutor!`,
+    name: 'Sophie',
+    job: 'August 2026',
+  },
+  {
     title: 'BEng Engineering',
+    board: 'The Open University',
     testimonial: `Daniel helped me with my first year modules for university level Engineering. I found lessons to be beneficial, enjoyable and confidence building. As someone who has low confidence in exams, I ended up exceeding my expectations with what grade I was able to achieve. I would recommend Daniel any day of the week and will be returning to him for my second year of university.`,
     name: 'Emily',
     job: 'July 2026',
@@ -40,8 +66,8 @@ export const testimonials: Testimonial[] = [
     job: 'November 2025',
   },
   {
-    title: 'A-Level Maths & Physics',
-    board: 'Edexcel Maths / AQA Physics',
+    title: 'A-level Mathematics & Physics',
+    board: 'Pearson Edexcel (Mathematics) / AQA (Physics)',
     testimonial: `Our son found himself in a position at senior school where he wanted — and needed — A level Maths in order to study Physics at university. The school would not allow him to switch subjects, so he decided to take the A level as a private candidate. We felt he would benefit from some additional tuition, and after meeting Daniel online, we engaged him as a private tutor.
 
 Daniel has been a fantastic tutor — always going the extra mile for our son. He even offered support with Physics from time to time and provided invaluable guidance on how to navigate the exam system as a private candidate.
