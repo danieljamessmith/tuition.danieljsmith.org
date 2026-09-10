@@ -51,16 +51,16 @@ const professionalStandards = [
   <HomeHero />
 
   <!-- Credentials Section -->
-  <section class="py-8 md:py-12 bg-section-gradient-reverse">
+  <section class="bg-section-gradient-reverse py-6 md:py-8 2xl:py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="max-w-6xl mx-auto grid gap-6 lg:grid-cols-2">
-        <div class="rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100 shadow-sm p-5 sm:p-6">
+      <div class="mx-auto grid max-w-5xl gap-5 lg:grid-cols-2 2xl:gap-6">
+        <div class="rounded-xl border border-gray-100 bg-white/80 p-5 shadow-sm backdrop-blur-sm 2xl:p-6">
           <div class="mb-5">
             <p class="text-sm font-bold uppercase tracking-wide text-emerald-700">Credentials</p>
-            <h2 class="mt-1 text-2xl font-bold tracking-normal text-gray-900">Academic Qualifications</h2>
+            <h2 class="mt-1 text-xl font-bold tracking-normal text-gray-900 2xl:text-2xl">Academic Qualifications</h2>
           </div>
 
-          <div class="space-y-4">
+          <div class="space-y-3 2xl:space-y-4">
             {
               qualifications.map((qual) => (
                 <div class="group flex gap-4 rounded-lg p-2 transition-colors hover:bg-emerald-50/60">
@@ -70,7 +70,7 @@ const professionalStandards = [
                     </div>
                   </div>
                   <div>
-                    <h3 class="text-lg font-semibold text-gray-900 group-hover:text-emerald-700 transition-colors">
+                    <h3 class="text-base font-semibold text-gray-900 transition-colors group-hover:text-emerald-700 2xl:text-lg">
                       {qual.title}
                     </h3>
                     <p class="text-gray-500 text-sm">{qual.institution}</p>
@@ -81,13 +81,13 @@ const professionalStandards = [
           </div>
         </div>
 
-        <div class="rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100 shadow-sm p-5 sm:p-6">
+        <div class="rounded-xl border border-gray-100 bg-white/80 p-5 shadow-sm backdrop-blur-sm 2xl:p-6">
           <div class="mb-5">
             <p class="text-sm font-bold uppercase tracking-wide text-emerald-700">Professional Standards</p>
-            <h2 class="mt-1 text-2xl font-bold tracking-normal text-gray-900">Safeguarding & Compliance</h2>
+            <h2 class="mt-1 text-xl font-bold tracking-normal text-gray-900 2xl:text-2xl">Safeguarding & Compliance</h2>
           </div>
 
-          <div class="space-y-4">
+          <div class="space-y-3 2xl:space-y-4">
             {
               professionalStandards.map((standard) => (
                 <div class="group flex gap-4 rounded-lg p-2 transition-colors hover:bg-emerald-50/60">
@@ -97,7 +97,7 @@ const professionalStandards = [
                     </div>
                   </div>
                   <div>
-                    <h3 class="text-lg font-semibold text-gray-900 group-hover:text-emerald-700 transition-colors">
+                    <h3 class="text-base font-semibold text-gray-900 transition-colors group-hover:text-emerald-700 2xl:text-lg">
                       {standard.title}
                     </h3>
                     <p class="text-gray-500 text-sm">{standard.detail}</p>

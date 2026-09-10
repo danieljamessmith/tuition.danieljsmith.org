@@ -158,6 +158,7 @@ export interface Testimonial {
   name?: string;
   job?: string;
   board?: string;
+  category?: 'Admissions' | 'A-level' | 'University' | 'GCSE & other';
   image?: string | unknown;
 }
 
@@ -226,6 +227,7 @@ export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' |
   content?: string;
   actions?: string | CallToAction[];
   image?: string | HeroImage;
+  compact?: boolean;
 }
 
 export interface Team extends Omit<Headline, 'classes'>, Widget {

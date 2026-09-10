@@ -12,6 +12,7 @@ const {
   content = await Astro.slots.render('content'),
   actions = await Astro.slots.render('actions'),
   image = await Astro.slots.render('image'),
+  compact = false,
 
   id,
   bg = await Astro.slots.render('bg'),
@@ -26,19 +27,32 @@ const {
   </div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-6 md:pt-[76px] pointer-events-none"></div>
-    <div class="py-10 md:py-14">
+    <div class:list={[compact ? 'py-8 md:py-10 2xl:py-14' : 'py-10 md:py-14']}>
       <div class="text-center max-w-5xl mx-auto">
         {tagline && <p class="text-base text-secondary font-bold tracking-wide uppercase" set:html={tagline} />}
         {
           title && (
             <h1
-              class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-gray-900"
+              class:list={[
+                'mb-4 font-heading text-3xl font-bold leading-tighter tracking-tighter text-gray-900',
+                compact ? '2xl:text-4xl' : 'md:text-4xl',
+              ]}
               set:html={title}
             />
           )
         }
         <div class="max-w-3xl mx-auto">
-          {subtitle && <p class="text-lg md:text-xl text-muted mb-6 leading-relaxed" set:html={subtitle} />}
+          {
+            subtitle && (
+              <p
+                class:list={[
+                  'mb-6 leading-relaxed text-muted',
+                  compact ? 'text-base md:text-lg 2xl:text-xl' : 'text-lg md:text-xl',
+                ]}
+                set:html={subtitle}
+              />
+            )
+          }
           {
             actions && (
               <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">

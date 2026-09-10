@@ -23,13 +23,28 @@ const {
 const formatTestimonial = (text: string): string => {
   return text.split('\n\n').join('<br><br>').split('\n').join('<br>');
 };
+
+const categoryOrder = ['Admissions', 'A-level', 'University', 'GCSE & other'] as const;
+const categorySummary = categoryOrder
+  .map((category) => ({
+    category,
+    count: testimonials.filter((testimonial) => testimonial.category === category).length,
+  }))
+  .filter(({ count }) => count > 0);
+
+const testimonialSummary = [
+  `${testimonials.length} testimonials`,
+  ...categorySummary.map(({ category, count }) => `${category} ${count}`),
+].join(' · ');
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-4xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
 
+  <p class="mx-auto mb-6 max-w-2xl text-center text-sm leading-relaxed text-gray-500">{testimonialSummary}</p>
+
   <!-- A grid preserves chronological source order across each row. -->
-  <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
+  <div class="mx-auto grid max-w-xl grid-cols-1 gap-5 md:max-w-none md:grid-cols-2 lg:gap-6">
     {
       testimonials &&
         testimonials.map(({ title, testimonial, name, job, board, image }) => {
@@ -38,48 +53,53 @@ const formatTestimonial = (text: string): string => {
               <div class="group relative flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
                 <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-400 opacity-80 group-hover:opacity-100 transition-opacity" />
 
-                <div class="p-6 md:p-8">
+                <div class="flex h-full flex-col p-5 lg:p-6">
                   <div
-                    class="absolute top-4 right-6 text-7xl font-serif text-emerald-100 leading-none select-none pointer-events-none"
+                    class="pointer-events-none absolute top-4 right-5 select-none font-serif text-6xl leading-none text-emerald-100"
                     aria-hidden="true"
                   >
                     &ldquo;
                   </div>
 
                   {testimonial && (
-                    <blockquote class="relative z-10 mb-6">
-                      <p class="text-gray-600 text-base leading-relaxed" set:html={formatTestimonial(testimonial)} />
+                    <blockquote class="relative z-10 mb-5">
+                      <p
+                        class="text-[0.9375rem] leading-relaxed text-gray-600"
+                        set:html={formatTestimonial(testimonial)}
+                      />
                     </blockquote>
                   )}
 
-                  <div class="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mb-5" />
+                  <div class="mt-auto">
+                    <div class="mb-4 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
 
-                  <div class="mb-4">
-                    {title && <h3 class="text-lg font-semibold text-gray-900 leading-snug mb-1">{title}</h3>}
-                    {board && <p class="text-sm text-emerald-700 font-medium">{board}</p>}
-                  </div>
+                    <div class="mb-3">
+                      {title && <h3 class="mb-1 text-base font-semibold leading-snug text-gray-900">{title}</h3>}
+                      {board && <p class="text-sm font-medium text-emerald-700">{board}</p>}
+                    </div>
 
-                  <div class="flex items-center mt-auto pt-2 border-t border-gray-100">
-                    {image && (
-                      <div class="h-10 w-10 rounded-full border-2 border-emerald-100 overflow-hidden flex-shrink-0">
-                        {typeof image === 'string' ? (
-                          <Fragment set:html={image} />
-                        ) : (
-                          <Image
-                            class="h-10 w-10 rounded-full min-w-full min-h-full object-cover"
-                            width={40}
-                            height={40}
-                            widths={[400, 768]}
-                            layout="fixed"
-                            {...image}
-                          />
-                        )}
+                    <div class="flex items-center border-t border-gray-100 pt-3">
+                      {image && (
+                        <div class="h-10 w-10 flex-shrink-0 overflow-hidden rounded-full border-2 border-emerald-100">
+                          {typeof image === 'string' ? (
+                            <Fragment set:html={image} />
+                          ) : (
+                            <Image
+                              class="min-h-full min-w-full rounded-full object-cover"
+                              width={40}
+                              height={40}
+                              widths={[400, 768]}
+                              layout="fixed"
+                              {...image}
+                            />
+                          )}
+                        </div>
+                      )}
+
+                      <div class={`grow ${image ? 'ml-3 rtl:ml-0 rtl:mr-3' : ''}`}>
+                        {name && <p class="text-sm font-semibold text-gray-900">{name}</p>}
+                        {job && <p class="text-xs text-gray-500">{job}</p>}
                       </div>
-                    )}
-
-                    <div class={`grow ${image ? 'ml-3 rtl:ml-0 rtl:mr-3' : ''}`}>
-                      {name && <p class="text-base font-semibold text-gray-900">{name}</p>}
-                      {job && <p class="text-sm text-gray-500">{job}</p>}
                     </div>
                   </div>
                 </div>
