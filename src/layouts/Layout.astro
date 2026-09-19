@@ -29,12 +29,6 @@ const { language, textDirection } = I18N;
   <head>
     <CommonMeta />
     <Favicons />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-      rel="stylesheet"
-    />
     <CustomStyles />
     <ApplyColorMode />
     <Metadata {...metadata} />
@@ -49,7 +43,7 @@ const { language, textDirection } = I18N;
     <ClientRouter fallback="swap" />
   </head>
 
-  <body class="antialiased text-default bg-page tracking-tight font-display">
+  <body class="antialiased text-default bg-page font-sans">
     <slot />
 
     <BasicScripts />
