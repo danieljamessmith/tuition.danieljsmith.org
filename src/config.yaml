@@ -18,7 +18,7 @@ metadata:
   openGraph:
     siteName: tuition.danieljsmith.org
     images:
-      - url: '~/assets/images/IMG_0976.JPG'
+      - url: '~/assets/images/daniel-social.jpg'
         width: 1200
         height: 628
     type: website
