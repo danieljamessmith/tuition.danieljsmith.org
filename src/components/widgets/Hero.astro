@@ -19,16 +19,16 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative md:-mt-[76px] not-prose overflow-hidden" {...id ? { id } : {}}>
+<section class="page-hero relative not-prose overflow-hidden" {...id ? { id } : {}}>
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <slot name="bg">
       {bg ? <Fragment set:html={bg} /> : <div class="absolute inset-0 bg-hero-pattern" />}
     </slot>
   </div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="pt-6 md:pt-[76px] pointer-events-none"></div>
+    <div class="hidden"></div>
     <div class:list={[compact ? 'py-8 md:py-10 2xl:py-14' : 'py-10 md:py-14']}>
-      <div class="text-center max-w-5xl mx-auto">
+      <div class="text-left max-w-5xl mx-auto">
         {tagline && <p class="text-base text-secondary font-bold tracking-wide uppercase" set:html={tagline} />}
         {
           title && (
@@ -41,7 +41,7 @@ const {
             />
           )
         }
-        <div class="max-w-3xl mx-auto">
+        <div class="max-w-3xl">
           {
             subtitle && (
               <p

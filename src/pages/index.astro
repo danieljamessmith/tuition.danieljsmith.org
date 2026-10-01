@@ -4,7 +4,7 @@ import HomeHero from '~/components/widgets/HomeHero.astro';
 import { Icon } from 'astro-icon/components';
 
 const metadata = {
-  title: 'Daniel James Smith | Further Maths & Admissions Tuition',
+  title: 'DJS Tuition | Maths, Physics & Admissions',
   ignoreTitleTemplate: true,
 };
 
@@ -54,7 +54,7 @@ const professionalStandards = [
   <section class="bg-section-gradient-reverse py-6 md:py-8 2xl:py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="mx-auto grid max-w-5xl gap-5 lg:grid-cols-2 2xl:gap-6">
-        <div class="rounded-xl border border-gray-100 bg-white/80 p-5 shadow-sm backdrop-blur-sm 2xl:p-6">
+        <div class="credential-panel">
           <div class="mb-5">
             <p class="text-sm font-bold uppercase tracking-wide text-emerald-700">Credentials</p>
             <h2 class="mt-1 text-xl font-heading font-normal tracking-normal text-gray-900 2xl:text-2xl">
@@ -67,7 +67,7 @@ const professionalStandards = [
               qualifications.map((qual) => (
                 <div class="group flex gap-4 rounded-lg p-2 transition-colors hover:bg-emerald-50/60">
                   <div class="flex-shrink-0 mt-0.5">
-                    <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-white shadow-sm">
+                    <div class="credential-icon">
                       <Icon name="tabler:check" class="w-4 h-4" />
                     </div>
                   </div>
@@ -83,7 +83,7 @@ const professionalStandards = [
           </div>
         </div>
 
-        <div class="rounded-xl border border-gray-100 bg-white/80 p-5 shadow-sm backdrop-blur-sm 2xl:p-6">
+        <div class="credential-panel">
           <div class="mb-5">
             <p class="text-sm font-bold uppercase tracking-wide text-emerald-700">Professional Standards</p>
             <h2 class="mt-1 text-xl font-heading font-normal tracking-normal text-gray-900 2xl:text-2xl">
@@ -96,7 +96,7 @@ const professionalStandards = [
               professionalStandards.map((standard) => (
                 <div class="group flex gap-4 rounded-lg p-2 transition-colors hover:bg-emerald-50/60">
                   <div class="flex-shrink-0 mt-0.5">
-                    <div class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-50 text-emerald-700 ring-1 ring-emerald-100">
+                    <div class="credential-icon">
                       <Icon name="tabler:shield-check" class="w-4 h-4" />
                     </div>
                   </div>

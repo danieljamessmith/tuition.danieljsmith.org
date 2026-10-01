@@ -3,54 +3,35 @@ import Image from '~/components/common/Image.astro';
 import { Icon } from 'astro-icon/components';
 ---
 
-<section class="relative md:-mt-[76px] not-prose overflow-hidden">
-  <div class="absolute inset-0 bg-hero-pattern" aria-hidden="true"></div>
-
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-    <div class="py-8 md:py-10 2xl:py-14">
-      <div class="max-w-5xl mx-auto">
-        <div class="flex flex-col gap-7 md:flex-row md:items-center md:gap-8 2xl:gap-12">
-          <!-- Headshot -->
-          <div class="flex-shrink-0 mx-auto md:mx-0">
-            <div class="relative">
-              <div
-                class="absolute -inset-2 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl opacity-20 blur-sm"
-                aria-hidden="true"
-              >
-              </div>
-              <Image
-                src="~/assets/images/daniel-profile.jpg"
-                alt="Daniel J. Smith - Mathematics and Physics Tutor"
-                width={288}
-                height={288}
-                class="relative h-48 w-48 rounded-2xl object-cover shadow-card-lg ring-4 ring-white md:h-52 md:w-52 2xl:h-72 2xl:w-72"
-                loading="eager"
-              />
-            </div>
-          </div>
-
-          <!-- Hero text -->
-          <div class="flex-1 text-center md:text-left">
-            <h1
-              class="mb-4 font-heading text-3xl font-normal leading-tight tracking-[-0.02em] text-balance text-gray-900 md:text-4xl 2xl:text-5xl"
-            >
-              Expert Mathematics and Physics Tuition
-            </h1>
-            <p class="mb-6 text-base leading-relaxed text-muted md:text-lg 2xl:mb-8 2xl:text-xl">
-              Cambridge MASt graduate with <span class="font-semibold text-emerald-700">2000+ hours'</span> experience helping
-              students excel in Maths, Further Maths and Physics. Entrance exams and admissions consultation.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <a class="btn-primary" href="/services">
-                <span>View Services</span>
-                <Icon name="tabler:arrow-right" class="w-4 h-4 ml-2" />
-              </a>
-              <a class="btn-secondary" href="/contact">Get in Touch</a>
-            </div>
-          </div>
-        </div>
+<section class="home-hero">
+  <div class="home-hero-inner">
+    <div class="home-introduction">
+      <p class="eyebrow">Independent online tuition</p>
+      <h1>Expert Mathematics<br />and Physics Tuition</h1>
+      <p class="hero-lede">
+        Cambridge MASt graduate with <strong>2000+ hours&rsquo;</strong> experience helping students excel in Maths, Further
+        Maths and Physics. Entrance exams and admissions consultation.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="/services"
+          >Tuition Services <Icon name="tabler:arrow-right" class="w-4 h-4 ml-3" /></a
+        >
+        <a class="btn-primary" href="/contact"
+          >Enquiries <Icon name="tabler:arrow-right" class="w-4 h-4 ml-3" /></a
+        >
       </div>
     </div>
+    <figure class="hero-portrait">
+      <div class="portrait-frame">
+        <Image
+          src="~/assets/images/daniel-profile.jpg"
+          alt="Daniel J. Smith - Mathematics and Physics Tutor"
+          width={360}
+          height={360}
+          class="portrait-image"
+          loading="eager"
+        />
+      </div>
+    </figure>
   </div>
 </section>

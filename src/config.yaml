@@ -9,8 +9,8 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: tuition.danieljsmith.org
-    template: '%s — tuition.danieljsmith.org'
+    default: DJS Tuition
+    template: '%s | DJS Tuition'
   description: 'Internationally oriented maths and physics tutor. Cambridge MASt graduate with 2000+ hours of experience supporting A-Level, Further Maths, undergraduate mathematics, admissions tests and more.'
   robots:
     index: true

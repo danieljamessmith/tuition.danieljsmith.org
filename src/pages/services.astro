@@ -16,8 +16,6 @@ const services = [
     description:
       'Preparation for TMUA, ESAT, STEP and related university entrance assessments, applications and interviews.',
     icon: 'tabler:certificate',
-    featured: true,
-    badge: 'Most Popular',
     items: [
       'Timed problem-solving practice',
       'Method selection and written reasoning',
@@ -29,7 +27,6 @@ const services = [
     description:
       'Specialist tuition in Mathematics, Further Mathematics and Physics across UK and international specifications.',
     icon: 'tabler:calculator',
-    featured: false,
     items: [
       'Edexcel, AQA, OCR A, OCR B (MEI) and Cambridge International',
       'Topic consolidation and problem-solving',
@@ -41,7 +38,6 @@ const services = [
     description:
       'Mathematics support for students on STEM degree programmes, including computational and applied work.',
     icon: 'tabler:books',
-    featured: false,
     items: [
       'Mathematical methods, applied mathematics and statistics',
       'Python, Jupyter and numerical methods',
@@ -53,7 +49,6 @@ const services = [
     description:
       'Tuition and assessment support for GCSE and other qualification routes, adapted to individual learning needs.',
     icon: 'tabler:clipboard-check',
-    featured: false,
     items: [
       'GCSE Mathematics and Physics',
       'IB, HND, BTEC and other programmes',
@@ -76,22 +71,10 @@ const services = [
       <div class="mx-auto grid max-w-4xl grid-cols-1 gap-5 md:grid-cols-2 lg:gap-6">
         {
           services.map((service) => (
-            <article
-              class={`group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover ${service.featured ? 'ring-2 ring-emerald-500 ring-offset-2 ring-offset-white shadow-glow-emerald' : 'border border-gray-100 shadow-card'}`}
-            >
-              {service.featured && service.badge && (
-                <div class="absolute right-0 top-0 z-10">
-                  <div class="rounded-bl-xl bg-gradient-to-r from-emerald-600 to-teal-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm">
-                    {service.badge}
-                  </div>
-                </div>
-              )}
-
+            <article class="service-panel">
               <div class="flex h-full flex-col p-5 md:p-6 2xl:p-8">
-                <div class="mb-3 flex items-center gap-3 pr-16 2xl:mb-4">
-                  <div
-                    class={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl transition-colors 2xl:h-12 2xl:w-12 ${service.featured ? 'bg-gradient-to-br from-emerald-500 to-teal-500 text-white' : 'bg-emerald-50 text-emerald-700 group-hover:bg-emerald-100'}`}
-                  >
+                <div class="mb-3 flex items-center gap-3 2xl:mb-4">
+                  <div class="service-icon">
                     <Icon name={service.icon} class="h-5 w-5 2xl:h-6 2xl:w-6" />
                   </div>
                   <h2 class="text-lg font-heading font-normal leading-snug text-gray-900 2xl:text-xl">
@@ -110,11 +93,8 @@ const services = [
                   ))}
                 </ul>
 
-                <a
-                  href="/contact"
-                  class={`mt-auto inline-flex w-full items-center justify-center rounded-lg px-6 py-2.5 text-sm font-medium transition-all duration-300 2xl:py-3 ${service.featured ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:from-emerald-600 hover:to-teal-600 hover:shadow-lg hover:shadow-emerald-500/25' : 'border border-gray-200 bg-gray-50 text-gray-700 hover:bg-emerald-50 hover:text-emerald-700'}`}
-                >
-                  Get Started
+                <a href="/contact" class="editorial-link mt-auto">
+                  Enquire about tuition
                   <Icon name="tabler:arrow-right" class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
               </div>
