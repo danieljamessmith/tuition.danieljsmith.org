@@ -15,7 +15,7 @@ export default defineConfig({
   output: 'static',
 
   redirects: {
-    '/pricing': '/services',
+    '/pricing': '/services/',
   },
 
   integrations: [
