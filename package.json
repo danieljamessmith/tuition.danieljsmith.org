@@ -20,34 +20,31 @@
     "fix:eslint": "eslint --fix .",
     "fix:prettier": "prettier -w ."
   },
-  "dependencies": {
-    "@astrojs/sitemap": "^3.7.4",
-    "astro": "^7.4.2",
-    "astro-icon": "^1.2.0",
-    "limax": "4.2.3",
-    "lodash.merge": "^4.6.2",
-    "unpic": "^4.2.2"
-  },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
+    "@astrojs/sitemap": "^3.7.4",
     "@eslint/js": "^10.0.1",
     "@iconify-json/flat-color-icons": "^1.2.3",
     "@iconify-json/tabler": "^1.2.37",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
-    "@types/js-yaml": "^4.0.9",
     "@types/lodash.merge": "^4.6.9",
+    "astro": "^7.4.2",
     "astro-eslint-parser": "^3.2.0",
+    "astro-icon": "^1.2.0",
     "eslint": "^10.8.0",
     "eslint-plugin-astro": "^3.2.1",
     "globals": "^17.7.0",
-    "js-yaml": "^4.3.0",
+    "limax": "4.2.3",
+    "lodash.merge": "^4.6.2",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^1.1.2",
     "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.3",
     "typescript": "~6.0.3",
     "typescript-eslint": "^8.65.0",
-    "unist-util-visit": "^5.1.0"
+    "unist-util-visit": "^5.1.0",
+    "unpic": "^4.2.2",
+    "yaml": "^2.9.1"
   }
 }
