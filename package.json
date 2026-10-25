@@ -4,7 +4,7 @@
   "description": "Professional tutoring website for Daniel J. Smith - Mathematics and Physics tuition",
   "type": "module",
   "engines": {
-    "node": ">=24 <25"
+    "node": ">=26"
   },
   "scripts": {
     "dev": "astro dev",
