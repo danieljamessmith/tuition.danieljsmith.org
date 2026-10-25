@@ -1,7 +1,9 @@
 ---
-import logoIcon from '~/assets/favicons/DJS_LOGO-01.png';
+// The favicon lives in public/ so it is served as a plain file: Astro 7.4
+// drops an image's original when another copy of it only has its size read
+// (the Open Graph image is the same logo), which lost the hashed favicon.
 ---
 
-<link rel="shortcut icon" href={logoIcon.src} />
-<link rel="icon" type="image/png" href={logoIcon.src} />
-<link rel="apple-touch-icon" sizes="180x180" href={logoIcon.src} />
+<link rel="shortcut icon" href="/favicon.png" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
