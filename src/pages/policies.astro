@@ -24,55 +24,51 @@ const metadata = {
                 Contents
               </h2>
               <ol class="mt-3 grid gap-x-8 gap-y-3 sm:grid-cols-2 2xl:mt-4">
-                {
-                  policySections.map((section) => (
-                    <li>
-                      <a
-                        href={`#${section.id}`}
-                        class="flex items-baseline gap-3 text-sm font-semibold leading-snug text-gray-900 transition-colors hover:text-emerald-700"
-                      >
-                        <span class="shrink-0 text-emerald-700">{section.number}.</span>
-                        <span>{section.title}</span>
-                      </a>
-                    </li>
-                  ))
-                }
+                {policySections.map((section) => (
+                  <li>
+                    <a
+                      href={`#${section.id}`}
+                      class="flex items-baseline gap-3 text-sm font-semibold leading-snug text-gray-900 transition-colors hover:text-emerald-700"
+                    >
+                      <span class="shrink-0 text-emerald-700">{section.number}.</span>
+                      <span>{section.title}</span>
+                    </a>
+                  </li>
+                ))}
               </ol>
             </nav>
           </header>
 
           <div class="mt-8 space-y-10 2xl:mt-10 2xl:space-y-14">
-            {
-              policySections.map((section) => (
-                <section id={section.id} class="scroll-mt-24">
-                  <div class="mb-3 border-b border-gray-100 pb-4">
-                    <h2 class="text-xl font-heading font-normal leading-tight tracking-normal text-gray-900 2xl:text-2xl">
-                      <a href={`#${section.id}`} class="transition-colors hover:text-emerald-700">
-                        <span class="text-emerald-700">{section.number}.</span> {section.title}
-                      </a>
-                    </h2>
-                  </div>
+            {policySections.map((section) => (
+              <section id={section.id} class="scroll-mt-24">
+                <div class="mb-3 border-b border-gray-100 pb-4">
+                  <h2 class="text-xl font-heading font-normal leading-tight tracking-normal text-gray-900 2xl:text-2xl">
+                    <a href={`#${section.id}`} class="transition-colors hover:text-emerald-700">
+                      <span class="text-emerald-700">{section.number}.</span> {section.title}
+                    </a>
+                  </h2>
+                </div>
 
-                  <ol class="divide-y divide-gray-100">
-                    {section.policies.map((policy) => (
-                      <li
-                        id={policy.id}
-                        class="scroll-mt-24 py-4 transition-colors target:rounded-lg target:bg-emerald-50 target:px-4 sm:grid sm:grid-cols-[3.5rem_minmax(0,1fr)] sm:gap-4 2xl:grid-cols-[4.25rem_minmax(0,1fr)] 2xl:gap-5 2xl:py-5"
+                <ol class="divide-y divide-gray-100">
+                  {section.policies.map((policy) => (
+                    <li
+                      id={policy.id}
+                      class="scroll-mt-24 py-4 transition-colors target:rounded-lg target:bg-emerald-50 target:px-4 sm:grid sm:grid-cols-[3.5rem_minmax(0,1fr)] sm:gap-4 2xl:grid-cols-[4.25rem_minmax(0,1fr)] 2xl:gap-5 2xl:py-5"
+                    >
+                      <a
+                        href={`#${policy.id}`}
+                        class="mb-2 inline-flex rounded-md px-0 py-1 text-sm font-bold text-emerald-700 transition-colors hover:text-emerald-900 sm:mb-0 sm:self-start"
+                        aria-label={`Policy ${policy.number}`}
                       >
-                        <a
-                          href={`#${policy.id}`}
-                          class="mb-2 inline-flex rounded-md px-0 py-1 text-sm font-bold text-emerald-700 transition-colors hover:text-emerald-900 sm:mb-0 sm:self-start"
-                          aria-label={`Policy ${policy.number}`}
-                        >
-                          {policy.number}
-                        </a>
-                        <p class="m-0 text-base leading-relaxed text-gray-700">{policy.text}</p>
-                      </li>
-                    ))}
-                  </ol>
-                </section>
-              ))
-            }
+                        {policy.number}
+                      </a>
+                      <p class="m-0 text-base leading-relaxed text-gray-700">{policy.text}</p>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            ))}
           </div>
         </article>
       </div>

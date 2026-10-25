@@ -69,38 +69,34 @@ const services = [
   <section class="bg-section-gradient py-6 md:py-8 2xl:py-12">
     <div class="mx-auto max-w-5xl px-4 sm:px-6">
       <div class="mx-auto grid max-w-4xl grid-cols-1 gap-5 md:grid-cols-2 lg:gap-6">
-        {
-          services.map((service) => (
-            <article class="service-panel">
-              <div class="flex h-full flex-col p-5 md:p-6 2xl:p-8">
-                <div class="mb-3 flex items-center gap-3 2xl:mb-4">
-                  <div class="service-icon">
-                    <Icon name={service.icon} class="h-5 w-5 2xl:h-6 2xl:w-6" />
-                  </div>
-                  <h2 class="text-lg font-heading font-normal leading-snug text-gray-900 2xl:text-xl">
-                    {service.name}
-                  </h2>
+        {services.map((service) => (
+          <article class="service-panel">
+            <div class="flex h-full flex-col p-5 md:p-6 2xl:p-8">
+              <div class="mb-3 flex items-center gap-3 2xl:mb-4">
+                <div class="service-icon">
+                  <Icon name={service.icon} class="h-5 w-5 2xl:h-6 2xl:w-6" />
                 </div>
-
-                <p class="mb-3 text-sm leading-relaxed text-gray-600 2xl:mb-4">{service.description}</p>
-
-                <ul class="mb-5 space-y-2 2xl:mb-6">
-                  {service.items.map((item) => (
-                    <li class="flex gap-2 text-sm leading-relaxed text-gray-600">
-                      <Icon name="tabler:check" class="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-600" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <a href="/contact/" class="editorial-link mt-auto">
-                  Enquire about tuition
-                  <Icon name="tabler:arrow-right" class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
+                <h2 class="text-lg font-heading font-normal leading-snug text-gray-900 2xl:text-xl">{service.name}</h2>
               </div>
-            </article>
-          ))
-        }
+
+              <p class="mb-3 text-sm leading-relaxed text-gray-600 2xl:mb-4">{service.description}</p>
+
+              <ul class="mb-5 space-y-2 2xl:mb-6">
+                {service.items.map((item) => (
+                  <li class="flex gap-2 text-sm leading-relaxed text-gray-600">
+                    <Icon name="tabler:check" class="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-600" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a href="/contact/" class="editorial-link mt-auto">
+                Enquire about tuition
+                <Icon name="tabler:arrow-right" class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   </section>

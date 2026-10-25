@@ -63,23 +63,21 @@ const professionalStandards = [
           </div>
 
           <div class="space-y-3 2xl:space-y-4">
-            {
-              qualifications.map((qual) => (
-                <div class="group flex gap-4 rounded-lg p-2 transition-colors hover:bg-emerald-50/60">
-                  <div class="flex-shrink-0 mt-0.5">
-                    <div class="credential-icon">
-                      <Icon name="tabler:check" class="w-4 h-4" />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 class="text-base font-semibold text-gray-900 transition-colors group-hover:text-emerald-700 2xl:text-lg">
-                      {qual.title}
-                    </h3>
-                    <p class="text-gray-500 text-sm">{qual.institution}</p>
+            {qualifications.map((qual) => (
+              <div class="group flex gap-4 rounded-lg p-2 transition-colors hover:bg-emerald-50/60">
+                <div class="flex-shrink-0 mt-0.5">
+                  <div class="credential-icon">
+                    <Icon name="tabler:check" class="w-4 h-4" />
                   </div>
                 </div>
-              ))
-            }
+                <div>
+                  <h3 class="text-base font-semibold text-gray-900 transition-colors group-hover:text-emerald-700 2xl:text-lg">
+                    {qual.title}
+                  </h3>
+                  <p class="text-gray-500 text-sm">{qual.institution}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -92,23 +90,21 @@ const professionalStandards = [
           </div>
 
           <div class="space-y-3 2xl:space-y-4">
-            {
-              professionalStandards.map((standard) => (
-                <div class="group flex gap-4 rounded-lg p-2 transition-colors hover:bg-emerald-50/60">
-                  <div class="flex-shrink-0 mt-0.5">
-                    <div class="credential-icon">
-                      <Icon name="tabler:shield-check" class="w-4 h-4" />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 class="text-base font-semibold text-gray-900 transition-colors group-hover:text-emerald-700 2xl:text-lg">
-                      {standard.title}
-                    </h3>
-                    <p class="text-gray-500 text-sm">{standard.detail}</p>
+            {professionalStandards.map((standard) => (
+              <div class="group flex gap-4 rounded-lg p-2 transition-colors hover:bg-emerald-50/60">
+                <div class="flex-shrink-0 mt-0.5">
+                  <div class="credential-icon">
+                    <Icon name="tabler:shield-check" class="w-4 h-4" />
                   </div>
                 </div>
-              ))
-            }
+                <div>
+                  <h3 class="text-base font-semibold text-gray-900 transition-colors group-hover:text-emerald-700 2xl:text-lg">
+                    {standard.title}
+                  </h3>
+                  <p class="text-gray-500 text-sm">{standard.detail}</p>
+                </div>
+              </div>
+            ))}
           </div>
 
           <a

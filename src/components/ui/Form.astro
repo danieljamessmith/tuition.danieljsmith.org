@@ -11,118 +11,106 @@ const { inputs, selects, textarea, disclaimer, button = 'Send enquiry', descript
   <input type="hidden" name="subject" value="New Contact Form Submission from danieljsmith.org" />
   <input type="hidden" name="from_name" value="Daniel J Smith Tuition Website" />
 
-  {
-    inputs &&
-      inputs.map(
-        ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
-          name && (
-            <div class="mb-5">
-              {label && (
-                <label for={name} class="block text-sm font-medium text-gray-700 mb-1.5">
-                  {label}
-                </label>
-              )}
-              <input
-                type={type}
-                name={name}
-                id={name}
-                autocomplete={autocomplete}
-                placeholder={placeholder}
-                required
-                class="py-3 px-4 block w-full text-base rounded-sm border border-gray-200 bg-gray-50 text-gray-900 transition-all duration-200 focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:bg-white outline-none placeholder:text-gray-400"
-              />
-            </div>
-          )
-      )
-  }
+  {inputs &&
+    inputs.map(
+      ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
+        name && (
+          <div class="mb-5">
+            {label && (
+              <label for={name} class="block text-sm font-medium text-gray-700 mb-1.5">
+                {label}
+              </label>
+            )}
+            <input
+              type={type}
+              name={name}
+              id={name}
+              autocomplete={autocomplete}
+              placeholder={placeholder}
+              required
+              class="py-3 px-4 block w-full text-base rounded-sm border border-gray-200 bg-gray-50 text-gray-900 transition-all duration-200 focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:bg-white outline-none placeholder:text-gray-400"
+            />
+          </div>
+        )
+    )}
 
-  {
-    selects &&
-      selects.map(({ name, label, options }) => (
-        <div class="mb-5">
-          {label && (
-            <label for={name} class="block text-sm font-medium text-gray-700 mb-1.5">
-              {label}
-            </label>
-          )}
-          <select
-            name={name}
-            id={name}
-            required
-            class="py-3 px-4 block w-full text-base rounded-sm border border-gray-200 bg-gray-50 text-gray-900 transition-all duration-200 focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:bg-white outline-none cursor-pointer"
-          >
-            {options.map((option) => (
-              <option value={option.value} disabled={option.value === ''}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </div>
-      ))
-  }
-
-  {
-    textarea && (
+  {selects &&
+    selects.map(({ name, label, options }) => (
       <div class="mb-5">
-        <label for="textarea" class="block text-sm font-medium text-gray-700 mb-1.5">
-          {textarea.label}
-        </label>
-        <textarea
-          id="textarea"
-          name={textarea.name ? textarea.name : 'message'}
-          rows={textarea.rows ? textarea.rows : 4}
-          placeholder={textarea.placeholder}
+        {label && (
+          <label for={name} class="block text-sm font-medium text-gray-700 mb-1.5">
+            {label}
+          </label>
+        )}
+        <select
+          name={name}
+          id={name}
           required
-          class="py-3 px-4 block w-full text-base rounded-sm border border-gray-200 bg-gray-50 text-gray-900 transition-all duration-200 focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:bg-white outline-none resize-y placeholder:text-gray-400"
+          class="py-3 px-4 block w-full text-base rounded-sm border border-gray-200 bg-gray-50 text-gray-900 transition-all duration-200 focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:bg-white outline-none cursor-pointer"
+        >
+          {options.map((option) => (
+            <option value={option.value} disabled={option.value === ''}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+      </div>
+    ))}
+
+  {textarea && (
+    <div class="mb-5">
+      <label for="textarea" class="block text-sm font-medium text-gray-700 mb-1.5">
+        {textarea.label}
+      </label>
+      <textarea
+        id="textarea"
+        name={textarea.name ? textarea.name : 'message'}
+        rows={textarea.rows ? textarea.rows : 4}
+        placeholder={textarea.placeholder}
+        required
+        class="py-3 px-4 block w-full text-base rounded-sm border border-gray-200 bg-gray-50 text-gray-900 transition-all duration-200 focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:bg-white outline-none resize-y placeholder:text-gray-400"
+      />
+    </div>
+  )}
+
+  {disclaimer && (
+    <div class="mt-4 flex items-start">
+      <div class="flex mt-0.5">
+        <input
+          id="disclaimer"
+          name="disclaimer"
+          type="checkbox"
+          required
+          class="cursor-pointer w-5 h-5 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500 focus:ring-offset-0 transition-colors"
         />
       </div>
-    )
-  }
-
-  {
-    disclaimer && (
-      <div class="mt-4 flex items-start">
-        <div class="flex mt-0.5">
-          <input
-            id="disclaimer"
-            name="disclaimer"
-            type="checkbox"
-            required
-            class="cursor-pointer w-5 h-5 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500 focus:ring-offset-0 transition-colors"
-          />
-        </div>
-        <div class="ml-3">
-          <label for="disclaimer" class="cursor-pointer text-sm text-gray-600 leading-relaxed">
-            <span>{disclaimer.label}</span>
-          </label>
-          {disclaimer.href && (
-            <a
-              href={disclaimer.href}
-              class="ml-1 text-sm font-medium text-emerald-700 hover:text-emerald-800 hover:underline"
-            >
-              {disclaimer.linkText ?? 'View policies'}
-            </a>
-          )}
-        </div>
+      <div class="ml-3">
+        <label for="disclaimer" class="cursor-pointer text-sm text-gray-600 leading-relaxed">
+          <span>{disclaimer.label}</span>
+        </label>
+        {disclaimer.href && (
+          <a
+            href={disclaimer.href}
+            class="ml-1 text-sm font-medium text-emerald-700 hover:text-emerald-800 hover:underline"
+          >
+            {disclaimer.linkText ?? 'View policies'}
+          </a>
+        )}
       </div>
-    )
-  }
+    </div>
+  )}
 
-  {
-    button && (
-      <div class="mt-10 grid">
-        <Button variant="primary" type="submit">
-          {button}
-        </Button>
-      </div>
-    )
-  }
+  {button && (
+    <div class="mt-10 grid">
+      <Button variant="primary" type="submit">
+        {button}
+      </Button>
+    </div>
+  )}
 
-  {
-    description && (
-      <div class="mt-3 text-center">
-        <p class="text-sm text-gray-600">{description}</p>
-      </div>
-    )
-  }
+  {description && (
+    <div class="mt-3 text-center">
+      <p class="text-sm text-gray-600">{description}</p>
+    </div>
+  )}
 </form>

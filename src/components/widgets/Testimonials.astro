@@ -45,73 +45,69 @@ const testimonialSummary = [
 
   <!-- A grid preserves chronological source order across each row. -->
   <div class="mx-auto grid max-w-xl grid-cols-1 gap-5 md:max-w-none md:grid-cols-2 lg:gap-6">
-    {
-      testimonials &&
-        testimonials.map(({ title, testimonial, name, job, board, image }) => {
-          return (
-            <div>
-              <div class="testimonial-panel relative flex h-full flex-col">
-                <div class="flex h-full flex-col p-5 lg:p-6">
-                  <div
-                    class="pointer-events-none absolute top-4 right-5 select-none font-serif text-6xl leading-none text-emerald-100"
-                    aria-hidden="true"
-                  >
-                    &ldquo;
+    {testimonials &&
+      testimonials.map(({ title, testimonial, name, job, board, image }) => {
+        return (
+          <div>
+            <div class="testimonial-panel relative flex h-full flex-col">
+              <div class="flex h-full flex-col p-5 lg:p-6">
+                <div
+                  class="pointer-events-none absolute top-4 right-5 select-none font-serif text-6xl leading-none text-emerald-100"
+                  aria-hidden="true"
+                >
+                  &ldquo;
+                </div>
+
+                {testimonial && (
+                  <blockquote class="relative z-10 mb-5">
+                    <p
+                      class="text-[0.9375rem] leading-relaxed text-gray-600"
+                      set:html={formatTestimonial(testimonial)}
+                    />
+                  </blockquote>
+                )}
+
+                <div class="mt-auto">
+                  <div class="mb-4 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+
+                  <div class="mb-3">
+                    {title && <h3 class="mb-1 text-base font-semibold leading-snug text-gray-900">{title}</h3>}
+                    {board && <p class="text-sm font-medium text-emerald-700">{board}</p>}
                   </div>
 
-                  {testimonial && (
-                    <blockquote class="relative z-10 mb-5">
-                      <p
-                        class="text-[0.9375rem] leading-relaxed text-gray-600"
-                        set:html={formatTestimonial(testimonial)}
-                      />
-                    </blockquote>
-                  )}
-
-                  <div class="mt-auto">
-                    <div class="mb-4 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
-
-                    <div class="mb-3">
-                      {title && <h3 class="mb-1 text-base font-semibold leading-snug text-gray-900">{title}</h3>}
-                      {board && <p class="text-sm font-medium text-emerald-700">{board}</p>}
-                    </div>
-
-                    <div class="flex items-center border-t border-gray-100 pt-3">
-                      {image && (
-                        <div class="h-10 w-10 flex-shrink-0 overflow-hidden rounded-full border-2 border-emerald-100">
-                          {typeof image === 'string' ? (
-                            <Fragment set:html={image} />
-                          ) : (
-                            <Image
-                              class="min-h-full min-w-full rounded-full object-cover"
-                              width={40}
-                              height={40}
-                              widths={[400, 768]}
-                              layout="fixed"
-                              {...image}
-                            />
-                          )}
-                        </div>
-                      )}
-
-                      <div class={`grow ${image ? 'ml-3 rtl:ml-0 rtl:mr-3' : ''}`}>
-                        {name && <p class="text-sm font-semibold text-gray-900">{name}</p>}
-                        {job && <p class="text-xs text-gray-500">{job}</p>}
+                  <div class="flex items-center border-t border-gray-100 pt-3">
+                    {image && (
+                      <div class="h-10 w-10 flex-shrink-0 overflow-hidden rounded-full border-2 border-emerald-100">
+                        {typeof image === 'string' ? (
+                          <Fragment set:html={image} />
+                        ) : (
+                          <Image
+                            class="min-h-full min-w-full rounded-full object-cover"
+                            width={40}
+                            height={40}
+                            widths={[400, 768]}
+                            layout="fixed"
+                            {...image}
+                          />
+                        )}
                       </div>
+                    )}
+
+                    <div class={`grow ${image ? 'ml-3 rtl:ml-0 rtl:mr-3' : ''}`}>
+                      {name && <p class="text-sm font-semibold text-gray-900">{name}</p>}
+                      {job && <p class="text-xs text-gray-500">{job}</p>}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          );
-        })
-    }
+          </div>
+        );
+      })}
   </div>
-  {
-    callToAction && (
-      <div class="flex justify-center mx-auto w-fit mt-8 md:mt-12 font-medium">
-        <Button {...callToAction} />
-      </div>
-    )
-  }
+  {callToAction && (
+    <div class="flex justify-center mx-auto w-fit mt-8 md:mt-12 font-medium">
+      <Button {...callToAction} />
+    </div>
+  )}
 </WidgetWrapper>

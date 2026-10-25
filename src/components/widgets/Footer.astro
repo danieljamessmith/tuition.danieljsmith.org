@@ -49,47 +49,41 @@ const currentYear = new Date().getFullYear();
         >
           {SITE?.name}
         </a>
-        <p class="mt-2 text-sm text-gray-500">
-          &copy; {currentYear} DJS Tuition. All rights reserved.
-        </p>
+        <p class="mt-2 text-sm text-gray-500">&copy; {currentYear} DJS Tuition. All rights reserved.</p>
       </div>
 
       <!-- Quick links -->
       <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
-        {
-          links.map(({ text, href, external }) => (
-            <a
-              href={href}
-              class="text-sm text-gray-600 hover:text-emerald-700 transition-colors"
-              {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-            >
-              {text}
-            </a>
-          ))
-        }
+        {links.map(({ text, href, external }) => (
+          <a
+            href={href}
+            class="text-sm text-gray-600 hover:text-emerald-700 transition-colors"
+            {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          >
+            {text}
+          </a>
+        ))}
       </nav>
 
       <!-- Social links -->
-      {
-        socialLinks?.length > 0 && (
-          <div class="flex justify-center gap-3">
-            {socialLinks.map(({ ariaLabel, href, icon }) => {
-              const logoSvg = getSocialLogo(icon);
-              return logoSvg ? (
-                <a
-                  class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-gray-600 hover:bg-emerald-100 hover:text-emerald-700 transition-colors"
-                  aria-label={ariaLabel}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span class="w-5 h-5" set:html={logoSvg} />
-                </a>
-              ) : null;
-            })}
-          </div>
-        )
-      }
+      {socialLinks?.length > 0 && (
+        <div class="flex justify-center gap-3">
+          {socialLinks.map(({ ariaLabel, href, icon }) => {
+            const logoSvg = getSocialLogo(icon);
+            return logoSvg ? (
+              <a
+                class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-gray-600 hover:bg-emerald-100 hover:text-emerald-700 transition-colors"
+                aria-label={ariaLabel}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="w-5 h-5" set:html={logoSvg} />
+              </a>
+            ) : null;
+          })}
+        </div>
+      )}
     </div>
   </div>
 </footer>
