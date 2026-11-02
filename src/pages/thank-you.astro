@@ -1,0 +1,25 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+
+const metadata = {
+  title: 'Thank You',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero>
+    <Fragment slot="title">Thank You</Fragment>
+    <Fragment slot="subtitle">Your enquiry has been submitted successfully.</Fragment>
+  </Hero>
+
+  <div class="flex justify-center pb-16 md:pb-20">
+    <a href="/" class="text-primary hover:underline text-lg font-medium">
+      ← Return to homepage
+    </a>
+  </div>
+</Layout>

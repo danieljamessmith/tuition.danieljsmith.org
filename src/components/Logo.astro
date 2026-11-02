@@ -1,0 +1,18 @@
+---
+import { SITE } from 'astrowind:config';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<span
+  class:list={[
+    'self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-heading font-normal text-white whitespace-nowrap transition-colors duration-300',
+    className,
+  ]}
+>
+  {SITE?.name}
+</span>

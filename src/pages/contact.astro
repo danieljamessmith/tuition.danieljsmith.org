@@ -1,0 +1,67 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+
+const metadata = {
+  title: 'Contact',
+  description: 'Enquire about online maths, physics, admissions, or university-level tuition.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero title="Enquiries" subtitle="Share the subject, level and goals you would like support with." />
+
+  <section class="bg-section-gradient-reverse pb-12 md:pb-16">
+    <ContactUs
+      id="form"
+      inputs={[
+        {
+          type: 'text',
+          name: 'name',
+          label: 'Name',
+        },
+        {
+          type: 'email',
+          name: 'email',
+          label: 'Email',
+        },
+      ]}
+      selects={[
+        {
+          name: 'tuition_subject',
+          label: 'Subject',
+          options: [
+            { value: '', label: 'Please select...' },
+            { value: 'further-mathematics', label: 'Further Mathematics' },
+            { value: 'mathematics', label: 'Mathematics' },
+            { value: 'physics', label: 'Physics' },
+            { value: 'other', label: 'Other' },
+          ],
+        },
+        {
+          name: 'level',
+          label: 'Level',
+          options: [
+            { value: '', label: 'Please select...' },
+            { value: 'a-level', label: 'A-Level' },
+            { value: 'university-admissions', label: 'University Admissions' },
+            { value: 'undergraduate', label: 'Undergraduate' },
+            { value: 'graduate', label: 'Graduate' },
+            { value: 'gcse', label: 'GCSE' },
+            { value: 'other', label: 'Other' },
+          ],
+        },
+      ]}
+      textarea={{
+        label: 'Message',
+      }}
+      disclaimer={{
+        label: 'By submitting this form, you acknowledge the collection and handling of your personal information.',
+        href: '/policies/#section-4',
+        linkText: 'View safeguarding and data policies.',
+      }}
+      description="I typically reply within 24 hours."
+    />
+  </section>
+</Layout>

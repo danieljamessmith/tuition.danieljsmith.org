@@ -1,0 +1,25 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import TestimonialsWidget from '~/components/widgets/Testimonials.astro';
+import { testimonials } from '~/data/testimonials';
+
+const metadata = {
+  title: 'Testimonials',
+  description: 'Student and parent testimonials for mathematics, physics, admissions and university-level tuition.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero tagline="Testimonials">
+    <Fragment slot="title">What Students Say</Fragment>
+  </Hero>
+
+  <!-- Testimonials Widget ******************* -->
+
+  <section class="bg-section-gradient pb-8 md:pb-12">
+    <TestimonialsWidget testimonials={testimonials} />
+  </section>
+</Layout>

@@ -1,0 +1,35 @@
+site:
+  name: tuition.danieljsmith.org
+  site: 'https://tuition.danieljsmith.org'
+  base: '/'
+  trailingSlash: true
+
+  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+
+# Default SEO metadata
+metadata:
+  title:
+    default: DJS Tuition
+    template: '%s | DJS Tuition'
+  description: 'Internationally oriented maths and physics tutor. Cambridge MASt graduate with 2000+ hours of experience supporting A-Level, Further Maths, undergraduate mathematics, admissions tests and more.'
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    siteName: tuition.danieljsmith.org
+    images:
+      - url: '~/assets/images/djs-logo.png'
+        width: 693
+        height: 695
+    type: website
+  twitter:
+    handle: null
+    site: null
+    cardType: summary
+
+i18n:
+  language: en
+  textDirection: ltr
+
+ui:
+  theme: 'light:only' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"

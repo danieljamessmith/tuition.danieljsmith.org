@@ -1,0 +1,29 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+
+import { headerData } from '~/navigation';
+
+import type { MetaData } from '~/types';
+
+export interface Props {
+  metadata?: MetaData;
+}
+
+const { metadata } = Astro.props;
+---
+
+<Layout metadata={metadata}>
+  <div class="flex flex-col min-h-screen bg-page">
+    <slot name="header">
+      <Header {...headerData} isSticky />
+    </slot>
+    <main class="flex-1">
+      <slot />
+    </main>
+    <slot name="footer">
+      <Footer socialLinks={headerData.socialLinks} />
+    </slot>
+  </div>
+</Layout>

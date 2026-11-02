@@ -1,0 +1,121 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HomeHero from '~/components/widgets/HomeHero.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'DJS Tuition | Maths, Physics & Admissions',
+  ignoreTitleTemplate: true,
+};
+
+const qualifications = [
+  {
+    title: 'MASt Applied Mathematics (2023)',
+    institution: "University of Cambridge, St Catharine's College",
+  },
+  {
+    title: 'BSc Mathematics & Physics (2022)',
+    institution: 'University of Warwick',
+  },
+  {
+    title: 'CertHE Mathematical Physics (2020)',
+    institution: 'University of Nottingham',
+  },
+];
+
+const professionalStandards = [
+  {
+    title: 'Enhanced DBS certificate',
+    detail: 'Child Workforce',
+  },
+  {
+    title: 'DBS Update Service',
+    detail: 'Registered for ongoing status checks',
+  },
+  {
+    title: 'Information Commissioner’s Office',
+    detail: 'Registered with the ICO',
+  },
+  {
+    title: 'Professional indemnity insurance',
+    detail: 'Cover in place for private tuition work',
+  },
+  {
+    title: 'Safeguarding training',
+    detail: 'Completed and kept under review',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <HomeHero />
+
+  <!-- Credentials Section -->
+  <section class="bg-section-gradient-reverse py-6 md:py-8 2xl:py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="mx-auto grid max-w-5xl gap-5 lg:grid-cols-2 2xl:gap-6">
+        <div class="credential-panel">
+          <div class="mb-5">
+            <p class="text-sm font-bold uppercase tracking-wide text-emerald-700">Credentials</p>
+            <h2 class="mt-1 text-xl font-heading font-normal tracking-normal text-gray-900 2xl:text-2xl">
+              Academic Qualifications
+            </h2>
+          </div>
+
+          <div class="space-y-3 2xl:space-y-4">
+            {qualifications.map((qual) => (
+              <div class="group flex gap-4 rounded-lg p-2 transition-colors hover:bg-emerald-50/60">
+                <div class="flex-shrink-0 mt-0.5">
+                  <div class="credential-icon">
+                    <Icon name="tabler:check" class="w-4 h-4" />
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-base font-semibold text-gray-900 transition-colors group-hover:text-emerald-700 2xl:text-lg">
+                    {qual.title}
+                  </h3>
+                  <p class="text-gray-500 text-sm">{qual.institution}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="credential-panel">
+          <div class="mb-5">
+            <p class="text-sm font-bold uppercase tracking-wide text-emerald-700">Professional Standards</p>
+            <h2 class="mt-1 text-xl font-heading font-normal tracking-normal text-gray-900 2xl:text-2xl">
+              Safeguarding & Compliance
+            </h2>
+          </div>
+
+          <div class="space-y-3 2xl:space-y-4">
+            {professionalStandards.map((standard) => (
+              <div class="group flex gap-4 rounded-lg p-2 transition-colors hover:bg-emerald-50/60">
+                <div class="flex-shrink-0 mt-0.5">
+                  <div class="credential-icon">
+                    <Icon name="tabler:shield-check" class="w-4 h-4" />
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-base font-semibold text-gray-900 transition-colors group-hover:text-emerald-700 2xl:text-lg">
+                    {standard.title}
+                  </h3>
+                  <p class="text-gray-500 text-sm">{standard.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="/policies/#section-4"
+            class="mt-5 inline-flex items-center text-sm font-semibold text-emerald-700 transition-colors hover:text-emerald-900"
+          >
+            View safeguarding and data policies
+            <Icon name="tabler:arrow-right" class="w-4 h-4 ml-1.5" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
