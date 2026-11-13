@@ -183,6 +183,24 @@ export interface Select {
   options: Array<{ value: string; label: string }>;
 }
 
+/** One kind of enquiry the contact form takes: its own fields and wording. */
+export interface Enquiry {
+  /** The value a link gives as `?enquiry=`, and the form sends as `enquiry_type`. */
+  id: string;
+  /** Its name on the form's picker. */
+  label: string;
+  /** The page's subtitle while it is chosen. */
+  subtitle?: string;
+  /** How the email's subject line starts. */
+  subject: string;
+  /** The fields only this enquiry has. */
+  selects?: Array<Select>;
+  /** The select, by name, that a link's `?topic=` chooses and the subject line names. */
+  topicField?: string;
+  /** The message box's hint while it is chosen. */
+  messagePlaceholder?: string;
+}
+
 export interface Disclaimer {
   label?: string;
   href?: string;
@@ -216,6 +234,7 @@ export interface Collapse {
 export interface Form {
   inputs?: Array<Input>;
   selects?: Array<Select>;
+  enquiries?: Array<Enquiry>;
   textarea?: Textarea;
   disclaimer?: Disclaimer;
   button?: string;

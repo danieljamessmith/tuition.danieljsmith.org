@@ -2,15 +2,17 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
+import { enquiries } from '~/data/enquiries';
 
 const metadata = {
   title: 'Contact',
-  description: 'Enquire about online maths, physics, admissions, or university-level tuition.',
+  description:
+    'Enquire about online maths, physics, admissions or university-level tuition, or about resources written for a student, school or organisation.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <Hero title="Enquiries" subtitle="Share the subject, level and goals you would like support with." />
+  <Hero title="Enquiries" subtitle={`<span data-enquiry-subtitle>${enquiries[0].subtitle}</span>`} />
 
   <section class="bg-section-gradient-reverse pb-12 md:pb-16">
     <ContactUs
@@ -27,32 +29,7 @@ const metadata = {
           label: 'Email',
         },
       ]}
-      selects={[
-        {
-          name: 'tuition_subject',
-          label: 'Subject',
-          options: [
-            { value: '', label: 'Please select...' },
-            { value: 'further-mathematics', label: 'Further Mathematics' },
-            { value: 'mathematics', label: 'Mathematics' },
-            { value: 'physics', label: 'Physics' },
-            { value: 'other', label: 'Other' },
-          ],
-        },
-        {
-          name: 'level',
-          label: 'Level',
-          options: [
-            { value: '', label: 'Please select...' },
-            { value: 'a-level', label: 'A-Level' },
-            { value: 'university-admissions', label: 'University Admissions' },
-            { value: 'undergraduate', label: 'Undergraduate' },
-            { value: 'graduate', label: 'Graduate' },
-            { value: 'gcse', label: 'GCSE' },
-            { value: 'other', label: 'Other' },
-          ],
-        },
-      ]}
+      enquiries={enquiries}
       textarea={{
         label: 'Message',
       }}

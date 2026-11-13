@@ -348,6 +348,57 @@ footer a:hover {
 #contact-form input[type='checkbox'] {
   accent-color: #245442;
 }
+/* The enquiry picker: one row of choices, the chosen one filled. */
+.enquiry-picker {
+  min-width: 0;
+  border: 0;
+  padding: 0;
+}
+.enquiry-options {
+  display: flex;
+  border: 1px solid #899587;
+  border-radius: 2px;
+  background: #fffefa;
+}
+.enquiry-option {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  cursor: pointer;
+}
+.enquiry-option + .enquiry-option {
+  border-left: 1px solid #899587;
+}
+.enquiry-option input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.enquiry-option span {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  font-size: 15px;
+  line-height: 1.25;
+  text-align: center;
+  color: #244332;
+}
+.enquiry-option:hover span {
+  background: #f3f4ed;
+}
+.enquiry-option input:checked + span {
+  background: #245442;
+  color: #fffefa;
+  font-weight: 600;
+}
+.enquiry-option input:focus-visible + span {
+  outline: 3px solid #245442;
+  outline-offset: 2px;
+}
 .testimonial-panel {
   background: #fffefa;
   border-top: 1px solid #8da381;

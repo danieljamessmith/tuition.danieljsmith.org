@@ -10,6 +10,7 @@ const {
   tagline = await Astro.slots.render('tagline'),
   inputs,
   selects,
+  enquiries,
   textarea,
   disclaimer,
   button,
@@ -30,6 +31,7 @@ const {
       <FormContainer
         inputs={inputs}
         selects={selects}
+        enquiries={enquiries}
         textarea={textarea}
         disclaimer={disclaimer}
         button={button}

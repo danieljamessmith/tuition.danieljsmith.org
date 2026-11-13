@@ -2,14 +2,55 @@
 import type { Form as Props } from '~/types';
 import Button from '~/components/ui/Button.astro';
 
-const { inputs, selects, textarea, disclaimer, button = 'Send enquiry', description = '' } = Astro.props;
+const { inputs, selects, enquiries, textarea, disclaimer, button = 'Send enquiry', description = '' } = Astro.props;
+
+const SUBJECT_FROM = 'from danieljsmith.org';
+const firstEnquiry = enquiries?.[0];
+
+// The selects every enquiry has, then each enquiry's own. Only the first
+// enquiry's are shown and sent until the script below switches them, so
+// without scripts the form is that enquiry's alone.
+const selectGroups = [
+  { enquiry: undefined, on: true, selects: selects ?? [] },
+  ...(enquiries ?? []).map(({ id, selects: own = [] }, index) => ({ enquiry: id, on: index === 0, selects: own })),
+].filter((group) => group.selects.length);
+
+const controlClass =
+  'py-3 px-4 block w-full text-base rounded-sm border border-gray-200 bg-gray-50 text-gray-900 transition-all duration-200 focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:bg-white outline-none';
 ---
 
-<form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+<form action="https://api.web3forms.com/submit" method="POST" id="contact-form" data-subject-from={SUBJECT_FROM}>
   <input type="hidden" name="access_key" value="78977e42-5cdb-4969-bf0e-9d3a9762ff81" />
   <input type="hidden" name="redirect" value="https://tuition.danieljsmith.org/thank-you" />
-  <input type="hidden" name="subject" value="New Contact Form Submission from danieljsmith.org" />
+  <input
+    type="hidden"
+    name="subject"
+    value={firstEnquiry ? `${firstEnquiry.subject} ${SUBJECT_FROM}` : `New Contact Form Submission ${SUBJECT_FROM}`}
+  />
   <input type="hidden" name="from_name" value="Daniel J Smith Tuition Website" />
+
+  {enquiries && enquiries.length > 1 && (
+    <fieldset class="enquiry-picker mb-6" hidden>
+      <legend class="block text-sm font-medium text-gray-700 mb-1.5">What is your enquiry about?</legend>
+      <div class="enquiry-options">
+        {enquiries.map(({ id, label, subtitle, subject, topicField, messagePlaceholder }, index) => (
+          <label class="enquiry-option">
+            <input
+              type="radio"
+              name="enquiry_type"
+              value={id}
+              checked={index === 0}
+              data-subject={subject}
+              data-subtitle={subtitle}
+              data-topic-field={topicField}
+              data-message-placeholder={messagePlaceholder ?? ''}
+            />
+            <span>{label}</span>
+          </label>
+        ))}
+      </div>
+    </fieldset>
+  )}
 
   {inputs &&
     inputs.map(
@@ -28,34 +69,32 @@ const { inputs, selects, textarea, disclaimer, button = 'Send enquiry', descript
               autocomplete={autocomplete}
               placeholder={placeholder}
               required
-              class="py-3 px-4 block w-full text-base rounded-sm border border-gray-200 bg-gray-50 text-gray-900 transition-all duration-200 focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:bg-white outline-none placeholder:text-gray-400"
+              class={`${controlClass} placeholder:text-gray-400`}
             />
           </div>
         )
     )}
 
-  {selects &&
-    selects.map(({ name, label, options }) => (
-      <div class="mb-5">
-        {label && (
-          <label for={name} class="block text-sm font-medium text-gray-700 mb-1.5">
-            {label}
-          </label>
-        )}
-        <select
-          name={name}
-          id={name}
-          required
-          class="py-3 px-4 block w-full text-base rounded-sm border border-gray-200 bg-gray-50 text-gray-900 transition-all duration-200 focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:bg-white outline-none cursor-pointer"
-        >
-          {options.map((option) => (
-            <option value={option.value} disabled={option.value === ''}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-      </div>
-    ))}
+  {selectGroups.map((group) => (
+    <div data-enquiry-fields={group.enquiry} hidden={!group.on}>
+      {group.selects.map(({ name, label, options }) => (
+        <div class="mb-5">
+          {label && (
+            <label for={name} class="block text-sm font-medium text-gray-700 mb-1.5">
+              {label}
+            </label>
+          )}
+          <select name={name} id={name} required disabled={!group.on} class={`${controlClass} cursor-pointer`}>
+            {options.map((option) => (
+              <option value={option.value} disabled={option.value === ''} selected={option.value === ''}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </div>
+      ))}
+    </div>
+  ))}
 
   {textarea && (
     <div class="mb-5">
@@ -66,9 +105,9 @@ const { inputs, selects, textarea, disclaimer, button = 'Send enquiry', descript
         id="textarea"
         name={textarea.name ? textarea.name : 'message'}
         rows={textarea.rows ? textarea.rows : 4}
-        placeholder={textarea.placeholder}
+        placeholder={textarea.placeholder ?? firstEnquiry?.messagePlaceholder}
         required
-        class="py-3 px-4 block w-full text-base rounded-sm border border-gray-200 bg-gray-50 text-gray-900 transition-all duration-200 focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:bg-white outline-none resize-y placeholder:text-gray-400"
+        class={`${controlClass} resize-y placeholder:text-gray-400`}
       />
     </div>
   )}
@@ -114,3 +153,54 @@ const { inputs, selects, textarea, disclaimer, button = 'Send enquiry', descript
     </div>
   )}
 </form>
+
+<script>
+  // The enquiry picker: shows the chosen enquiry's fields and wording, and
+  // opens on the enquiry and topic a link names (?enquiry=<id>&topic=<value>).
+  function setUpEnquiryPicker() {
+    const form = document.querySelector<HTMLFormElement>('#contact-form');
+    const picker = form?.querySelector<HTMLFieldSetElement>('.enquiry-picker');
+    if (!form || !picker || picker.dataset.ready) return;
+    picker.dataset.ready = 'true';
+
+    const choices = [...picker.querySelectorAll<HTMLInputElement>('input[name="enquiry_type"]')];
+    const groups = [...form.querySelectorAll<HTMLElement>('[data-enquiry-fields]')];
+    const subject = form.querySelector<HTMLInputElement>('input[name="subject"]');
+    const message = form.querySelector<HTMLTextAreaElement>('textarea');
+    const subtitle = document.querySelector<HTMLElement>('[data-enquiry-subtitle]');
+    const topicSelect = (choice: HTMLInputElement) =>
+      [...form.querySelectorAll<HTMLSelectElement>('select')].find(
+        (select) => select.name === choice.dataset.topicField
+      );
+
+    const show = () => {
+      const chosen = choices.find((choice) => choice.checked) ?? choices[0];
+      for (const group of groups) {
+        const on = group.dataset.enquiryFields === chosen.value;
+        group.hidden = !on;
+        // A disabled field is neither checked nor sent.
+        for (const field of group.querySelectorAll('select')) field.disabled = !on;
+      }
+      const topic = topicSelect(chosen);
+      const topicLabel = topic?.value ? ` (${topic.selectedOptions[0].text})` : '';
+      if (subject) subject.value = `${chosen.dataset.subject}${topicLabel} ${form.dataset.subjectFrom}`;
+      if (message) message.placeholder = chosen.dataset.messagePlaceholder ?? '';
+      if (subtitle && chosen.dataset.subtitle) subtitle.textContent = chosen.dataset.subtitle;
+    };
+
+    const asked = new URLSearchParams(window.location.search);
+    const linked = choices.find((choice) => choice.value === asked.get('enquiry'));
+    if (linked) {
+      linked.checked = true;
+      const topic = topicSelect(linked);
+      const option = [...(topic?.options ?? [])].find((o) => o.value && o.value === asked.get('topic'));
+      if (topic && option) topic.value = option.value;
+    }
+
+    form.addEventListener('change', show);
+    picker.hidden = false;
+    show();
+  }
+
+  document.addEventListener('astro:page-load', setUpEnquiryPicker);
+</script>
